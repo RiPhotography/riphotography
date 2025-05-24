@@ -2,60 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Packages - RI Photography</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Photography Packages</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
       font-family: "Times New Roman", Times, serif;
     }
+    .fade-in {
+      animation: fadeIn 1s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
-<body class="bg-white text-black">
-  <!-- Header -->
-  <header class="bg-black py-6">
-    <h1 class="text-white text-center text-3xl font-bold">Our Packages</h1>
-  </header>
+<body class="bg-white text-black p-6">
 
-  <!-- Packages Section -->
-  <section class="grid md:grid-cols-3 gap-8 p-8">
+  <h1 class="text-4xl text-center font-bold mb-8 fade-in">Our Photography Packages</h1>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 fade-in">
     <!-- Package 1 -->
-    <div class="border-2 p-4 shadow hover:shadow-lg transition duration-300">
-      <h2 class="text-xl font-semibold mb-2">Basic Package</h2>
-      <img src="https://via.placeholder.com/300x200" alt="Basic Package" class="mb-4">
-      <ul class="list-disc list-inside">
+    <div class="border-2 border-black p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+      <h2 class="text-2xl font-bold mb-2">Basic Package</h2>
+      <img src="https://via.placeholder.com/300x200" alt="Basic Package" class="mb-3 rounded">
+      <ul class="list-disc list-inside space-y-1">
         <li>1 Photographer</li>
         <li>2 Hours Coverage</li>
         <li>50 Edited Photos</li>
-        <li>Delivery in 5 Days</li>
+        <li>Delivery within 5 days</li>
       </ul>
     </div>
 
     <!-- Package 2 -->
-    <div class="border-2 p-4 shadow hover:shadow-lg transition duration-300">
-      <h2 class="text-xl font-semibold mb-2">Standard Package</h2>
-      <img src="https://via.placeholder.com/300x200" alt="Standard Package" class="mb-4">
-      <ul class="list-disc list-inside">
+    <div class="border-2 border-black p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+      <h2 class="text-2xl font-bold mb-2">Standard Package</h2>
+      <img src="https://via.placeholder.com/300x200" alt="Standard Package" class="mb-3 rounded">
+      <ul class="list-disc list-inside space-y-1">
         <li>2 Photographers</li>
-        <li>4 Hours Coverage</li>
+        <li>5 Hours Coverage</li>
         <li>100 Edited Photos</li>
-        <li>1 Cinematic Video</li>
-        <li>Delivery in 7 Days</li>
+        <li>Highlight Video</li>
+        <li>Delivery within 7 days</li>
       </ul>
     </div>
 
     <!-- Package 3 -->
-    <div class="border-2 p-4 shadow hover:shadow-lg transition duration-300">
-      <h2 class="text-xl font-semibold mb-2">Premium Package</h2>
-      <img src="https://via.placeholder.com/300x200" alt="Premium Package" class="mb-4">
-      <ul class="list-disc list-inside">
-        <li>3 Photographers + 1 Cinematographer</li>
+    <div class="border-2 border-black p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
+      <h2 class="text-2xl font-bold mb-2">Premium Package</h2>
+      <img src="https://via.placeholder.com/300x200" alt="Premium Package" class="mb-3 rounded">
+      <ul class="list-disc list-inside space-y-1">
         <li>Full Day Coverage</li>
-        <li>200+ Edited Photos</li>
-        <li>Drone Footage</li>
-        <li>Delivery in 10 Days</li>
+        <li>Photo + Cinematic Video</li>
+        <li>Premium Album</li>
+        <li>Drone Shots Included</li>
+        <li>Delivery within 10 days</li>
       </ul>
     </div>
-  </section>
+  </div>
+
+  <!-- Back Button -->
+  <div class="text-center mt-10">
+    <a href="index.html" class="text-white bg-black px-6 py-3 rounded hover:bg-gray-800 transition duration-300">← Back to Home</a>
+  </div>
+
 </body>
 </html>
