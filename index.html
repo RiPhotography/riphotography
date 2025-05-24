@@ -5,50 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RI Photography</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Alike&family=Beau+Rivage&family=Bevan&family=Great+Vibes&family=Beau+Rivage&family=Beau+Rivage&family=Beau+Rivage&family=Beittany&family=Alike&display=swap" rel="stylesheet">
+
   <style>
     body {
-      font-family: "Times New Roman", Times, serif;
+      font-family: "Alike", serif;
+      background-image: repeating-linear-gradient(
+        45deg,
+        #f9f9f9,
+        #f9f9f9 10px,
+        #f0f0f0 10px,
+        #f0f0f0 20px
+      );
     }
-    .fade-in {
-      animation: fadeIn 1.5s ease-in;
+    .title-font {
+      font-family: "Beittany", cursive;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
+    .theme-font {
+      font-family: "Alike", serif;
     }
   </style>
 </head>
-<body class="bg-white text-black">
+<body class="text-black">
+
+  <!-- Search Bar -->
+  <div class="flex justify-end p-4">
+    <input type="text" placeholder="Search..." class="border border-gray-400 px-4 py-2 rounded w-64">
+  </div>
+
   <!-- Header Section -->
-  <header class="bg-black py-8">
-    <div class="border-4 border-white w-max mx-auto px-6 py-3 bg-white fade-in">
-      <h1 class="text-black text-4xl font-bold">RI Photography</h1>
+  <header class="py-8">
+    <div class="border-4 border-dashed border-black w-max mx-auto px-8 py-6 bg-white shadow-lg">
+      <h1 class="text-black text-5xl title-font text-center">RI Photography</h1>
+      <p class="text-lg theme-font text-center mt-2">Turning Moments into Timeless Art</p>
     </div>
   </header>
 
-  <!-- Welcome Section -->
-  <section class="text-center my-10 px-4 fade-in">
-    <div class="border border-gray-400 p-6 max-w-2xl mx-auto">
-      <h2 class="text-2xl font-bold mb-4">WELCOME!</h2>
-      <p class="text-lg">Welcome to RI Photography. We capture the beautiful moments of your life. Our goal is to tell a story through every photo.</p>
-    </div>
+  <!-- Navigation Section -->
+  <section class="flex justify-center gap-6 my-12 flex-wrap">
+    <a href="packages.html" class="border-2 border-blue-500 px-6 py-3 hover:bg-blue-100 transition duration-300 animate-pulse">Packages</a>
+    <a href="portfolio.html" class="border-2 border-green-500 px-6 py-3 hover:bg-green-100 transition duration-300 animate-bounce">Personal Portfolio</a>
+    <a href="gallery.html" class="border-2 border-purple-500 px-6 py-3 hover:bg-purple-100 transition duration-300 animate-pulse">Gallery</a>
+    <a href="vlog.html" class="border-2 border-yellow-500 px-6 py-3 hover:bg-yellow-100 transition duration-300 animate-bounce">Vlog</a>
   </section>
 
-  <!-- Navigation Section -->
-  <section class="flex justify-center gap-6 my-12 flex-wrap fade-in">
-    <a href="packages.html" class="border-2 border-blue-500 px-6 py-3 hover:scale-105 hover:bg-blue-100 transition duration-300">Packages</a>
-    <a href="portfolio.html" class="border-2 border-green-500 px-6 py-3 hover:scale-105 hover:bg-green-100 transition duration-300">Personal Portfolio</a>
-    <a href="gallery.html" class="border-2 border-purple-500 px-6 py-3 hover:scale-105 hover:bg-purple-100 transition duration-300">Gallery</a>
-    <a href="vlog.html" class="border-2 border-yellow-500 px-6 py-3 hover:scale-105 hover:bg-yellow-100 transition duration-300">Vlog</a>
+  <!-- Welcome Section -->
+  <section class="text-center px-4">
+    <h2 class="text-3xl font-semibold mb-4">Welcome!</h2>
+    <p class="text-lg max-w-3xl mx-auto">
+      Welcome to RI Photography. Here you will find professional photography packages, personal portfolios, mesmerizing galleries, and coming soon — storytelling photo vlogs that bring every frame to life.
+    </p>
   </section>
 
   <!-- Footer Info -->
-  <section id="contact" class="text-center my-8 fade-in">
-    <div class="border border-gray-400 p-4 max-w-md mx-auto">
-      <h2 class="text-xl font-semibold">RI Photography</h2>
-      <p>Phone: 01736813344</p>
-      <p>Email: riphotography2021@gmail.com</p>
-    </div>
+  <section id="contact" class="text-center my-12">
+    <h2 class="text-xl font-semibold">RI Photography</h2>
+    <p>Phone: 01736813344</p>
+    <p>Email: riphotography2021@gmail.com</p>
+    <p>
+      Facebook Page: 
+      <a href="https://www.facebook.com/share/16g9kcrbMv/" target="_blank" class="text-blue-600 underline">Visit Here</a>
+    </p>
   </section>
+
 </body>
 </html>
