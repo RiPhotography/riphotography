@@ -4,37 +4,93 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RI Photography</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: "Times New Roman", Times, serif;
+    }
+  </style>
 </head>
-<body>
-  <header>
-    <div class="hero">
-      <h1>RI Photography</h1>
-      <p>Turning Moments into Timeless Art</p>
+<body class="bg-white text-black">
+  <!-- Header Section -->
+  <header class="bg-black py-8">
+    <div class="border-4 border-white w-max mx-auto px-6 py-3 bg-white">
+      <h1 class="text-black text-4xl font-bold">RI Photography</h1>
     </div>
   </header>
 
-  <main>
-    <section class="description">
-      <h2>Welcome</h2>
-      <p>RI Photography captures your story through a lens, creating memories that last forever.</p>
-      <div class="home-images">
-        <img src="images/sample1.jpg" alt="Sample Photo 1">
-        <img src="images/sample2.jpg" alt="Sample Photo 2">
+  <!-- Navigation Section -->
+  <section class="flex justify-center gap-6 my-12 flex-wrap">
+    <a href="#packages" class="border-2 border-blue-500 px-6 py-3 hover:bg-blue-100 transition duration-300">Packages</a>
+    <a href="#portfolio" class="border-2 border-green-500 px-6 py-3 hover:bg-green-100 transition duration-300">Personal Portfolio</a>
+    <a href="#contact" class="border-2 border-red-500 px-6 py-3 hover:bg-red-100 transition duration-300">Contact</a>
+  </section>
+
+  <!-- Footer Info -->
+  <section class="text-center my-8">
+    <h2 class="text-xl font-semibold">RI Photography</h2>
+    <p>Contact: +8801XXXXXXXXX</p>
+  </section>
+
+  <!-- Packages Section -->
+  <section id="packages" class="my-16 px-4">
+    <h2 class="text-3xl font-bold text-center mb-10">Our Packages</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Package 1 -->
+      <div class="border p-4">
+        <h3 class="text-2xl font-semibold mb-2">Basic Outdoor</h3>
+        <img src="https://via.placeholder.com/300x200" alt="Basic Outdoor" class="mb-2" />
+        <ul class="list-disc ml-5">
+          <li>1 Photographer</li>
+          <li>1.5 hours shoot</li>
+          <li>30 Edited Photos</li>
+        </ul>
       </div>
-    </section>
 
-    <section class="contact">
-      <h2>Contact Us</h2>
-      <p>Email: riphotography@email.com</p>
-      <p>Phone: +8801XXXXXXXXX</p>
-      <p>Facebook: fb.com/riphotography</p>
-    </section>
-  </main>
+      <!-- Package 2 -->
+      <div class="border p-4">
+        <h3 class="text-2xl font-semibold mb-2">Couple Portrait</h3>
+        <img src="https://via.placeholder.com/300x200" alt="Couple Portrait" class="mb-2" />
+        <ul class="list-disc ml-5">
+          <li>1 Photographer + 1 Assistant</li>
+          <li>2 hours shoot</li>
+          <li>40 Edited Photos</li>
+        </ul>
+      </div>
 
-  <footer>
-    <p>&copy; 2025 RI Photography. All rights reserved.</p>
-  </footer>
+      <!-- Package 3 -->
+      <div class="border p-4">
+        <h3 class="text-2xl font-semibold mb-2">Wedding Premium</h3>
+        <img src="https://via.placeholder.com/300x200" alt="Wedding Premium" class="mb-2" />
+        <ul class="list-disc ml-5">
+          <li>2 Photographers</li>
+          <li>5 hours shoot</li>
+          <li>100 Edited Photos + Cinematic Teaser</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="my-16 px-4">
+    <h2 class="text-3xl font-bold text-center mb-10">Personal Portfolio</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Folder 1 -->
+      <div class="border p-4">
+        <h3 class="text-xl font-semibold mb-2">Street Photography</h3>
+        <img src="https://via.placeholder.com/300x200" alt="Street" />
+      </div>
+      <!-- Folder 2 -->
+      <div class="border p-4">
+        <h3 class="text-xl font-semibold mb-2">Personal Portrait</h3>
+        <img src="https://via.placeholder.com/300x200" alt="Portrait" />
+      </div>
+      <!-- Folder 3 -->
+      <div class="border p-4">
+        <h3 class="text-xl font-semibold mb-2">Wedding</h3>
+        <img src="https://via.placeholder.com/300x200" alt="Wedding" />
+      </div>
+    </div>
+  </section>
 </body>
 </html>
