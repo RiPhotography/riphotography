@@ -1,0 +1,76 @@
+/* Font styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #fff;
+  color: #111;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+header .hero {
+  background: repeating-linear-gradient(
+    45deg,
+    #ff5f6d,
+    #ff5f6d 20px,
+    #ffc371 20px,
+    #ffc371 40px,
+    #9be15d 40px,
+    #9be15d 60px
+  );
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+main {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.description, .contact {
+  margin-bottom: 40px;
+}
+
+.home-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.home-images img {
+  width: calc(50% - 10px);
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background: #111;
+  color: #eee;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .home-images img {
+    width: 100%;
+  }
+}
