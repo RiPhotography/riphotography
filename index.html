@@ -5,66 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RI Photography</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Alike&family=Beau+Rivage&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Alike&display=swap');
-    .theme-font {
+    body {
       font-family: 'Alike', serif;
+    }
+    .title-font {
+      font-family: 'Beau Rivage', cursive;
     }
   </style>
 </head>
-<body class="bg-white text-black">
+<body class="bg-gray-100 text-black">
 
-  <!-- Top Bar with Title and Theme -->
-  <div class="bg-gray-200 py-4 text-center">
-    <a href="index.html" class="text-3xl font-bold block">RI Photography</a>
-    <p class="theme-font text-lg">Turning Moments into Timeless Art</p>
-  </div>
-
-  <!-- Side Thumbnails and Search Bar -->
-  <div class="flex items-center justify-between px-4 my-6">
-    <!-- Left Images -->
-    <div class="flex gap-2">
-      <a href="gallery.html"><img src="https://source.unsplash.com/60x60/?nature" class="rounded-md hover:scale-110 transition" /></a>
-      <a href="gallery.html"><img src="https://source.unsplash.com/60x60/?camera" class="rounded-md hover:scale-110 transition" /></a>
-      <a href="gallery.html"><img src="https://source.unsplash.com/60x60/?wedding" class="rounded-md hover:scale-110 transition" /></a>
+  <!-- Top Header with Title & Theme -->
+  <header class="bg-gray-300 py-6 px-4 flex justify-between items-center">
+    <div>
+      <a href="index.html" class="text-3xl title-font font-bold text-black hover:underline">RI Photography</a>
+      <p class="text-sm font-semibold">Turning Moments into Timeless Art</p>
     </div>
 
-    <!-- Search bar -->
+    <!-- Search Bar (right aligned) -->
     <div class="relative">
-      <input type="text" placeholder="Search..." list="pages" class="border px-3 py-1 pl-8 rounded-md" />
-      <i class="fas fa-magnifying-glass absolute left-2 top-1.5 text-sm text-gray-500"></i>
-      <datalist id="pages">
+      <input type="text" id="searchInput" placeholder="Search..." class="pl-10 pr-4 py-2 border border-gray-400 rounded-full focus:outline-none focus:ring-2 focus:ring-black" list="suggestions">
+      <datalist id="suggestions">
         <option value="Packages">
         <option value="Personal Portfolio">
         <option value="Gallery">
         <option value="Vlog">
       </datalist>
+      <div class="absolute left-3 top-2.5 text-gray-500">
+        🔍
+      </div>
+    </div>
+  </header>
+
+  <!-- Image Columns (Left & Right) -->
+  <div class="flex justify-between items-start px-4 py-8">
+    <!-- Left Column Images -->
+    <div class="space-y-4">
+      <a href="gallery.html"><img src="img1.jpg" alt="Thumb1" class="w-24 rounded-lg shadow-md hover:scale-105 transition duration-300"></a>
+      <a href="gallery.html"><img src="img2.jpg" alt="Thumb2" class="w-24 rounded-lg shadow-md hover:scale-105 transition duration-300"></a>
+      <a href="gallery.html"><img src="img3.jpg" alt="Thumb3" class="w-24 rounded-lg shadow-md hover:scale-105 transition duration-300"></a>
     </div>
 
-    <!-- Right Images -->
-    <div class="flex gap-2">
-      <a href="gallery.html"><img src="https://source.unsplash.com/60x60/?portrait" class="rounded-md hover:scale-110 transition" /></a>
-      <a href="gallery.html"><img src="https://source.unsplash.com/60x60/?street" class="rounded-md hover:scale-110 transition" /></a>
-      <a href="gallery.html"><img src="https://source.unsplash.com/60x60/?photography" class="rounded-md hover:scale-110 transition" /></a>
+    <!-- Main Content -->
+    <div class="text-center max-w-xl mx-auto">
+      <h2 class="text-2xl font-bold mb-4">Welcome to RI Photography</h2>
+      <p class="mb-6">Capturing life’s most beautiful moments, one frame at a time. Explore our portfolio, packages, and storytelling visual blogs to experience the journey.</p>
+
+      <!-- Animated Navigation Boxes -->
+      <div class="grid grid-cols-2 gap-4">
+        <a href="packages.html" class="border-2 border-blue-500 px-6 py-3 hover:bg-blue-100 transition duration-300 animate-bounce">Packages</a>
+        <a href="portfolio.html" class="border-2 border-green-500 px-6 py-3 hover:bg-green-100 transition duration-300 animate-bounce">Personal Portfolio</a>
+        <a href="gallery.html" class="border-2 border-purple-500 px-6 py-3 hover:bg-purple-100 transition duration-300 animate-pulse">Gallery</a>
+        <a href="vlog.html" class="border-2 border-yellow-500 px-6 py-3 hover:bg-yellow-100 transition duration-300 animate-pulse">Vlog</a>
+      </div>
     </div>
-  </div>
 
-  <!-- Navigation Buttons -->
-  <section class="flex justify-center gap-6 my-6 flex-wrap">
-    <a href="packages.html" class="border-2 border-blue-500 px-6 py-3 hover:bg-blue-100 transition duration-300 animate-bounce">Packages</a>
-    <a href="portfolio.html" class="border-2 border-green-500 px-6 py-3 hover:bg-green-100 transition duration-300 animate-bounce">Personal Portfolio</a>
-    <a href="gallery.html" class="border-2 border-purple-500 px-6 py-3 hover:bg-purple-100 transition duration-300 animate-pulse">Gallery</a>
-    <a href="vlog.html" class="border-2 border-red-500 px-6 py-3 hover:bg-red-100 transition duration-300 animate-pulse">Vlog</a>
-  </section>
-
-  <!-- Welcome Section -->
-  <div class="text-center mt-10 mx-4">
-    <div class="border-2 border-dashed border-gray-400 p-6 bg-gray-100 inline-block">
-      <h2 class="text-2xl font-bold mb-2">Welcome to RI Photography</h2>
-      <p class="text-lg max-w-xl mx-auto">
-        Discover timeless moments through our lens. Explore packages, portfolios, and visual stories that capture emotion, beauty, and life in motion.
-      </p>
+    <!-- Right Column Images -->
+    <div class="space-y-4">
+      <a href="gallery.html"><img src="img4.jpg" alt="Thumb4" class="w-24 rounded-lg shadow-md hover:scale-105 transition duration-300"></a>
+      <a href="gallery.html"><img src="img5.jpg" alt="Thumb5" class="w-24 rounded-lg shadow-md hover:scale-105 transition duration-300"></a>
+      <a href="gallery.html"><img src="img6.jpg" alt="Thumb6" class="w-24 rounded-lg shadow-md hover:scale-105 transition duration-300"></a>
     </div>
   </div>
 
