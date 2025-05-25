@@ -2,7 +2,6 @@ const folders = ['wedding', 'portrait', 'events'];
 const container = document.getElementById('gallery-container');
 
 folders.forEach(folder => {
-  
   const section = document.createElement('section');
   section.className = 'mb-10';
 
@@ -14,10 +13,9 @@ folders.forEach(folder => {
   const grid = document.createElement('div');
   grid.className = "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4";
 
-  
   for (let i = 1; i <= 20; i++) {
     const img = document.createElement('img');
-    img.src = `portfolio/${folder}/image${i}.jpg`; 
+    img.src = `portfolio/${folder}/image${i}.jpg`;
     img.alt = `${folder} image ${i}`;
     img.className = "rounded-lg shadow-md hover:scale-105 transition duration-300 w-full h-auto";
 
