@@ -5,51 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      font-family: "Times New Roman", Times, serif;
-    }
-    .fade-in {
-      animation: fadeIn 1s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
 </head>
 <body class="bg-white text-black p-6">
+  <h1 class="text-4xl text-center font-bold mb-8">My Portfolio</h1>
 
-  <h1 class="text-4xl text-center font-bold mb-8 fade-in">My Portfolio</h1>
-
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 fade-in">
-    
-    <!-- Street Photography -->
-    <div class="border border-black p-4 rounded shadow hover:shadow-lg transition">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Street -->
+    <a href="street.html" class="block border border-black p-4 rounded shadow hover:shadow-lg transition">
       <h2 class="text-xl font-bold mb-2 text-center">Street Photography</h2>
-      <img src="https://via.placeholder.com/300x200" alt="Street Photography" class="rounded mb-3">
-      <p class="text-sm text-center">Candid moments, street life & emotion.</p>
-    </div>
+      <img src="images/street/cover.jpg" alt="Street Cover" class="rounded mb-3 mx-auto h-48 object-cover">
+    </a>
 
-    <!-- Personal Portraits -->
-    <div class="border border-black p-4 rounded shadow hover:shadow-lg transition">
+    <!-- Portrait -->
+    <a href="portraits.html" class="block border border-black p-4 rounded shadow hover:shadow-lg transition">
       <h2 class="text-xl font-bold mb-2 text-center">Personal Portraits</h2>
-      <img src="https://via.placeholder.com/300x200" alt="Personal Portraits" class="rounded mb-3">
-      <p class="text-sm text-center">Styled individual portraits in natural light.</p>
-    </div>
+      <img src="images/portraits/cover.jpg" alt="Portrait Cover" class="rounded mb-3 mx-auto h-48 object-cover">
+    </a>
 
-    <!-- Wedding Works -->
-    <div class="border border-black p-4 rounded shadow hover:shadow-lg transition">
+    <!-- Wedding -->
+    <a href="wedding.html" class="block border border-black p-4 rounded shadow hover:shadow-lg transition">
       <h2 class="text-xl font-bold mb-2 text-center">Wedding Works</h2>
-      <img src="https://via.placeholder.com/300x200" alt="Wedding Works" class="rounded mb-3">
-      <p class="text-sm text-center">Capturing love stories, rituals & celebration.</p>
-    </div>
+      <img src="images/wedding/cover.jpg" alt="Wedding Cover" class="rounded mb-3 mx-auto h-48 object-cover">
+    </a>
   </div>
 
-  <!-- Back Button -->
   <div class="text-center mt-10">
     <a href="index.html" class="text-white bg-black px-6 py-3 rounded hover:bg-gray-800 transition duration-300">← Back to Home</a>
   </div>
-
 </body>
 </html>
