@@ -18,6 +18,22 @@
     .theme-font {
       font-family: "Alike", serif;
     }
+    .suggestions {
+      position: absolute;
+      background-color: white;
+      color: black;
+      border-radius: 0.25rem;
+      margin-top: 0.25rem;
+      width: 100%;
+      z-index: 50;
+    }
+    .suggestions div {
+      padding: 0.5rem;
+      cursor: pointer;
+    }
+    .suggestions div:hover {
+      background-color: #f1f5f9;
+    }
   </style>
 </head>
 <body>
@@ -30,18 +46,41 @@
     <p class="theme-font text-white text-sm mt-1">Turning Moments into Timeless Art</p>
   </div>
 
-  <!-- Search Icon Only -->
-  <div class="flex justify-end p-4">
-    <button class="text-white text-2xl hover:text-gray-400 transition duration-200">🔍</button>
+  <!-- Search bar with icon -->
+  <div class="relative max-w-sm mx-auto mt-4">
+    <div class="flex items-center border border-white rounded px-3 py-2 bg-white text-black">
+      <span class="mr-2">🔍</span>
+      <input id="searchBox" type="text" placeholder="Search..." class="w-full focus:outline-none bg-white" oninput="showSuggestions()" />
+    </div>
+    <div id="suggestions" class="suggestions hidden"></div>
   </div>
 
-  <!-- Navigation Section with Animation -->
-  <section class="flex justify-center gap-6 my-10 flex-wrap">
-    <a href="packages.html" class="border-2 border-blue-400 px-6 py-3 hover:bg-blue-600 hover:text-white transition duration-500 transform hover:scale-110 animate-bounce">Packages</a>
-    <a href="portfolio.html" class="border-2 border-green-400 px-6 py-3 hover:bg-green-600 hover:text-white transition duration-500 transform hover:scale-110 animate-pulse">Personal Portfolio</a>
-    <a href="gallery.html" class="border-2 border-purple-400 px-6 py-3 hover:bg-purple-600 hover:text-white transition duration-500 transform hover:scale-110 animate-bounce">Gallery</a>
-    <a href="vlog.html" class="border-2 border-yellow-400 px-6 py-3 hover:bg-yellow-600 hover:text-white transition duration-500 transform hover:scale-110 animate-pulse">Vlog</a>
-  </section>
+  <!-- Image Thumbnails Row -->
+  <div class="flex justify-between px-6 my-8">
+    <!-- Left Side Thumbnails -->
+    <div class="flex flex-col gap-2">
+      <a href="gallery.html"><img src="https://via.placeholder.com/60" alt="thumb" class="rounded hover:scale-110 transition" /></a>
+      <a href="gallery.html"><img src="https://via.placeholder.com/60" alt="thumb" class="rounded hover:scale-110 transition" /></a>
+      <a href="gallery.html"><img src="https://via.placeholder.com/60" alt="thumb" class="rounded hover:scale-110 transition" /></a>
+      <a href="gallery.html"><img src="https://via.placeholder.com/60" alt="thumb" class="rounded hover:scale-110 transition" /></a>
+    </div>
+
+    <!-- Center Options -->
+    <section class="flex justify-center gap-6 flex-wrap items-center">
+      <a href="packages.html" class="border-2 border-blue-400 px-6 py-3 hover:bg-blue-600 hover:text-white transition duration-500 transform hover:scale-110 animate-bounce">Packages</a>
+      <a href="portfolio.html" class="border-2 border-green-400 px-6 py-3 hover:bg-green-600 hover:text-white transition duration-500 transform hover:scale-110 animate-pulse">Personal Portfolio</a>
+      <a href="gallery.html" class="border-2 border-purple-400 px-6 py-3 hover:bg-purple-600 hover:text-white transition duration-500 transform hover:scale-110 animate-bounce">Gallery</a>
+      <a href="vlog.html" class="border-2 border-yellow-400 px-6 py-3 hover:bg-yellow-600 hover:text-white transition duration-500 transform hover:scale-110 animate-pulse">Vlog</a>
+    </section>
+
+    <!-- Right Side Thumbnails -->
+    <div class="flex flex-col gap-2">
+      <a href="gallery.html"><img src="https://via.placeholder.com/60" alt="thumb" class="rounded hover:scale-110 transition" /></a>
+      <a href="gallery.html"><img src="https://via.placeholder.com/60" alt="thumb" class="rounded hover:scale-110 transition" /></a>
+      <a href="gallery.html"><img src="https://via.placeholder.com/60" alt="thumb" class="rounded hover:scale-110 transition" /></a>
+      <a href="gallery.html"><img src="https://via.placeholder.com/60" alt="thumb" class="rounded hover:scale-110 transition" /></a>
+    </div>
+  </div>
 
   <!-- Welcome Section -->
   <section class="text-center px-4">
@@ -61,6 +100,40 @@
       <a href="https://www.facebook.com/share/16g9kcrbMv/" target="_blank" class="text-blue-300 underline">Visit Here</a>
     </p>
   </section>
+
+  <!-- JS for suggestions -->
+  <script>
+    const suggestionsList = ['Packages', 'Portfolio', 'Gallery', 'Vlog'];
+    const searchBox = document.getElementById("searchBox");
+    const suggestionsContainer = document.getElementById("suggestions");
+
+    function showSuggestions() {
+      const input = searchBox.value.toLowerCase();
+      suggestionsContainer.innerHTML = "";
+      if (input === "") {
+        suggestionsContainer.classList.add("hidden");
+        return;
+      }
+
+      const filtered = suggestionsList.filter(item => item.toLowerCase().includes(input));
+      filtered.forEach(item => {
+        const div = document.createElement("div");
+        div.textContent = item;
+        div.onclick = () => {
+          window.location.href = item.toLowerCase() + ".html";
+        };
+        suggestionsContainer.appendChild(div);
+      });
+
+      suggestionsContainer.classList.remove("hidden");
+    }
+
+    document.addEventListener("click", function(event) {
+      if (!searchBox.contains(event.target)) {
+        suggestionsContainer.classList.add("hidden");
+      }
+    });
+  </script>
 
 </body>
 </html>
