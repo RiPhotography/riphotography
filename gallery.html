@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RI Photography Booking Form</title>
-  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Amsterdam+One&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RI Photography Booking</title>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("pISh5CiJ8Pkr6BXKD"); // Your User ID
+    })();
+  </script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -19,17 +24,6 @@
       margin: auto;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       border-radius: 10px;
-    }
-    h1, h2 {
-      text-align: center;
-      color: #444;
-    }
-    .section {
-      margin-bottom: 20px;
-    }
-    label {
-      display: block;
-      margin-top: 10px;
     }
     input, select, textarea {
       width: 100%;
@@ -46,137 +40,93 @@
       border-radius: 8px;
       font-size: 16px;
       cursor: pointer;
-      display: block;
       width: 100%;
+      margin-top: 20px;
     }
     .certificate {
       display: none;
-      margin-top: 40px;
       border: 2px solid #ccc;
       padding: 30px;
       background: #fff;
-    }
-    .signature {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 50px;
-    }
-    .signature p {
-      font-family: 'Amsterdam One', cursive;
-      font-size: 24px;
-    }
-    .signature .label {
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-      text-align: center;
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>RI Photography – Booking Form</h1>
+    <form id="bookingForm">
+      <label>Client Name</label>
+      <input type="text" name="client_name" required />
 
-    <div class="section">
-      <label>Are you agree with our Terms & Conditions?</label>
-      <select id="termsAgree">
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-      </select>
-    </div>
+      <label>Client Email</label>
+      <input type="email" name="client_email" required />
 
-    <div class="section">
-      <label>Client Name [Full Name]</label>
-      <input type="text" id="clientName">
-      <label>Phone Number</label>
-      <input type="tel" id="phone">
-      <label>Email</label>
-      <input type="email" id="email">
+      <label>Client Phone</label>
+      <input type="tel" name="client_phone" required />
 
-      <label>I'm _______ of the event</label>
-      <select id="role">
-        <option value="host">Host</option>
-        <option value="organizer">Organizer</option>
-        <option value="model">Model</option>
-      </select>
+      <label>Event Date</label>
+      <input type="date" name="event_date" required />
 
-      <label>Event Category</label>
-      <input type="text" id="eventCategory">
+      <label>Event Time</label>
+      <input type="time" name="event_time" required />
+
+      <label>Event Location</label>
+      <input type="text" name="event_location" required />
+
+      <label>Budget (BDT)</label>
+      <input type="number" name="budget" required />
 
       <label>Package</label>
-      <select id="package">
-        <option value="package1">Package 1</option>
-        <option value="package2">Package 2</option>
-        <option value="customized">Customized</option>
+      <select name="package" required>
+        <option value="Basic">Basic</option>
+        <option value="Standard">Standard</option>
+        <option value="Pro">Pro</option>
+        <option value="Customized">Customized</option>
       </select>
 
-      <label>Date</label>
-      <input type="date" id="date">
-      <label>Time</label>
-      <input type="time" id="time">
-      <label>Location</label>
-      <input type="text" id="location">
+      <label>Additional Notes</label>
+      <textarea name="extra_note" placeholder="Optional"></textarea>
 
-      <label>Payment Status</label>
-      <select id="paymentStatus">
-        <option value="complete">Complete</option>
-        <option value="pending">Pending</option>
-      </select>
+      <button type="submit">Confirm Booking</button>
+    </form>
 
-      <label>Confirming Budget (BDT)</label>
-      <input type="number" id="budget">
-
-      <label>Additional Requirements</label>
-      <textarea id="extra"></textarea>
-
-      <label>Confirming booking?</label>
-      <select id="finalConfirm">
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-      </select>
-    </div>
-
-    <button onclick="submitForm()">Confirm Booking</button>
-
-    <div class="certificate" id="certificate">
-      <h2>RI Photography</h2>
-      <p>Thank you for your booking. This document confirms that:</p>
-      <p><strong id="cName"></strong> has confirmed a booking with us.</p>
-      <p>Date: <strong id="cLocation"></strong></p>
-      <p>Time: <strong id="cLocation"></strong></p>
-      <p>Budget: <strong id="cBudget"></strong> BDT</p>
-      <p>Location: <strong id="cLocation"></strong></p>
-      <div class="signature">
-        <div>
-          <p id="cNameSign"></p>
-          <div class="label">Client</div>
-        </div>
-        <div>
-          <p style="font-family:'Amsterdam One', cursive">RI Rahat</p>
-          <div class="label">Photographer</div>
-        </div>
-      </div>
+    <div class="certificate" id="confirmationBox">
+      <h2>Booking Confirmed!</h2>
+      <p><strong>Name:</strong> <span id="cName"></span></p>
+      <p><strong>Event Date:</strong> <span id="cDate"></span></p>
+      <p><strong>Time:</strong> <span id="cTime"></span></p>
+      <p><strong>Location:</strong> <span id="cLocation"></span></p>
+      <p><strong>Package:</strong> <span id="cPackage"></span></p>
+      <p><strong>Budget:</strong> <span id="cBudget"></span> BDT</p>
     </div>
   </div>
 
   <script>
-    function submitForm() {
-      const agree = document.getElementById('termsAgree').value;
-      if (agree === 'no') {
-        alert("We do not work if our terms are not accepted.");
-        return;
-      }
+    const form = document.getElementById('bookingForm');
 
-      const name = document.getElementById('clientName').value;
-      const location = document.getElementById('location').value;
-      const budget = document.getElementById('budget').value;
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
 
-      document.getElementById('cName').innerText = name;
-      document.getElementById('cNameSign').innerText = name;
-      document.getElementById('cLocation').innerText = location;
-      document.getElementById('cBudget').innerText = budget;
+      emailjs.sendForm('service_ri28', 'template_1zbt48l', this)
+        .then(function(response) {
+          alert('Booking confirmed & email sent successfully!');
+          
+          // Show confirmation certificate
+          document.getElementById("cName").innerText = form.client_name.value;
+          document.getElementById("cDate").innerText = form.event_date.value;
+          document.getElementById("cTime").innerText = form.event_time.value;
+          document.getElementById("cLocation").innerText = form.event_location.value;
+          document.getElementById("cPackage").innerText = form.package.value;
+          document.getElementById("cBudget").innerText = form.budget.value;
+          document.getElementById("confirmationBox").style.display = "block";
 
-      document.getElementById('certificate').style.display = 'block';
-    }
+          form.reset();
+        }, function(error) {
+          alert('Email sending failed. Please try again!');
+          console.error('FAILED...', error);
+        });
+    });
   </script>
 </body>
 </html>
