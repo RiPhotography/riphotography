@@ -5,73 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RI Photography</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Alike&family=Beau+Rivage&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
-    body {
-      font-family: 'Alike', serif;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Alike&display=swap');
     .theme-font {
-      font-family: 'Beau Rivage', cursive;
-    }
-    .dash-border {
-      border: 2px dashed gray;
+      font-family: 'Alike', serif;
     }
   </style>
 </head>
-<body class="bg-gray-100 text-black">
+<body class="bg-white text-black">
 
-  <!-- Header with title and theme -->
-  <header class="bg-gray-200 py-4 text-center dash-border">
-    <a href="index.html">
-      <h1 class="text-3xl text-black font-bold theme-font">RI Photography</h1>
-    </a>
-    <p class="text-sm text-gray-600 mt-1">Turning Moments into Timeless Art</p>
-  </header>
+  <!-- Top Bar with Title and Theme -->
+  <div class="bg-gray-200 py-4 text-center">
+    <a href="index.html" class="text-3xl font-bold block">RI Photography</a>
+    <p class="theme-font text-lg">Turning Moments into Timeless Art</p>
+  </div>
 
-  <!-- Top bar with thumbnails and search -->
-  <div class="flex justify-between items-center py-4 px-4 bg-white shadow-md">
-    <!-- Left thumbnails -->
+  <!-- Side Thumbnails and Search Bar -->
+  <div class="flex items-center justify-between px-4 my-6">
+    <!-- Left Images -->
     <div class="flex gap-2">
-      <a href="gallery.html"><img src="https://source.unsplash.com/60x60/?photography,1" class="rounded-md hover:scale-105 transition" /></a>
-      <a href="gallery.html"><img src="https://source.unsplash.com/60x60/?portrait,2" class="rounded-md hover:scale-105 transition" /></a>
-      <a href="gallery.html"><img src="https://source.unsplash.com/60x60/?street,3" class="rounded-md hover:scale-105 transition" /></a>
+      <a href="gallery.html"><img src="https://source.unsplash.com/60x60/?nature" class="rounded-md hover:scale-110 transition" /></a>
+      <a href="gallery.html"><img src="https://source.unsplash.com/60x60/?camera" class="rounded-md hover:scale-110 transition" /></a>
+      <a href="gallery.html"><img src="https://source.unsplash.com/60x60/?wedding" class="rounded-md hover:scale-110 transition" /></a>
     </div>
 
-    <!-- Search icon -->
-    <div>
-      <input type="text" placeholder="Search..." list="options" class="border px-3 py-1 text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-gray-400"/>
-      <datalist id="options">
-        <option value="Packages" />
-        <option value="Portfolio" />
-        <option value="Gallery" />
-        <option value="Vlog" />
-        <option value="Contact" />
+    <!-- Search bar -->
+    <div class="relative">
+      <input type="text" placeholder="Search..." list="pages" class="border px-3 py-1 pl-8 rounded-md" />
+      <i class="fas fa-magnifying-glass absolute left-2 top-1.5 text-sm text-gray-500"></i>
+      <datalist id="pages">
+        <option value="Packages">
+        <option value="Personal Portfolio">
+        <option value="Gallery">
+        <option value="Vlog">
       </datalist>
     </div>
 
-    <!-- Right thumbnails -->
+    <!-- Right Images -->
     <div class="flex gap-2">
-      <a href="gallery.html"><img src="https://source.unsplash.com/60x60/?wedding,4" class="rounded-md hover:scale-105 transition" /></a>
-      <a href="gallery.html"><img src="https://source.unsplash.com/60x60/?lens,5" class="rounded-md hover:scale-105 transition" /></a>
-      <a href="gallery.html"><img src="https://source.unsplash.com/60x60/?nature,6" class="rounded-md hover:scale-105 transition" /></a>
+      <a href="gallery.html"><img src="https://source.unsplash.com/60x60/?portrait" class="rounded-md hover:scale-110 transition" /></a>
+      <a href="gallery.html"><img src="https://source.unsplash.com/60x60/?street" class="rounded-md hover:scale-110 transition" /></a>
+      <a href="gallery.html"><img src="https://source.unsplash.com/60x60/?photography" class="rounded-md hover:scale-110 transition" /></a>
     </div>
   </div>
 
-  <!-- Welcome Section -->
-  <section class="text-center py-8 px-4">
-    <h2 class="text-4xl font-bold text-black underline decoration-gray-400 decoration-2">Welcome to RI Photography</h2>
-    <p class="mt-4 text-lg text-gray-700 max-w-2xl mx-auto">
-      Discover the art of capturing memories through the lens. RI Photography offers you timeless portraits, elegant weddings, and vibrant street life—wrapped in creativity and passion.
-    </p>
+  <!-- Navigation Buttons -->
+  <section class="flex justify-center gap-6 my-6 flex-wrap">
+    <a href="packages.html" class="border-2 border-blue-500 px-6 py-3 hover:bg-blue-100 transition duration-300 animate-bounce">Packages</a>
+    <a href="portfolio.html" class="border-2 border-green-500 px-6 py-3 hover:bg-green-100 transition duration-300 animate-bounce">Personal Portfolio</a>
+    <a href="gallery.html" class="border-2 border-purple-500 px-6 py-3 hover:bg-purple-100 transition duration-300 animate-pulse">Gallery</a>
+    <a href="vlog.html" class="border-2 border-red-500 px-6 py-3 hover:bg-red-100 transition duration-300 animate-pulse">Vlog</a>
   </section>
 
-  <!-- Navigation Options -->
-  <section class="flex justify-center gap-6 my-8 flex-wrap">
-    <a href="packages.html" class="animate-bounce border-2 border-blue-500 px-6 py-3 hover:bg-blue-100 transition duration-300 rounded shadow">Packages</a>
-    <a href="portfolio.html" class="animate-bounce border-2 border-green-500 px-6 py-3 hover:bg-green-100 transition duration-300 rounded shadow">Portfolio</a>
-    <a href="gallery.html" class="animate-pulse border-2 border-purple-500 px-6 py-3 hover:bg-purple-100 transition duration-300 rounded shadow">Gallery</a>
-    <a href="vlog.html" class="animate-pulse border-2 border-yellow-500 px-6 py-3 hover:bg-yellow-100 transition duration-300 rounded shadow">Vlog</a>
-  </section>
+  <!-- Welcome Section -->
+  <div class="text-center mt-10 mx-4">
+    <div class="border-2 border-dashed border-gray-400 p-6 bg-gray-100 inline-block">
+      <h2 class="text-2xl font-bold mb-2">Welcome to RI Photography</h2>
+      <p class="text-lg max-w-xl mx-auto">
+        Discover timeless moments through our lens. Explore packages, portfolios, and visual stories that capture emotion, beauty, and life in motion.
+      </p>
+    </div>
+  </div>
 
   <!-- Footer Info -->
   <footer class="text-center my-6">
