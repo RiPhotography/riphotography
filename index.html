@@ -5,135 +5,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RI Photography</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Alike&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alike&family=Beau+Rivage&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: "Alike", serif;
-      background: linear-gradient(to bottom, #1e293b, #334155);
-      color: white;
-    }
-    .title-font {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Alike', serif;
     }
     .theme-font {
-      font-family: "Alike", serif;
+      font-family: 'Beau Rivage', cursive;
     }
-    .suggestions {
-      position: absolute;
-      background-color: white;
-      color: black;
-      border-radius: 0.25rem;
-      margin-top: 0.25rem;
-      width: 100%;
-      z-index: 50;
-    }
-    .suggestions div {
-      padding: 0.5rem;
-      cursor: pointer;
-    }
-    .suggestions div:hover {
-      background-color: #f1f5f9;
+    .dash-border {
+      border: 2px dashed gray;
     }
   </style>
 </head>
-<body>
+<body class="bg-gray-100 text-black">
 
-  <!-- Top Title + Theme -->
-  <div class="bg-gray-800 text-center py-4">
-    <a href="index.html" class="title-font text-3xl text-white hover:underline transition duration-300 block">
-      RI Photography
+  <!-- Header with title and theme -->
+  <header class="bg-gray-200 py-4 text-center dash-border">
+    <a href="index.html">
+      <h1 class="text-3xl text-black font-bold theme-font">RI Photography</h1>
     </a>
-    <p class="theme-font text-white text-sm mt-1">Turning Moments into Timeless Art</p>
-  </div>
+    <p class="text-sm text-gray-600 mt-1">Turning Moments into Timeless Art</p>
+  </header>
 
-  <!-- Search bar with icon -->
-  <div class="relative max-w-sm mx-auto mt-4">
-    <div class="flex items-center border border-white rounded px-3 py-2 bg-white text-black">
-      <span class="mr-2">🔍</span>
-      <input id="searchBox" type="text" placeholder="Search..." class="w-full focus:outline-none bg-white" oninput="showSuggestions()" />
-    </div>
-    <div id="suggestions" class="suggestions hidden"></div>
-  </div>
-
-  <!-- Image Thumbnails Row -->
-  <div class="flex justify-between px-6 my-8">
-    <!-- Left Side Thumbnails -->
-    <div class="flex flex-col gap-2">
-      <a href="gallery.html"><img src="https://via.placeholder.com/60" alt="thumb" class="rounded hover:scale-110 transition" /></a>
-      <a href="gallery.html"><img src="https://via.placeholder.com/60" alt="thumb" class="rounded hover:scale-110 transition" /></a>
-      <a href="gallery.html"><img src="https://via.placeholder.com/60" alt="thumb" class="rounded hover:scale-110 transition" /></a>
-      <a href="gallery.html"><img src="https://via.placeholder.com/60" alt="thumb" class="rounded hover:scale-110 transition" /></a>
+  <!-- Top bar with thumbnails and search -->
+  <div class="flex justify-between items-center py-4 px-4 bg-white shadow-md">
+    <!-- Left thumbnails -->
+    <div class="flex gap-2">
+      <a href="gallery.html"><img src="https://source.unsplash.com/60x60/?photography,1" class="rounded-md hover:scale-105 transition" /></a>
+      <a href="gallery.html"><img src="https://source.unsplash.com/60x60/?portrait,2" class="rounded-md hover:scale-105 transition" /></a>
+      <a href="gallery.html"><img src="https://source.unsplash.com/60x60/?street,3" class="rounded-md hover:scale-105 transition" /></a>
     </div>
 
-    <!-- Center Options -->
-    <section class="flex justify-center gap-6 flex-wrap items-center">
-      <a href="packages.html" class="border-2 border-blue-400 px-6 py-3 hover:bg-blue-600 hover:text-white transition duration-500 transform hover:scale-110 animate-bounce">Packages</a>
-      <a href="portfolio.html" class="border-2 border-green-400 px-6 py-3 hover:bg-green-600 hover:text-white transition duration-500 transform hover:scale-110 animate-pulse">Personal Portfolio</a>
-      <a href="gallery.html" class="border-2 border-purple-400 px-6 py-3 hover:bg-purple-600 hover:text-white transition duration-500 transform hover:scale-110 animate-bounce">Gallery</a>
-      <a href="vlog.html" class="border-2 border-yellow-400 px-6 py-3 hover:bg-yellow-600 hover:text-white transition duration-500 transform hover:scale-110 animate-pulse">Vlog</a>
-    </section>
+    <!-- Search icon -->
+    <div>
+      <input type="text" placeholder="Search..." list="options" class="border px-3 py-1 text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-gray-400"/>
+      <datalist id="options">
+        <option value="Packages" />
+        <option value="Portfolio" />
+        <option value="Gallery" />
+        <option value="Vlog" />
+        <option value="Contact" />
+      </datalist>
+    </div>
 
-    <!-- Right Side Thumbnails -->
-    <div class="flex flex-col gap-2">
-      <a href="gallery.html"><img src="https://via.placeholder.com/60" alt="thumb" class="rounded hover:scale-110 transition" /></a>
-      <a href="gallery.html"><img src="https://via.placeholder.com/60" alt="thumb" class="rounded hover:scale-110 transition" /></a>
-      <a href="gallery.html"><img src="https://via.placeholder.com/60" alt="thumb" class="rounded hover:scale-110 transition" /></a>
-      <a href="gallery.html"><img src="https://via.placeholder.com/60" alt="thumb" class="rounded hover:scale-110 transition" /></a>
+    <!-- Right thumbnails -->
+    <div class="flex gap-2">
+      <a href="gallery.html"><img src="https://source.unsplash.com/60x60/?wedding,4" class="rounded-md hover:scale-105 transition" /></a>
+      <a href="gallery.html"><img src="https://source.unsplash.com/60x60/?lens,5" class="rounded-md hover:scale-105 transition" /></a>
+      <a href="gallery.html"><img src="https://source.unsplash.com/60x60/?nature,6" class="rounded-md hover:scale-105 transition" /></a>
     </div>
   </div>
 
   <!-- Welcome Section -->
-  <section class="text-center px-4">
-    <h2 class="text-2xl font-semibold mb-4">Welcome!</h2>
-    <p class="text-md max-w-3xl mx-auto">
-      Welcome to RI Photography. Here you will find professional photography packages, personal portfolios, mesmerizing galleries, and coming soon — storytelling photo vlogs that bring every frame to life.
+  <section class="text-center py-8 px-4">
+    <h2 class="text-4xl font-bold text-black underline decoration-gray-400 decoration-2">Welcome to RI Photography</h2>
+    <p class="mt-4 text-lg text-gray-700 max-w-2xl mx-auto">
+      Discover the art of capturing memories through the lens. RI Photography offers you timeless portraits, elegant weddings, and vibrant street life—wrapped in creativity and passion.
     </p>
+  </section>
+
+  <!-- Navigation Options -->
+  <section class="flex justify-center gap-6 my-8 flex-wrap">
+    <a href="packages.html" class="animate-bounce border-2 border-blue-500 px-6 py-3 hover:bg-blue-100 transition duration-300 rounded shadow">Packages</a>
+    <a href="portfolio.html" class="animate-bounce border-2 border-green-500 px-6 py-3 hover:bg-green-100 transition duration-300 rounded shadow">Portfolio</a>
+    <a href="gallery.html" class="animate-pulse border-2 border-purple-500 px-6 py-3 hover:bg-purple-100 transition duration-300 rounded shadow">Gallery</a>
+    <a href="vlog.html" class="animate-pulse border-2 border-yellow-500 px-6 py-3 hover:bg-yellow-100 transition duration-300 rounded shadow">Vlog</a>
   </section>
 
   <!-- Footer Info -->
-  <section id="contact" class="text-center my-12">
-    <h2 class="text-xl font-semibold">Contact</h2>
-    <p>Phone: 01736813344</p>
-    <p>Email: riphotography2021@gmail.com</p>
-    <p>
-      Facebook Page:
-      <a href="https://www.facebook.com/share/16g9kcrbMv/" target="_blank" class="text-blue-300 underline">Visit Here</a>
-    </p>
-  </section>
-
-  <!-- JS for suggestions -->
-  <script>
-    const suggestionsList = ['Packages', 'Portfolio', 'Gallery', 'Vlog'];
-    const searchBox = document.getElementById("searchBox");
-    const suggestionsContainer = document.getElementById("suggestions");
-
-    function showSuggestions() {
-      const input = searchBox.value.toLowerCase();
-      suggestionsContainer.innerHTML = "";
-      if (input === "") {
-        suggestionsContainer.classList.add("hidden");
-        return;
-      }
-
-      const filtered = suggestionsList.filter(item => item.toLowerCase().includes(input));
-      filtered.forEach(item => {
-        const div = document.createElement("div");
-        div.textContent = item;
-        div.onclick = () => {
-          window.location.href = item.toLowerCase() + ".html";
-        };
-        suggestionsContainer.appendChild(div);
-      });
-
-      suggestionsContainer.classList.remove("hidden");
-    }
-
-    document.addEventListener("click", function(event) {
-      if (!searchBox.contains(event.target)) {
-        suggestionsContainer.classList.add("hidden");
-      }
-    });
-  </script>
+  <footer class="text-center my-6">
+    <p>📞 <a href="tel:01736813344" class="text-blue-600 hover:underline">01736813344</a></p>
+    <p>📧 <a href="mailto:riphotography2021@gmail.com" class="text-blue-600 hover:underline">riphotography2021@gmail.com</a></p>
+    <p>🔗 <a href="https://www.facebook.com/share/16g9kcrbMv/" target="_blank" class="text-blue-600 hover:underline">Facebook Page</a></p>
+  </footer>
 
 </body>
 </html>
+
