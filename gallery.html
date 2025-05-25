@@ -1,152 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Booking | RI Photography</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
-  <script>
-    (function(){
-      emailjs.init("WPba1Vcz9_695QNIR");
-    })();
-  </script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=AmstelvarAlpha&display=swap');
-    .signature-font {
-      font-family: 'AmstelvarAlpha', cursive;
+<script>
+  document.getElementById("booking-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const termsAccepted = form.terms_agree.value;
+    const bookingConfirmed = form.confirm_booking.value;
+
+    if (termsAccepted !== "Yes") {
+      alert("We don't work with those who don't follow our terms.");
+      return;
     }
-  </style>
-</head>
-<body class="bg-gray-100 text-gray-900">
-  <div class="max-w-4xl mx-auto p-6">
-    <h1 class="text-3xl font-bold text-center mb-6">RI Photography – Terms & Conditions</h1>
-    <div class="bg-white p-4 rounded shadow">
-      <p class="mb-2 font-semibold">Please read it before booking.</p>
-      <ol class="list-decimal pl-6 space-y-2 text-sm">
-        <li><strong>Booking Confirmation:</strong> 30% advance is mandatory to confirm booking. No time/date reservation without it.</li>
-        <li><strong>Cancellation & Date Change:</strong> Unjustified cancellation will charge 50%. One-time reschedule possible based on availability.</li>
-        <li><strong>Payment:</strong> Full payment is required by or on the shoot day. No delivery before full payment.</li>
-        <li><strong>Delivery:</strong> Images: 7–10 business days. Videos/Large events: 15–20 days.</li>
-        <li><strong>Usage Rights:</strong> We may use photos for our portfolio. Inform in writing if you object (extra charge applies).</li>
-        <li><strong>RAW Files:</strong> Not shared. Editing style is our discretion. One revision free; extra changes cost extra.</li>
-        <li><strong>Client Duties:</strong> Punctuality and cooperation required. We’re not liable for lack of cooperation.</li>
-        <li><strong>Backup:</strong> Stored for 30 days post-delivery. No guarantee after that.</li>
-        <li><strong>Force Majeure:</strong> Natural causes or emergencies may alter agreements by mutual decision.</li>
-      </ol>
-    </div>
+    if (bookingConfirmed !== "Yes") {
+      alert("The form will not be submitted unless the booking is confirmed.");
+      return;
+    }
 
-    <form id="booking-form" class="bg-white p-6 rounded shadow mt-6 space-y-4">
-      <p class="font-semibold">Do you accept our Terms & Conditions?</p>
-      <label><input type="radio" name="terms_agree" value="Yes" required> Yes</label>
-      <label><input type="radio" name="terms_agree" value="No"> No</label>
+    emailjs.sendForm('service_ri28', 'template_1zbt48l', form)
+      .then(() => {
+        form.classList.add("hidden");
+        const summary = document.getElementById("summary");
+        
+        summary.innerHTML = `
+          <p><strong>Name:</strong> ${form.client_name.value}</p>
+          <p><strong>Phone:</strong> ${form.phone.value}</p>
+          <p><strong>Email:</strong> ${form.email.value}</p>
+          <p><strong>Role:</strong> ${form.role.value}</p>
+          <p><strong>Category:</strong> ${form.event_category.value}</p>
+          <p><strong>Package:</strong> ${form.package.value}</p>
+          <p><strong>Date:</strong> ${form.date.value}</p>
+          <p><strong>Time:</strong> ${form.time.value}</p>
+          <p><strong>Location:</strong> ${form.location.value}</p>
+          <p><strong>Payment:</strong> ${form.payment_status.value}</p>
+          <p><strong>Budget:</strong> ${form.budget.value} BDT</p>
+          <p><strong>Note:</strong> ${form.extra_note.value}</p>
+        `;
 
-      <input name="client_name" placeholder="Client Name" class="w-full border p-2 rounded" required>
-      <input name="phone" placeholder="Phone Number" class="w-full border p-2 rounded" required>
-      <input name="email" type="email" placeholder="Email Address" class="w-full border p-2 rounded" required>
-
-      <label class="block">I am the:
-        <select name="role" class="w-full border p-2 rounded">
-          <option>Host</option>
-          <option>Organizer</option>
-          <option>Model</option>
-        </select>
-      </label>
-
-      <input name="event_category" placeholder="Event Category" class="w-full border p-2 rounded" required>
-
-      <label class="block">Package:
-        <select name="package" class="w-full border p-2 rounded">
-          <option>Package 1</option>
-          <option>Package 2</option>
-          <option>Customized</option>
-        </select>
-      </label>
-
-      <input type="date" name="date" class="w-full border p-2 rounded" required>
-      <input type="time" name="time" class="w-full border p-2 rounded" required>
-      <input name="location" placeholder="Location" class="w-full border p-2 rounded" required>
-
-      <label class="block">Payment Status:
-        <select name="payment_status" class="w-full border p-2 rounded">
-          <option>Complete</option>
-          <option>Pending</option>
-        </select>
-      </label>
-
-      <input name="budget" placeholder="Confirming Budget (BDT)" class="w-full border p-2 rounded" required>
-      <textarea name="extra_note" placeholder="Any extra request or note..." class="w-full border p-2 rounded h-24"></textarea>
-
-      <p>Do you confirm the booking?</p>
-      <label><input type="radio" name="confirm_booking" value="Yes" required> Yes</label>
-      <label><input type="radio" name="confirm_booking" value="No"> No</label>
-
-      <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded">Confirm Booking</button>
-    </form>
-
-    <div id="confirmation-msg" class="mt-6 hidden bg-white p-6 rounded shadow border">
-      <h2 class="text-2xl font-bold text-center mb-4">RI Photography</h2>
-      <p class="mb-4">Your booking has been received successfully. Please keep the below as your confirmation document:</p>
-      <div id="summary" class="text-sm"></div>
-      <div class="flex justify-between mt-6">
-        <p class="signature-font text-lg">RI Rahat</p>
-        <p id="client-sign" class="text-sm"></p>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    document.getElementById("booking-form").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const termsAccepted = form.terms_agree.value;
-      const bookingConfirmed = form.confirm_booking.value;
-      if (termsAccepted !== "Yes") {
-        alert("আমরা টার্মস না মানলে কাজ করি না।");
-        return;
-      }
-      if (bookingConfirmed !== "Yes") {
-        alert("বুকিং কনফার্ম না করলে ফর্ম সাবমিট হবে না।");
-        return;
-      }
-
-      const formData = {
-        client_name: form.client_name.value,
-        phone: form.phone.value,
-        email: form.email.value,
-        role: form.role.value,
-        event_category: form.event_category.value,
-        package: form.package.value,
-        date: form.date.value,
-        time: form.time.value,
-        location: form.location.value,
-        payment_status: form.payment_status.value,
-        budget: form.budget.value,
-        extra_note: form.extra_note.value
-      };
-
-      emailjs.send("service_ri28", "template_1zbt48l", formData)
-        .then(() => {
-          document.getElementById("booking-form").classList.add("hidden");
-          const summary = document.getElementById("summary");
-          summary.innerHTML = `
-            <p><strong>Name:</strong> ${formData.client_name}</p>
-            <p><strong>Phone:</strong> ${formData.phone}</p>
-            <p><strong>Email:</strong> ${formData.email}</p>
-            <p><strong>Role:</strong> ${formData.role}</p>
-            <p><strong>Category:</strong> ${formData.event_category}</p>
-            <p><strong>Package:</strong> ${formData.package}</p>
-            <p><strong>Date:</strong> ${formData.date}</p>
-            <p><strong>Time:</strong> ${formData.time}</p>
-            <p><strong>Location:</strong> ${formData.location}</p>
-            <p><strong>Payment:</strong> ${formData.payment_status}</p>
-            <p><strong>Budget:</strong> ${formData.budget} BDT</p>
-            <p><strong>Note:</strong> ${formData.extra_note}</p>
-          `;
-          document.getElementById("client-sign").innerText = formData.client_name;
-          document.getElementById("confirmation-msg").classList.remove("hidden");
-        })
-        .catch(error => alert("Something went wrong: " + error));
-    });
-  </script>
-</body>
-</html>
+        document.getElementById("client-sign").innerText = form.client_name.value;
+        document.getElementById("confirmation-msg").classList.remove("hidden");
+      })
+      .catch(error => alert("Something went wrong: " + error));
+  });
+</script>
