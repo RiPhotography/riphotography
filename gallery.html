@@ -1,42 +1,113 @@
-<script>
-  document.getElementById("booking-form").addEventListener("submit", function(e) {
-    e.preventDefault();
-    const form = e.target;
-    const termsAccepted = form.terms_agree.value;
-    const bookingConfirmed = form.confirm_booking.value;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RI Photography Booking Form</title>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("WPba1Vcz9_695QNIR"/
+    })();
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("booking-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const form = e.target;
+        const termsAccepted = form.terms_agree.value;
+        const bookingConfirmed = form.confirm_booking.value;
 
-    if (termsAccepted !== "Yes") {
-      alert("We don't work with those who don't follow our terms.");
-      return;
-    }
-    if (bookingConfirmed !== "Yes") {
-      alert("The form will not be submitted unless the booking is confirmed.");
-      return;
-    }
+        if (termsAccepted !== "Yes") {
+          alert("We don't work with those who don't follow our terms.");
+          return;
+        }
+        if (bookingConfirmed !== "Yes") {
+          alert("বুকিং কনফার্ম না করলে ফর্ম সাবমিট হবে না।");
+          return;
+        }
 
-    emailjs.sendForm('service_ri28', 'template_1zbt48l', form)
-      .then(() => {
-        form.classList.add("hidden");
-        const summary = document.getElementById("summary");
-        
-        summary.innerHTML = `
-          <p><strong>Name:</strong> ${form.client_name.value}</p>
-          <p><strong>Phone:</strong> ${form.phone.value}</p>
-          <p><strong>Email:</strong> ${form.email.value}</p>
-          <p><strong>Role:</strong> ${form.role.value}</p>
-          <p><strong>Category:</strong> ${form.event_category.value}</p>
-          <p><strong>Package:</strong> ${form.package.value}</p>
-          <p><strong>Date:</strong> ${form.date.value}</p>
-          <p><strong>Time:</strong> ${form.time.value}</p>
-          <p><strong>Location:</strong> ${form.location.value}</p>
-          <p><strong>Payment:</strong> ${form.payment_status.value}</p>
-          <p><strong>Budget:</strong> ${form.budget.value} BDT</p>
-          <p><strong>Note:</strong> ${form.extra_note.value}</p>
-        `;
+        emailjs.sendForm("service_ri28", "template_1zbt48l", form)
+          .then(() => {
+            form.classList.add("hidden");
+            const summary = document.getElementById("summary");
 
-        document.getElementById("client-sign").innerText = form.client_name.value;
-        document.getElementById("confirmation-msg").classList.remove("hidden");
-      })
-      .catch(error => alert("Something went wrong: " + error));
-  });
-</script>
+            const getValue = name => form.querySelector(`[name="${name}"]`)?.value || "";
+
+            summary.innerHTML = `
+              <p><strong>Name:</strong> ${getValue("client_name")}</p>
+              <p><strong>Phone:</strong> ${getValue("phone")}</p>
+              <p><strong>Email:</strong> ${getValue("email")}</p>
+              <p><strong>Role:</strong> ${getValue("role")}</p>
+              <p><strong>Category:</strong> ${getValue("event_category")}</p>
+              <p><strong>Package:</strong> ${getValue("package")}</p>
+              <p><strong>Date:</strong> ${getValue("date")}</p>
+              <p><strong>Time:</strong> ${getValue("time")}</p>
+              <p><strong>Location:</strong> ${getValue("location")}</p>
+              <p><strong>Payment:</strong> ${getValue("payment_status")}</p>
+              <p><strong>Budget:</strong> ${getValue("budget")} BDT</p>
+              <p><strong>Note:</strong> ${getValue("extra_note")}</p>
+            `;
+
+            document.getElementById("client-sign").innerText = getValue("client_name");
+            document.getElementById("confirmation-msg").classList.remove("hidden");
+          })
+          .catch(error => {
+            console.error("EmailJS Error:", error);
+            alert("Something went wrong: " + error.text || error);
+          });
+      });
+    });
+  </script>
+</head>
+<body>
+  <form id="booking-form">
+    <label>Name: <input type="text" name="client_name" required></label><br>
+    <label>Phone: <input type="text" name="phone" required></label><br>
+    <label>Email: <input type="email" name="email" required></label><br>
+    <label>Role: <input type="text" name="role" required></label><br>
+    <label>Event Category: <input type="text" name="event_category" required></label><br>
+    <label>Package: <input type="text" name="package" required></label><br>
+    <label>Date: <input type="date" name="date" required></label><br>
+    <label>Time: <input type="time" name="time" required></label><br>
+    <label>Location: <input type="text" name="location" required></label><br>
+    <label>Payment Status:
+      <select name="payment_status" required>
+        <option value="Paid">Paid</option>
+        <option value="Unpaid">Unpaid</option>
+        <option value="Advance">Advance</option>
+      </select>
+    </label><br>
+    <label>Budget (BDT): <input type="number" name="budget" required></label><br>
+    <label>Extra Note: <textarea name="extra_note"></textarea></label><br>
+    <label>Terms & Conditions Accepted?
+      <select name="terms_agree" required>
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+    </label><br>
+    <label>Confirm Booking?
+      <select name="confirm_booking" required>
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+    </label><br><br>
+    <button type="submit">Submit Booking</button>
+  </form>
+
+  <div id="confirmation-msg" class="hidden">
+    <h2>Booking Confirmed!</h2>
+    <div id="summary"></div>
+    <div class="flex justify-between mt-6">
+      <p class="signature-font text-lg">RI Rahat</p>
+      <p id="client-sign" class="text-sm"></p>
+    </div>
+  </div>
+
+  <style>
+    .hidden { display: none; }
+    .signature-font { font-family: cursive; }
+  </style>
+</body>
+</html>
