@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>RI Photography Booking</title>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
@@ -11,14 +11,97 @@
     })();
   </script>
   <style>
-    body { font-family: Arial, sans-serif; margin: 20px; padding: 20px; background: #f7f7f7; }
-    .container { background: white; padding: 20px; border-radius: 8px; max-width: 800px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    h1, h2 { text-align: center; }
-    label { display: block; margin-top: 10px; font-weight: bold; }
-    input, select, textarea { width: 100%; padding: 8px; margin-top: 5px; }
-    .hidden { display: none; }
-    .flex { display: flex; justify-content: space-between; margin-top: 20px; }
-    .signature-font { font-family: "Amsterdam One", cursive; font-size: 24px; }
+    @font-face {
+      font-family: 'Amsterdam One';
+      src: url('https://files.fontsme.com/a/136/21136/file/AmsterdamOne-eZ12l.ttf') format('truetype');
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      text-align: center;
+      font-family: 'Amsterdam One', cursive;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .signature-section {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #ccc;
+    }
+
+    .signature-block {
+      text-align: center;
+      width: 45%;
+    }
+
+    .signature-name {
+      font-family: 'Amsterdam One', cursive;
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    .signature-title {
+      font-size: 14px;
+      color: #555;
+    }
+
+    ul {
+      list-style-type: decimal;
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
@@ -26,20 +109,21 @@
     <h1>RI Photography</h1>
     <p><strong>Terms & Conditions (Please read before booking)</strong></p>
     <ul>
-      <li><strong>1. Booking Confirmation:</strong> <br>i) A minimum of 30% advance payment of the package price is required. <br>ii) No date or time will be reserved without advance payment.</li>
-      <li><strong>2. Booking Cancellation & Date Change:</strong> <br>i) Cancellation without valid reason will incur a penalty of 50% of the contract. <br>ii) In emergencies or weather issues, one-time rescheduling is allowed subject to availability.</li>
-      <li><strong>3. Payment:</strong> <br>i) Remaining balance must be paid on the shoot day or within 2 days. <br>ii) No delivery without full payment.</li>
-      <li><strong>4. Image Delivery:</strong> <br>i) Edited images: 7-10 business days. <br>ii) Videos or large events: 15-20 business days.</li>
-      <li><strong>5. Image Usage Rights:</strong> <br>i) Photographer may use selected images for portfolio/promotion. <br>ii) Clients must notify in writing if they disagree. Additional charges may apply.</li>
-      <li><strong>6. RAW Files & Editing:</strong> <br>i) No RAW files provided. <br>ii) Editing is at the photographer's discretion. <br>iii) One minor revision allowed. Extra revisions cost more.</li>
-      <li><strong>7. Client Responsibilities:</strong> <br>i) Timely presence and cooperation are mandatory. <br>ii) Photographer is not responsible for uncooperative behavior.</li>
-      <li><strong>8. Backup:</strong> <br>i) Files stored for 30 days post-delivery. <br>ii) No guarantee of file availability after that.</li>
-      <li><strong>9. Force Majeure:</strong> <br>i) In case of natural disasters, health issues, or uncontrollable events, both parties will mutually decide next steps.</li>
+      <li><strong>Booking Confirmation:</strong> A minimum of 30% advance payment of the package price is required. No date or time will be reserved without advance payment.</li>
+      <li><strong>Booking Cancellation & Date Change:</strong> Cancellation without valid reason will incur a penalty of 50% of the contract. In emergencies or weather issues, one-time rescheduling is allowed subject to availability.</li>
+      <li><strong>Payment:</strong> Remaining balance must be paid on the shoot day or within 2 days. No delivery without full payment.</li>
+      <li><strong>Image Delivery:</strong> Edited images: 7-10 business days. Videos or large events: 15-20 business days.</li>
+      <li><strong>Image Usage Rights:</strong> Photographer may use selected images for portfolio/promotion. Clients must notify in writing if they disagree. Additional charges may apply.</li>
+      <li><strong>RAW Files & Editing:</strong> No RAW files provided. Editing is at the photographer's discretion. One minor revision allowed. Extra revisions cost more.</li>
+      <li><strong>Client Responsibilities:</strong> Timely presence and cooperation are mandatory. Photographer is not responsible for uncooperative behavior.</li>
+      <li><strong>Backup:</strong> Files stored for 30 days post-delivery. No guarantee of file availability after that.</li>
+      <li><strong>Force Majeure:</strong> In case of natural disasters, health issues, or uncontrollable events, both parties will mutually decide next steps.</li>
     </ul>
 
     <form id="booking-form">
       <label>Do you agree to our Terms & Conditions?</label>
-      <select name="terms_agree">
+      <select name="terms_agree" required>
+        <option value="">--Select--</option>
         <option value="Yes">Yes</option>
         <option value="No">No</option>
       </select>
@@ -54,7 +138,8 @@
       <input type="email" name="email" required>
 
       <label>I am the</label>
-      <select name="role">
+      <select name="role" required>
+        <option value="">--Select--</option>
         <option value="Host">Host</option>
         <option value="Organizer">Organizer</option>
         <option value="Model">Model</option>
@@ -64,7 +149,8 @@
       <input type="text" name="event_category" required>
 
       <label>Package</label>
-      <select name="package">
+      <select name="package" required>
+        <option value="">--Select--</option>
         <option value="Package 1">Package 1</option>
         <option value="Package 2">Package 2</option>
         <option value="Customized">Customized</option>
@@ -80,7 +166,8 @@
       <input type="text" name="location" required>
 
       <label>Payment Status</label>
-      <select name="payment_status">
+      <select name="payment_status" required>
+        <option value="">--Select--</option>
         <option value="Complete">Complete</option>
         <option value="Pending">Pending</option>
       </select>
@@ -92,7 +179,8 @@
       <textarea name="extra_note"></textarea>
 
       <label>Do you confirm the booking?</label>
-      <select name="confirm_booking">
+      <select name="confirm_booking" required>
+        <option value="">--Select--</option>
         <option value="Yes">Yes</option>
         <option value="No">No</option>
       </select>
@@ -103,9 +191,15 @@
     <div id="confirmation-msg" class="hidden">
       <h2>Booking Confirmation Certificate</h2>
       <div id="summary"></div>
-      <div class="flex">
-        <p id="client-sign" class="text-sm"></p>
-        <p class="signature-font">RI Rahat</p>
+      <div class="signature-section">
+        <div class="signature-block">
+          <div class="signature-name" id="client-sign"></div>
+          <div class="signature-title">Client</div>
+        </div>
+        <div class="signature-block">
+          <div class="signature-name">RI Rahat</div>
+          <div class="signature-title">Photographer</div>
+        </div>
       </div>
       <p style="margin-top: 30px; text-align:center;">Thank you for choosing RI Photography</p>
     </div>
@@ -148,8 +242,4 @@
           document.getElementById("client-sign").innerText = form.client_name.value;
           document.getElementById("confirmation-msg").classList.remove("hidden");
         })
-        .catch(error => alert("Something went wrong: " + error));
-    });
-  </script>
-</body>
-</html>
+        .catch(error =>14
