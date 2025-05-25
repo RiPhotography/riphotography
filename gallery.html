@@ -2,82 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>RI Photography Booking Form</title>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    input, select, textarea {
-      display: block;
-      margin: 10px 0;
-      width: 100%;
-      padding: 8px;
-    }
-    button {
-      padding: 10px 20px;
-      background: #007bff;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    .success {
-      color: green;
-    }
-    .error {
-      color: red;
-    }
-  </style>
+  <title>Booking Form</title>
 </head>
 <body>
 
-<h2>RI Photography Booking Form</h2>
+  <h1>Book Your Shoot</h1>
 
-<form id="bookingForm">
-  <input type="text" name="client_name" placeholder="Your Name" required />
-  <input type="email" name="client_email" placeholder="Your Email" required />
-  <input type="tel" name="client_phone" placeholder="Your Phone" required />
-  <input type="date" name="event_date" required />
-  <input type="time" name="event_time" required />
-  <input type="text" name="event_location" placeholder="Event Location" required />
-  <input type="text" name="budget" placeholder="Estimated Budget" required />
-
-  <select name="package" required>
-    <option value="">Select Package</option>
-    <option value="Single - Basic">Single - Basic</option>
-    <option value="Couple - Pro">Couple - Pro</option>
-    <option value="Wedding - Standard">Wedding - Standard</option>
-  </select>
-
-  <textarea name="extra_note" placeholder="Extra Note (Optional)"></textarea>
-
-  <button type="submit">Send Booking</button>
-</form>
-
-<p id="msg"></p>
-
-<script>
-  (function() {
-    emailjs.init("pISh5CiJ8Pkr6BXKD"); // Your User ID
-  })();
-
-  document.getElementById("bookingForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    emailjs.sendForm("service_ri28", "template_1zbt48l", this)
-      .then(function(response) {
-        console.log("SUCCESS!", response.status, response.text);
-        document.getElementById("msg").innerHTML = "Your booking has been sent successfully!";
-        document.getElementById("msg").className = "success";
-        document.getElementById("bookingForm").reset();
-      }, function(error) {
-        console.error("FAILED...", error);
-        document.getElementById("msg").innerHTML = "Failed to send booking. Please try again.";
-        document.getElementById("msg").className = "error";
-      });
-  });
-</script>
+  <!-- Google Form Embed -->
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfYJ6tE.../viewform?embedded=true"
+          width="640" height="1200" frameborder="0" marginheight="0" marginwidth="0">
+    Loading…
+  </iframe>
 
 </body>
 </html>
