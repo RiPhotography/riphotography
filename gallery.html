@@ -1,49 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gallery | RI Photography</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Alike&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background-color: #1e293b;
-      color: white;
-      font-family: 'Alike', serif;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>Gallery</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-
-  <!-- Header -->
-  <div class="text-center py-6">
-    <h1 class="text-4xl font-bold">Gallery</h1>
-    <p class="text-gray-300 mt-2 text-sm">Turning Moments into Timeless Art</p>
+<body class="bg-gray-100">
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold text-center mb-6">Photo Gallery</h1>
+    <div id="gallery-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"></div>
   </div>
 
-  <!-- Gallery Container -->
-  <div class="max-w-7xl mx-auto px-4 pb-10">
-    <div id="gallery" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4"></div>
-  </div>
-
-  <!-- Gallery Script -->
-  <script>
-    fetch('gallery-data.json')
-      .then(res => res.json())
-      .then(data => {
-        const gallery = document.getElementById('gallery');
-        data.forEach(item => {
-          const wrapper = document.createElement('div');
-          wrapper.className = "rounded overflow-hidden shadow-md bg-gray-800 hover:scale-105 transition transform duration-300";
-          wrapper.innerHTML = `
-            <img src="${item.src}" alt="${item.category}" class="w-full h-48 object-cover">
-            <div class="text-center py-2 text-sm text-gray-300">${item.category}</div>
-          `;
-          gallery.appendChild(wrapper);
-        });
-      });
-  </script>
-
+  <script src="js/gallery.js"></script>
 </body>
 </html>
