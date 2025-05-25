@@ -2,150 +2,164 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Booking | RI Photography</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
-  <script>
-    (function(){
-      emailjs.init("pISh5CiJ8Pkr6BXKD");
-    })();
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RI Photography Booking Confirmation</title>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=AmstelvarAlpha&display=swap');
-    .signature-font {
-      font-family: 'AmstelvarAlpha', cursive;
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    .container {
+      background: #fff;
+      padding: 30px;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 20px;
+      background-color: #000;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+    .certificate {
+      margin-top: 40px;
+      border: 2px solid #000;
+      padding: 20px;
+      font-family: 'Playfair Display', serif;
+      background: #fffbe6;
+    }
+    .signatures {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+    .signatures div {
+      text-align: center;
+    }
+    .timestamp {
+      font-size: 0.9em;
+      color: #666;
     }
   </style>
 </head>
-<body class="bg-gray-100 text-gray-900">
-  <div class="max-w-4xl mx-auto p-6">
-    <h1 class="text-3xl font-bold text-center mb-6">RI Photography – Terms & Conditions</h1>
-    <div class="bg-white p-4 rounded shadow">
-      <p class="mb-2 font-semibold">Please read it before booking.</p>
-      <ol class="list-decimal pl-6 space-y-2 text-sm">
-        <li><strong>Booking Confirmation:</strong> 30% advance is mandatory to confirm booking. No time/date reservation without it.</li>
-        <li><strong>Cancellation & Date Change:</strong> Unjustified cancellation will charge 50%. One-time reschedule possible based on availability.</li>
-        <li><strong>Payment:</strong> Full payment is required by or on the shoot day. No delivery before full payment.</li>
-        <li><strong>Delivery:</strong> Images: 7–10 business days. Videos/Large events: 15–20 days.</li>
-        <li><strong>Usage Rights:</strong> We may use photos for our portfolio. Inform in writing if you object (extra charge applies).</li>
-        <li><strong>RAW Files:</strong> Not shared. Editing style is our discretion. One revision free; extra changes cost extra.</li>
-        <li><strong>Client Duties:</strong> Punctuality and cooperation required. We’re not liable for lack of cooperation.</li>
-        <li><strong>Backup:</strong> Stored for 30 days post-delivery. No guarantee after that.</li>
-        <li><strong>Force Majeure:</strong> Natural causes or emergencies may alter agreements by mutual decision.</li>
-      </ol>
-    </div>
+<body>
+  <div class="container">
+    <h2>RI Photography Booking Form</h2>
+    <form id="booking-form">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
 
-    <form id="booking-form" class="bg-white p-6 rounded shadow mt-6 space-y-4">
-      <p class="font-semibold">Do you accept our Terms & Conditions?</p>
-      <label><input type="radio" name="terms_agree" value="Yes" required> Yes</label>
-      <label><input type="radio" name="terms_agree" value="No"> No</label>
+      <label for="program">Program Type</label>
+      <select id="program" name="program" required>
+        <option value="Single Outdoor">Single Outdoor</option>
+        <option value="Couple Outdoor">Couple Outdoor</option>
+        <option value="Wedding">Wedding</option>
+        <option value="Pre-Wedding">Pre-Wedding</option>
+        <option value="Post-Wedding">Post-Wedding</option>
+        <option value="Birthday">Birthday</option>
+      </select>
 
-      <input name="client_name" placeholder="Client Name" class="w-full border p-2 rounded" required>
-      <input name="phone" placeholder="Phone Number" class="w-full border p-2 rounded" required>
-      <input name="email" type="email" placeholder="Email Address" class="w-full border p-2 rounded" required>
+      <label for="package">Package Name</label>
+      <input type="text" id="package" name="package" required>
 
-      <label class="block">I am the:
-        <select name="role" class="w-full border p-2 rounded">
-          <option>Host</option>
-          <option>Organizer</option>
-          <option>Model</option>
-        </select>
-      </label>
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required>
 
-      <input name="event_category" placeholder="Event Category" class="w-full border p-2 rounded" required>
+      <label for="event_date">Event Date</label>
+      <input type="date" id="event_date" name="event_date" required>
 
-      <label class="block">Package:
-        <select name="package" class="w-full border p-2 rounded">
-          <option>Package 1</option>
-          <option>Package 2</option>
-          <option>Customized</option>
-        </select>
-      </label>
+      <label for="location">Event Location</label>
+      <textarea id="location" name="location" rows="3" required></textarea>
 
-      <input type="date" name="date" class="w-full border p-2 rounded" required>
-      <input type="time" name="time" class="w-full border p-2 rounded" required>
-      <input name="location" placeholder="Location" class="w-full border p-2 rounded" required>
-
-      <label class="block">Payment Status:
-        <select name="payment_status" class="w-full border p-2 rounded">
-          <option>Complete</option>
-          <option>Pending</option>
-        </select>
-      </label>
-
-      <input name="budget" placeholder="Confirming Budget (BDT)" class="w-full border p-2 rounded" required>
-      <textarea name="extra_note" placeholder="Any extra request or note..." class="w-full border p-2 rounded h-24"></textarea>
-
-      <p>Do you confirm the booking?</p>
-      <label><input type="radio" name="confirm_booking" value="Yes" required> Yes</label>
-      <label><input type="radio" name="confirm_booking" value="No"> No</label>
-
-      <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded">Confirm Booking</button>
+      <button type="submit">Confirm Booking</button>
     </form>
 
-    <div id="confirmation-msg" class="mt-6 hidden bg-white p-6 rounded shadow border">
-      <h2 class="text-2xl font-bold text-center mb-4">RI Photography</h2>
-      <p class="mb-4">Your booking has been received successfully. Please keep the below as your confirmation document:</p>
-      <div id="summary" class="text-sm"></div>
-      <div class="flex justify-between mt-6">
-        <p class="signature-font text-lg">RI Rahat</p>
-        <p id="client-sign" class="text-sm"></p>
+    <div class="certificate" id="certificate" style="display:none">
+      <h2>Booking Confirmation</h2>
+      <p>Ref ID: <span id="refId"></span></p>
+      <p>Name: <span id="c_name"></span></p>
+      <p>Program Type: <span id="c_program"></span></p>
+      <p>Package: <span id="c_package"></span></p>
+      <p>Phone: <span id="c_phone"></span></p>
+      <p>Event Date: <span id="c_event"></span></p>
+      <p>Location: <span id="c_location"></span></p>
+      <p class="timestamp">Submitted on: <span id="submitted"></span></p>
+
+      <div class="signatures">
+        <div>
+          <p>_______________________</p>
+          <p>RI Rahat</p>
+          <p>ফটোগ্রাফার</p>
+        </div>
+        <div>
+          <p>_______________________</p>
+          <p><span id="c_name_2"></span></p>
+          <p>ক্লায়েন্ট</p>
+        </div>
       </div>
     </div>
   </div>
 
   <script>
-    document.getElementById("booking-form").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const termsAccepted = form.terms_agree.value;
-      const bookingConfirmed = form.confirm_booking.value;
-      if (termsAccepted !== "Yes") {
-        alert("আমরা টার্মস না মানলে কাজ করি না।");
-        return;
-      }
-      if (bookingConfirmed !== "Yes") {
-        alert("বুকিং কনফার্ম না করলে ফর্ম সাবমিট হবে না।");
-        return;
-      }
+    emailjs.init("pISh5CiJ8Pkr6BXKD"); // Your Public Key
 
-      const formData = {
-        client_name: form.client_name.value,
-        phone: form.phone.value,
-        email: form.email.value,
-        role: form.role.value,
-        event_category: form.event_category.value,
-        package: form.package.value,
-        date: form.date.value,
-        time: form.time.value,
-        location: form.location.value,
-        payment_status: form.payment_status.value,
-        budget: form.budget.value,
-        extra_note: form.extra_note.value
-      };
+    document.getElementById('booking-form').addEventListener('submit', function(event) {
+      event.preventDefault();
 
-      emailjs.send("service_ri28", "template_1zbt48l", formData)
+      const form = event.target;
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData);
+
+      const refId = 'RI-' + Date.now();
+      const timestamp = new Date().toLocaleString();
+
+      data.refId = refId;
+      data.submitted = timestamp;
+
+      emailjs.send("service_ri28", "template_1zbt48l", data)
         .then(() => {
-          document.getElementById("booking-form").classList.add("hidden");
-          const summary = document.getElementById("summary");
-          summary.innerHTML = `
-            <p><strong>Name:</strong> ${formData.client_name}</p>
-            <p><strong>Phone:</strong> ${formData.phone}</p>
-            <p><strong>Email:</strong> ${formData.email}</p>
-            <p><strong>Role:</strong> ${formData.role}</p>
-            <p><strong>Category:</strong> ${formData.event_category}</p>
-            <p><strong>Package:</strong> ${formData.package}</p>
-            <p><strong>Date:</strong> ${formData.date}</p>
-            <p><strong>Time:</strong> ${formData.time}</p>
-            <p><strong>Location:</strong> ${formData.location}</p>
-            <p><strong>Payment:</strong> ${formData.payment_status}</p>
-            <p><strong>Budget:</strong> ${formData.budget} BDT</p>
-            <p><strong>Note:</strong> ${formData.extra_note}</p>
-          `;
-          document.getElementById("client-sign").innerText = formData.client_name;
-          document.getElementById("confirmation-msg").classList.remove("hidden");
+          document.getElementById('refId').textContent = refId;
+          document.getElementById('submitted').textContent = timestamp;
+
+          document.getElementById('c_name').textContent = data.name;
+          document.getElementById('c_program').textContent = data.program;
+          document.getElementById('c_package').textContent = data.package;
+          document.getElementById('c_phone').textContent = data.phone;
+          document.getElementById('c_event').textContent = data.event_date;
+          document.getElementById('c_location').textContent = data.location;
+          document.getElementById('c_name_2').textContent = data.name;
+
+          document.getElementById('certificate').style.display = 'block';
+          form.reset();
         })
-        .catch(error => alert("Something went wrong: " + error));
+        .catch((error) => {
+          alert("Something went wrong. Please try again.");
+          console.error("EmailJS Error:", error);
+        });
     });
   </script>
 </body>
