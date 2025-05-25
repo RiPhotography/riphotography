@@ -77,7 +77,7 @@
     <h1>RI Photography – Booking Form</h1>
 
     <div class="section">
-      <label>আপনি কি আমাদের টার্মস এন্ড কন্ডিশন এ রাজি আছেন?</label>
+      <label>Are you agree with our Terms & Conditions?</label>
       <select id="termsAgree">
         <option value="yes">Yes</option>
         <option value="no">No</option>
@@ -128,7 +128,7 @@
       <label>Additional Requirements</label>
       <textarea id="extra"></textarea>
 
-      <label>আপনি কি বুকিং কনফার্ম করছেন?</label>
+      <label>Confirming booking?</label>
       <select id="finalConfirm">
         <option value="yes">Yes</option>
         <option value="no">No</option>
@@ -141,6 +141,8 @@
       <h2>RI Photography</h2>
       <p>Thank you for your booking. This document confirms that:</p>
       <p><strong id="cName"></strong> has confirmed a booking with us.</p>
+      <p>Date: <strong id="cLocation"></strong></p>
+      <p>Time: <strong id="cLocation"></strong></p>
       <p>Budget: <strong id="cBudget"></strong> BDT</p>
       <p>Location: <strong id="cLocation"></strong></p>
       <div class="signature">
@@ -160,7 +162,7 @@
     function submitForm() {
       const agree = document.getElementById('termsAgree').value;
       if (agree === 'no') {
-        alert("আমরা টার্মস না মানলে কাজ করি না।");
+        alert("We do not work if our terms are not accepted.");
         return;
       }
 
