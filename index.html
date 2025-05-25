@@ -1,16 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RI Photography</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Alike&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
   <style>
+    body {
+      font-family: "Alike", serif;
+      background: linear-gradient(to bottom, #1e293b, #334155);
+      color: white;
+    }
+    .title-font {
+      font-family: 'Playfair Display', serif;
+    }
+    .theme-font {
+      font-family: "Alike", serif;
+    }
+    .suggestions {
+      position: absolute;
+      background-color: white;
+      color: black;
+      border-radius: 0.25rem;
+      margin-top: 0.25rem;
+      width: 100%;
+      z-index: 50;
+    }
+    .suggestions div {
+      padding: 0.5rem;
+      cursor: pointer;
+    }
     .suggestions div:hover {
       background-color: #f1f5f9;
     }
   </style>
 </head>
-<body class="bg-gray-50">
+<body>
+
   <!-- Top Title + Theme -->
   <div class="bg-gray-800 text-center py-4">
     <a href="index.html" class="title-font text-3xl text-white hover:underline transition duration-250 block">
@@ -18,6 +45,7 @@
     </a>
     <p class="theme-font text-white text-sm mt-1">Turning Moments into Timeless Art</p>
   </div>
+
 
   <!-- Search Bar -->
   <div class="flex justify-end pr-6 mt-4">
@@ -33,13 +61,15 @@
     </div>
   </div>
 
-  <!-- Navigation Boxes -->
-  <div class="grid grid-cols-2 gap-4 mt-6 px-4">
-    <a href="packages.html" class="border-2 border-blue-400 px-4 py-3 hover:bg-blue-100 transition duration-250 animate-pulse">Packages</a>
-    <a href="portfolio.html" class="border-2 border-green-400 px-4 py-3 hover:bg-green-100 transition duration-250 animate-pulse">Personal Portfolio</a>
-    <a href="gallery.html" class="border-2 border-purple-400 px-4 py-3 hover:bg-purple-100 transition duration-250 animate-pulse">Gallery</a>
-    <a href="vlog.html" class="border-2 border-yellow-400 px-4 py-3 hover:bg-yellow-100 transition duration-250 animate-pulse">Vlog</a>
-  </div>
+     <!-- Navigation Boxes -->
+      <div class="grid grid-cols-2 gap-4 mt-6">
+        <a href="packages.html" class="border-2 border-blue-400 px-4 py-3 hover:bg-blue-100 transition duration-250 animate-pulse">Packages</a>
+        <a href="portfolio.html" class="border-2 border-green-400 px-4 py-3 hover:bg-green-100 transition duration-250 animate-pulse">Personal Portfolio</a>
+        <a href="gallery.html" class="border-2 border-purple-400 px-4 py-3 hover:bg-purple-100 transition duration-250 animate-pulse">Gallery</a>
+        <a href="vlog.html" class="border-2 border-yellow-00 px-4 py-3 hover:bg-yellow-100 transition duration-250 animate-pulse">Vlog</a>
+      </div>
+    </div>
+
 
   <!-- Image Columns & Main Content -->
   <div class="flex justify-between items-start px-4 py-8">
