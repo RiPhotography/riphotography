@@ -2,27 +2,63 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Booking</title>
+  <title>Booking Form</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("WPba1Vcz9_695QNIR"); // তোমার Public Key
+    })();
+  </script>
 </head>
 <body class="bg-gray-100">
-  <div class="container mx-auto px-4 py-8">
-    <h1 class="text-4xl font-bold text-center mb-6">Book Your Session</h1>
-    
-    <!-- Google Form Embed -->
-    <div class="flex justify-center">
-      <iframe 
-        src="https://docs.google.com/forms/d/e/1FAIpQLScuIKfXiYyi01UG78uliICxEoN4FLuxJz6Fhc3Zn1hqG3JqCg/viewform?embedded=true" 
-        width="100%" 
-        height="1200" 
-        frameborder="0" 
-        marginheight="0" 
-        marginwidth="0"
-        class="max-w-4xl w-full rounded-lg shadow-lg"
-        >Loading…</iframe>
-    </div>
-
+  <div class="max-w-xl mx-auto mt-10 bg-white p-8 rounded shadow">
+    <h2 class="text-2xl font-bold mb-6 text-center">Booking Form</h2>
+    <form id="booking-form">
+      <div class="mb-4">
+        <label class="block text-gray-700">Name</label>
+        <input type="text" name="from_name" class="w-full p-2 border rounded" required>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700">Email</label>
+        <input type="email" name="from_email" class="w-full p-2 border rounded" required>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700">Phone</label>
+        <input type="text" name="phone_number" class="w-full p-2 border rounded" required>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700">Booking Type</label>
+        <select name="booking_type" class="w-full p-2 border rounded" required>
+          <option value="">Select One</option>
+          <option value="Wedding">Wedding</option>
+          <option value="Pre-Wedding">Pre-Wedding</option>
+          <option value="Post-Wedding">Post-Wedding</option>
+          <option value="Couple Outdoor">Couple Outdoor</option>
+          <option value="Single Outdoor">Single Outdoor</option>
+          <option value="Birthday">Birthday</option>
+        </select>
+      </div>
+      <div class="mb-6">
+        <label class="block text-gray-700">Message</label>
+        <textarea name="message" class="w-full p-2 border rounded" rows="4"></textarea>
+      </div>
+      <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Submit Booking</button>
+    </form>
+    <p id="response" class="text-center mt-4 text-green-600 hidden">Booking request sent successfully!</p>
   </div>
+
+  <script>
+    document.getElementById('booking-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      emailjs.sendForm('service_ri28', 'template_1zbt48l', this)
+        .then(function() {
+          document.getElementById('response').classList.remove('hidden');
+        }, function(error) {
+          alert('Something went wrong: ' + JSON.stringify(error));
+        });
+      this.reset();
+    });
+  </script>
 </body>
 </html>
-
