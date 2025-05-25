@@ -1,207 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>RI Photography Booking</title>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <meta charset="UTF-8">
+  <title>Booking | RI Photography</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
   <script>
-    (function() {
-      emailjs.init("pISh5CiJ8Pkr6BXKD"); // Replace with your actual EmailJS public key
+    (function(){
+      emailjs.init("pISh5CiJ8Pkr6BXKD");
     })();
   </script>
   <style>
-    @font-face {
-      font-family: 'Amsterdam One';
-      src: url('https://files.fontsme.com/a/136/21136/file/AmsterdamOne-eZ12l.ttf') format('truetype');
-    }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f9f9f9;
-      margin: 0;
-      padding: 0;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    }
-
-    h1, h2 {
-      text-align: center;
-      font-family: 'Amsterdam One', cursive;
-    }
-
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-    }
-
-    input, select, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    button {
-      margin-top: 20px;
-      padding: 12px 20px;
-      background-color: #007BFF;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    button:hover {
-      background-color: #0056b3;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    .signature-section {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid #ccc;
-    }
-
-    .signature-block {
-      text-align: center;
-      width: 45%;
-    }
-
-    .signature-name {
-      font-family: 'Amsterdam One', cursive;
-      font-size: 24px;
-      margin-bottom: 5px;
-    }
-
-    .signature-title {
-      font-size: 14px;
-      color: #555;
-    }
-
-    ul {
-      list-style-type: decimal;
-      padding-left: 20px;
-    }
-
-    ul li {
-      margin-bottom: 10px;
+    @import url('https://fonts.googleapis.com/css2?family=AmstelvarAlpha&display=swap');
+    .signature-font {
+      font-family: 'AmstelvarAlpha', cursive;
     }
   </style>
 </head>
-<body>
-  <div class="container">
-    <h1>RI Photography</h1>
-    <p><strong>Terms & Conditions (Please read before booking)</strong></p>
-    <ul>
-      <li><strong>Booking Confirmation:</strong> A minimum of 30% advance payment of the package price is required. No date or time will be reserved without advance payment.</li>
-      <li><strong>Booking Cancellation & Date Change:</strong> Cancellation without valid reason will incur a penalty of 50% of the contract. In emergencies or weather issues, one-time rescheduling is allowed subject to availability.</li>
-      <li><strong>Payment:</strong> Remaining balance must be paid on the shoot day or within 2 days. No delivery without full payment.</li>
-      <li><strong>Image Delivery:</strong> Edited images: 7-10 business days. Videos or large events: 15-20 business days.</li>
-      <li><strong>Image Usage Rights:</strong> Photographer may use selected images for portfolio/promotion. Clients must notify in writing if they disagree. Additional charges may apply.</li>
-      <li><strong>RAW Files & Editing:</strong> No RAW files provided. Editing is at the photographer's discretion. One minor revision allowed. Extra revisions cost more.</li>
-      <li><strong>Client Responsibilities:</strong> Timely presence and cooperation are mandatory. Photographer is not responsible for uncooperative behavior.</li>
-      <li><strong>Backup:</strong> Files stored for 30 days post-delivery. No guarantee of file availability after that.</li>
-      <li><strong>Force Majeure:</strong> In case of natural disasters, health issues, or uncontrollable events, both parties will mutually decide next steps.</li>
-    </ul>
+<body class="bg-gray-100 text-gray-900">
+  <div class="max-w-4xl mx-auto p-6">
+    <h1 class="text-3xl font-bold text-center mb-6">RI Photography – Terms & Conditions</h1>
+    <div class="bg-white p-4 rounded shadow">
+      <p class="mb-2 font-semibold">Please read it before booking.</p>
+      <ol class="list-decimal pl-6 space-y-2 text-sm">
+        <li><strong>Booking Confirmation:</strong> 30% advance is mandatory to confirm booking. No time/date reservation without it.</li>
+        <li><strong>Cancellation & Date Change:</strong> Unjustified cancellation will charge 50%. One-time reschedule possible based on availability.</li>
+        <li><strong>Payment:</strong> Full payment is required by or on the shoot day. No delivery before full payment.</li>
+        <li><strong>Delivery:</strong> Images: 7–10 business days. Videos/Large events: 15–20 days.</li>
+        <li><strong>Usage Rights:</strong> We may use photos for our portfolio. Inform in writing if you object (extra charge applies).</li>
+        <li><strong>RAW Files:</strong> Not shared. Editing style is our discretion. One revision free; extra changes cost extra.</li>
+        <li><strong>Client Duties:</strong> Punctuality and cooperation required. We’re not liable for lack of cooperation.</li>
+        <li><strong>Backup:</strong> Stored for 30 days post-delivery. No guarantee after that.</li>
+        <li><strong>Force Majeure:</strong> Natural causes or emergencies may alter agreements by mutual decision.</li>
+      </ol>
+    </div>
 
-    <form id="booking-form">
-      <label>Do you agree to our Terms & Conditions?</label>
-      <select name="terms_agree" required>
-        <option value="">--Select--</option>
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
-      </select>
+    <form id="booking-form" class="bg-white p-6 rounded shadow mt-6 space-y-4">
+      <p class="font-semibold">Do you accept our Terms & Conditions?</p>
+      <label><input type="radio" name="terms_agree" value="Yes" required> Yes</label>
+      <label><input type="radio" name="terms_agree" value="No"> No</label>
 
-      <label>Client Name (Full Name)</label>
-      <input type="text" name="client_name" required>
+      <input name="client_name" placeholder="Client Name" class="w-full border p-2 rounded" required>
+      <input name="phone" placeholder="Phone Number" class="w-full border p-2 rounded" required>
+      <input name="email" type="email" placeholder="Email Address" class="w-full border p-2 rounded" required>
 
-      <label>Phone Number</label>
-      <input type="text" name="phone" required>
+      <label class="block">I am the:
+        <select name="role" class="w-full border p-2 rounded">
+          <option>Host</option>
+          <option>Organizer</option>
+          <option>Model</option>
+        </select>
+      </label>
 
-      <label>Email</label>
-      <input type="email" name="email" required>
+      <input name="event_category" placeholder="Event Category" class="w-full border p-2 rounded" required>
 
-      <label>I am the</label>
-      <select name="role" required>
-        <option value="">--Select--</option>
-        <option value="Host">Host</option>
-        <option value="Organizer">Organizer</option>
-        <option value="Model">Model</option>
-      </select>
+      <label class="block">Package:
+        <select name="package" class="w-full border p-2 rounded">
+          <option>Package 1</option>
+          <option>Package 2</option>
+          <option>Customized</option>
+        </select>
+      </label>
 
-      <label>Event Category</label>
-      <input type="text" name="event_category" required>
+      <input type="date" name="date" class="w-full border p-2 rounded" required>
+      <input type="time" name="time" class="w-full border p-2 rounded" required>
+      <input name="location" placeholder="Location" class="w-full border p-2 rounded" required>
 
-      <label>Package</label>
-      <select name="package" required>
-        <option value="">--Select--</option>
-        <option value="Package 1">Package 1</option>
-        <option value="Package 2">Package 2</option>
-        <option value="Customized">Customized</option>
-      </select>
+      <label class="block">Payment Status:
+        <select name="payment_status" class="w-full border p-2 rounded">
+          <option>Complete</option>
+          <option>Pending</option>
+        </select>
+      </label>
 
-      <label>Date</label>
-      <input type="date" name="date" required>
+      <input name="budget" placeholder="Confirming Budget (BDT)" class="w-full border p-2 rounded" required>
+      <textarea name="extra_note" placeholder="Any extra request or note..." class="w-full border p-2 rounded h-24"></textarea>
 
-      <label>Time</label>
-      <input type="time" name="time" required>
+      <p>Do you confirm the booking?</p>
+      <label><input type="radio" name="confirm_booking" value="Yes" required> Yes</label>
+      <label><input type="radio" name="confirm_booking" value="No"> No</label>
 
-      <label>Location</label>
-      <input type="text" name="location" required>
-
-      <label>Payment Status</label>
-      <select name="payment_status" required>
-        <option value="">--Select--</option>
-        <option value="Complete">Complete</option>
-        <option value="Pending">Pending</option>
-      </select>
-
-      <label>Confirming Budget (BDT)</label>
-      <input type="number" name="budget" required>
-
-      <label>Additional Notes</label>
-      <textarea name="extra_note"></textarea>
-
-      <label>Do you confirm the booking?</label>
-      <select name="confirm_booking" required>
-        <option value="">--Select--</option>
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
-      </select>
-
-      <button type="submit">Submit Booking</button>
+      <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded">Confirm Booking</button>
     </form>
 
-    <div id="confirmation-msg" class="hidden">
-      <h2>Booking Confirmation Certificate</h2>
-      <div id="summary"></div>
-      <div class="signature-section">
-        <div class="signature-block">
-          <div class="signature-name" id="client-sign"></div>
-          <div class="signature-title">Client</div>
-        </div>
-        <div class="signature-block">
-          <div class="signature-name">RI Rahat</div>
-          <div class="signature-title">Photographer</div>
-        </div>
+    <div id="confirmation-msg" class="mt-6 hidden bg-white p-6 rounded shadow border">
+      <h2 class="text-2xl font-bold text-center mb-4">RI Photography</h2>
+      <p class="mb-4">Your booking has been received successfully. Please keep the below as your confirmation document:</p>
+      <div id="summary" class="text-sm"></div>
+      <div class="flex justify-between mt-6">
+        <p class="signature-font text-lg">RI Rahat</p>
+        <p id="client-sign" class="text-sm"></p>
       </div>
-      <p style="margin-top: 30px; text-align:center;">Thank you for choosing RI Photography</p>
     </div>
   </div>
 
@@ -211,35 +100,53 @@
       const form = e.target;
       const termsAccepted = form.terms_agree.value;
       const bookingConfirmed = form.confirm_booking.value;
-
       if (termsAccepted !== "Yes") {
-        alert("We don't proceed without accepting the terms.");
+        alert("আমরা টার্মস না মানলে কাজ করি না।");
         return;
       }
       if (bookingConfirmed !== "Yes") {
-        alert("The form won't submit unless you confirm the booking.");
+        alert("বুকিং কনফার্ম না করলে ফর্ম সাবমিট হবে না।");
         return;
       }
 
-      emailjs.sendForm('service_ri28', 'template_1zbt48l', form)
+      const formData = {
+        client_name: form.client_name.value,
+        phone: form.phone.value,
+        email: form.email.value,
+        role: form.role.value,
+        event_category: form.event_category.value,
+        package: form.package.value,
+        date: form.date.value,
+        time: form.time.value,
+        location: form.location.value,
+        payment_status: form.payment_status.value,
+        budget: form.budget.value,
+        extra_note: form.extra_note.value
+      };
+
+      emailjs.send("service_ri28", "template_1zbt48l", formData)
         .then(() => {
-          form.classList.add("hidden");
+          document.getElementById("booking-form").classList.add("hidden");
           const summary = document.getElementById("summary");
           summary.innerHTML = `
-            <p><strong>Name:</strong> ${form.client_name.value}</p>
-            <p><strong>Phone:</strong> ${form.phone.value}</p>
-            <p><strong>Email:</strong> ${form.email.value}</p>
-            <p><strong>Role:</strong> ${form.role.value}</p>
-            <p><strong>Category:</strong> ${form.event_category.value}</p>
-            <p><strong>Package:</strong> ${form.package.value}</p>
-            <p><strong>Date:</strong> ${form.date.value}</p>
-            <p><strong>Time:</strong> ${form.time.value}</p>
-            <p><strong>Location:</strong> ${form.location.value}</p>
-            <p><strong>Payment:</strong> ${form.payment_status.value}</p>
-            <p><strong>Budget:</strong> ${form.budget.value} BDT</p>
-            <p><strong>Note:</strong> ${form.extra_note.value}</p>
+            <p><strong>Name:</strong> ${formData.client_name}</p>
+            <p><strong>Phone:</strong> ${formData.phone}</p>
+            <p><strong>Email:</strong> ${formData.email}</p>
+            <p><strong>Role:</strong> ${formData.role}</p>
+            <p><strong>Category:</strong> ${formData.event_category}</p>
+            <p><strong>Package:</strong> ${formData.package}</p>
+            <p><strong>Date:</strong> ${formData.date}</p>
+            <p><strong>Time:</strong> ${formData.time}</p>
+            <p><strong>Location:</strong> ${formData.location}</p>
+            <p><strong>Payment:</strong> ${formData.payment_status}</p>
+            <p><strong>Budget:</strong> ${formData.budget} BDT</p>
+            <p><strong>Note:</strong> ${formData.extra_note}</p>
           `;
-          document.getElementById("client-sign").innerText = form.client_name.value;
+          document.getElementById("client-sign").innerText = formData.client_name;
           document.getElementById("confirmation-msg").classList.remove("hidden");
         })
-        .catch(error =>14
+        .catch(error => alert("Something went wrong: " + error));
+    });
+  </script>
+</body>
+</html>
