@@ -3,164 +3,178 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RI Photography Booking Confirmation</title>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
+  <title>RI Photography Booking Form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Amsterdam+One&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Roboto', sans-serif;
-      background: #f4f4f4;
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
       padding: 20px;
+      color: #333;
     }
     .container {
-      background: #fff;
+      background: white;
       padding: 30px;
-      max-width: 600px;
-      margin: 0 auto;
+      max-width: 800px;
+      margin: auto;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       border-radius: 10px;
     }
-    h2 {
-      font-family: 'Playfair Display', serif;
+    h1, h2 {
       text-align: center;
+      color: #444;
+    }
+    .section {
+      margin-bottom: 20px;
     }
     label {
       display: block;
-      margin-top: 15px;
+      margin-top: 10px;
     }
     input, select, textarea {
       width: 100%;
-      padding: 8px;
+      padding: 10px;
       margin-top: 5px;
-      border-radius: 5px;
       border: 1px solid #ccc;
+      border-radius: 5px;
     }
     button {
-      margin-top: 20px;
-      background-color: #000;
-      color: #fff;
-      padding: 10px;
+      background: green;
+      color: white;
+      padding: 15px;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
+      font-size: 16px;
       cursor: pointer;
+      display: block;
       width: 100%;
     }
     .certificate {
+      display: none;
       margin-top: 40px;
-      border: 2px solid #000;
-      padding: 20px;
-      font-family: 'Playfair Display', serif;
-      background: #fffbe6;
+      border: 2px solid #ccc;
+      padding: 30px;
+      background: #fff;
     }
-    .signatures {
+    .signature {
       display: flex;
       justify-content: space-between;
-      margin-top: 30px;
+      margin-top: 50px;
     }
-    .signatures div {
+    .signature p {
+      font-family: 'Amsterdam One', cursive;
+      font-size: 24px;
+    }
+    .signature .label {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
       text-align: center;
-    }
-    .timestamp {
-      font-size: 0.9em;
-      color: #666;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h2>RI Photography Booking Form</h2>
-    <form id="booking-form">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" required>
+    <h1>RI Photography – Booking Form</h1>
 
-      <label for="program">Program Type</label>
-      <select id="program" name="program" required>
-        <option value="Single Outdoor">Single Outdoor</option>
-        <option value="Couple Outdoor">Couple Outdoor</option>
-        <option value="Wedding">Wedding</option>
-        <option value="Pre-Wedding">Pre-Wedding</option>
-        <option value="Post-Wedding">Post-Wedding</option>
-        <option value="Birthday">Birthday</option>
+    <div class="section">
+      <label>আপনি কি আমাদের টার্মস এন্ড কন্ডিশন এ রাজি আছেন?</label>
+      <select id="termsAgree">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+    </div>
+
+    <div class="section">
+      <label>Client Name [Full Name]</label>
+      <input type="text" id="clientName">
+      <label>Phone Number</label>
+      <input type="tel" id="phone">
+      <label>Email</label>
+      <input type="email" id="email">
+
+      <label>I'm _______ of the event</label>
+      <select id="role">
+        <option value="host">Host</option>
+        <option value="organizer">Organizer</option>
+        <option value="model">Model</option>
       </select>
 
-      <label for="package">Package Name</label>
-      <input type="text" id="package" name="package" required>
+      <label>Event Category</label>
+      <input type="text" id="eventCategory">
 
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone" required>
+      <label>Package</label>
+      <select id="package">
+        <option value="package1">Package 1</option>
+        <option value="package2">Package 2</option>
+        <option value="customized">Customized</option>
+      </select>
 
-      <label for="event_date">Event Date</label>
-      <input type="date" id="event_date" name="event_date" required>
+      <label>Date</label>
+      <input type="date" id="date">
+      <label>Time</label>
+      <input type="time" id="time">
+      <label>Location</label>
+      <input type="text" id="location">
 
-      <label for="location">Event Location</label>
-      <textarea id="location" name="location" rows="3" required></textarea>
+      <label>Payment Status</label>
+      <select id="paymentStatus">
+        <option value="complete">Complete</option>
+        <option value="pending">Pending</option>
+      </select>
 
-      <button type="submit">Confirm Booking</button>
-    </form>
+      <label>Confirming Budget (BDT)</label>
+      <input type="number" id="budget">
 
-    <div class="certificate" id="certificate" style="display:none">
-      <h2>Booking Confirmation</h2>
-      <p>Ref ID: <span id="refId"></span></p>
-      <p>Name: <span id="c_name"></span></p>
-      <p>Program Type: <span id="c_program"></span></p>
-      <p>Package: <span id="c_package"></span></p>
-      <p>Phone: <span id="c_phone"></span></p>
-      <p>Event Date: <span id="c_event"></span></p>
-      <p>Location: <span id="c_location"></span></p>
-      <p class="timestamp">Submitted on: <span id="submitted"></span></p>
+      <label>Additional Requirements</label>
+      <textarea id="extra"></textarea>
 
-      <div class="signatures">
+      <label>আপনি কি বুকিং কনফার্ম করছেন?</label>
+      <select id="finalConfirm">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+    </div>
+
+    <button onclick="submitForm()">Confirm Booking</button>
+
+    <div class="certificate" id="certificate">
+      <h2>RI Photography</h2>
+      <p>Thank you for your booking. This document confirms that:</p>
+      <p><strong id="cName"></strong> has confirmed a booking with us.</p>
+      <p>Budget: <strong id="cBudget"></strong> BDT</p>
+      <p>Location: <strong id="cLocation"></strong></p>
+      <div class="signature">
         <div>
-          <p>_______________________</p>
-          <p>RI Rahat</p>
-          <p>ফটোগ্রাফার</p>
+          <p id="cNameSign"></p>
+          <div class="label">Client</div>
         </div>
         <div>
-          <p>_______________________</p>
-          <p><span id="c_name_2"></span></p>
-          <p>ক্লায়েন্ট</p>
+          <p style="font-family:'Amsterdam One', cursive">RI Rahat</p>
+          <div class="label">Photographer</div>
         </div>
       </div>
     </div>
   </div>
 
   <script>
-    emailjs.init("pISh5CiJ8Pkr6BXKD"); // Your Public Key
+    function submitForm() {
+      const agree = document.getElementById('termsAgree').value;
+      if (agree === 'no') {
+        alert("আমরা টার্মস না মানলে কাজ করি না।");
+        return;
+      }
 
-    document.getElementById('booking-form').addEventListener('submit', function(event) {
-      event.preventDefault();
+      const name = document.getElementById('clientName').value;
+      const location = document.getElementById('location').value;
+      const budget = document.getElementById('budget').value;
 
-      const form = event.target;
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData);
+      document.getElementById('cName').innerText = name;
+      document.getElementById('cNameSign').innerText = name;
+      document.getElementById('cLocation').innerText = location;
+      document.getElementById('cBudget').innerText = budget;
 
-      const refId = 'RI-' + Date.now();
-      const timestamp = new Date().toLocaleString();
-
-      data.refId = refId;
-      data.submitted = timestamp;
-
-      emailjs.send("service_ri28", "template_1zbt48l", data)
-        .then(() => {
-          document.getElementById('refId').textContent = refId;
-          document.getElementById('submitted').textContent = timestamp;
-
-          document.getElementById('c_name').textContent = data.name;
-          document.getElementById('c_program').textContent = data.program;
-          document.getElementById('c_package').textContent = data.package;
-          document.getElementById('c_phone').textContent = data.phone;
-          document.getElementById('c_event').textContent = data.event_date;
-          document.getElementById('c_location').textContent = data.location;
-          document.getElementById('c_name_2').textContent = data.name;
-
-          document.getElementById('certificate').style.display = 'block';
-          form.reset();
-        })
-        .catch((error) => {
-          alert("Something went wrong. Please try again.");
-          console.error("EmailJS Error:", error);
-        });
-    });
+      document.getElementById('certificate').style.display = 'block';
+    }
   </script>
 </body>
 </html>
