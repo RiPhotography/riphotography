@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RI Photography</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Alike&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
@@ -11,6 +11,7 @@
       font-family: "Alike", serif;
       background: linear-gradient(to bottom, #1e293b, #334155);
       color: white;
+      animation: fadeIn 0.8s ease-in-out;
     }
     .title-font {
       font-family: 'Playfair Display', serif;
@@ -18,11 +19,15 @@
     .theme-font {
       font-family: "Alike", serif;
     }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
   </style>
 </head>
-<body class="overflow-x-hidden">
+<body>
 
-  <!-- Title & Theme -->
+  <!-- Top Title + Theme -->
   <div class="bg-gray-600 text-center py-4">
     <a href="index.html" class="title-font text-3xl text-white hover:underline transition duration-250 block">
       RI Photography
@@ -31,9 +36,9 @@
   </div>
 
   <!-- Search Bar -->
-  <div class="flex justify-end px-4 mt-4">
-    <div class="relative w-full max-w-xs">
-      <input type="text" id="searchInput" placeholder="Search..." class="pl-7 pr-4 py-2 w-full rounded-full border border-gray-400 focus:outline-none focus:ring-2 focus:ring-white" list="suggestions">
+  <div class="flex justify-end pr-6 mt-4">
+    <div class="relative">
+      <input type="text" id="searchInput" placeholder="Search..." class="pl-7 pr-4 py-2 w-48 rounded-full border border-gray-400 focus:outline-black focus:ring-2 focus:ring-black" list="suggestions">
       <datalist id="suggestions">
         <option value="Packages">
         <option value="Personal Portfolio">
@@ -43,50 +48,44 @@
     </div>
   </div>
 
-  <!-- Navigation Buttons in Single Row -->
-  <div class="flex flex-wrap justify-center gap-2 mt-6 px-2">
-    <a href="packages.html" class="border border-blue-400 px-4 py-1 text-sm hover:bg-blue-100 hover:text-black transition duration-200">Packages</a>
-    <a href="portfolio.html" class="border border-green-400 px-4 py-1 text-sm hover:bg-green-100 hover:text-black transition duration-200">Portfolio</a>
-    <a href="gallery.html" class="border border-purple-400 px-4 py-1 text-sm hover:bg-purple-100 hover:text-black transition duration-200">Gallery</a>
-    <a href="vlog.html" class="border border-yellow-400 px-4 py-1 text-sm hover:bg-yellow-100 hover:text-black transition duration-200">Vlog</a>
+  <!-- Navigation Boxes in One Line -->
+  <div class="flex flex-wrap justify-center gap-3 mt-6 px-4">
+    <a href="packages.html" class="border-2 border-blue-400 px-4 py-2 hover:bg-blue-100 text-white text-sm whitespace-nowrap rounded transition duration-250 animate-pulse">Packages</a>
+    <a href="portfolio.html" class="border-2 border-green-400 px-4 py-2 hover:bg-green-100 text-white text-sm whitespace-nowrap rounded transition duration-250 animate-pulse">Personal Portfolio</a>
+    <a href="gallery.html" class="border-2 border-purple-400 px-4 py-2 hover:bg-purple-100 text-white text-sm whitespace-nowrap rounded transition duration-250 animate-pulse">Gallery</a>
+    <a href="vlog.html" class="border-2 border-yellow-400 px-4 py-2 hover:bg-yellow-100 text-white text-sm whitespace-nowrap rounded transition duration-250 animate-pulse">Vlog</a>
   </div>
 
-  <!-- Welcome Message with Border Only -->
-  <div class="max-w-xl mx-auto text-center mt-8 border border-white p-4">
-    <h2 class="text-2xl font-bold mb-2">Welcome to RI Photography</h2>
-    <p>Capturing life’s most beautiful moments, one frame at a time. Explore our portfolio, packages, and storytelling visual blogs to experience the journey.</p>
-  </div>
+  <!-- Image Columns & Main Content -->
+  <div class="flex flex-col lg:flex-row justify-between items-start px-4 py-8 gap-4">
 
-  <!-- Image Columns -->
-  <div class="flex flex-col md:flex-row justify-between items-start px-4 py-8 gap-4">
-    <!-- Left Column -->
-    <div class="space-y-4 flex-shrink-0">
-      <a href="gallery.html"><img src="img1.jpg" alt="Thumb1" class="w-24 rounded-lg shadow-md hover:scale-105 transition duration-300"></a>
-      <a href="gallery.html"><img src="img2.jpg" alt="Thumb2" class="w-24 rounded-lg shadow-md hover:scale-105 transition duration-300"></a>
-      <a href="gallery.html"><img src="img3.jpg" alt="Thumb3" class="w-24 rounded-lg shadow-md hover:scale-105 transition duration-300"></a>
+    <!-- Left Images -->
+    <div class="flex flex-col gap-4">
+      <a href="gallery.html"><img src="img1.jpg" alt="Thumb1" class="w-28 rounded-lg shadow-md hover:scale-105 transition duration-300"></a>
+      <a href="gallery.html"><img src="img2.jpg" alt="Thumb2" class="w-28 rounded-lg shadow-md hover:scale-105 transition duration-300"></a>
+      <a href="gallery.html"><img src="img3.jpg" alt="Thumb3" class="w-28 rounded-lg shadow-md hover:scale-105 transition duration-300"></a>
     </div>
 
-    <!-- Spacer on small screen -->
-    <div class="my-4 md:my-0"></div>
+    <!-- Main Text Box (with border only) -->
+    <div class="border border-white rounded-lg p-6 mx-4 max-w-xl text-center">
+      <h2 class="text-2xl font-bold mb-4">Welcome to RI Photography</h2>
+      <p class="text-white">Capturing life’s most beautiful moments, one frame at a time. Explore our portfolio, packages, and storytelling visual blogs to experience the journey.</p>
+    </div>
 
-    <!-- Right Column -->
-    <div class="space-y-4 flex-shrink-0">
-      <a href="gallery.html"><img src="img4.jpg" alt="Thumb4" class="w-24 rounded-lg shadow-md hover:scale-105 transition duration-300"></a>
-      <a href="gallery.html"><img src="img5.jpg" alt="Thumb5" class="w-24 rounded-lg shadow-md hover:scale-105 transition duration-300"></a>
-      <a href="gallery.html"><img src="img6.jpg" alt="Thumb6" class="w-24 rounded-lg shadow-md hover:scale-105 transition duration-300"></a>
+    <!-- Right Images -->
+    <div class="flex flex-col gap-4">
+      <a href="gallery.html"><img src="img1.jpg" alt="Thumb4" class="w-28 rounded-lg shadow-md hover:scale-105 transition duration-300"></a>
+      <a href="gallery.html"><img src="img2.jpg" alt="Thumb5" class="w-28 rounded-lg shadow-md hover:scale-105 transition duration-300"></a>
+      <a href="gallery.html"><img src="img3.jpg" alt="Thumb6" class="w-28 rounded-lg shadow-md hover:scale-105 transition duration-300"></a>
     </div>
   </div>
 
-  <!-- Contact Info with Border Box -->
-  <div class="max-w-sm mx-auto border border-white p-4 mt-4 text-center">
-    <p>📞 <a href="tel:01736813344" class="text-blue-300 hover:underline">01736813344</a></p>
-    <p>📧 <a href="mailto:riphotography2021@gmail.com" class="text-blue-300 hover:underline">riphotography2021@gmail.com</a></p>
-    <p>🔗 <a href="https://www.facebook.com/share/16g9kcrbMv/" target="_blank" class="text-blue-300 hover:underline">Facebook Page</a></p>
+  <!-- Footer Contact Box -->
+  <div class="max-w-sm mx-auto border border-white rounded-lg p-4 text-center my-6">
+    <p>📞 <a href="tel:01736813344" class="text-blue-400 hover:underline">01736813344</a></p>
+    <p>📧 <a href="mailto:riphotography2021@gmail.com" class="text-blue-400 hover:underline">riphotography2021@gmail.com</a></p>
+    <p>🔗 <a href="https://www.facebook.com/share/16g9kcrbMv/" target="_blank" class="text-blue-400 hover:underline">Facebook Page</a></p>
   </div>
-
-  <footer class="text-center text-xs mt-6 mb-2 text-gray-400">
-    &copy; 2025 RI Photography. All rights reserved.
-  </footer>
 
 </body>
 </html>
