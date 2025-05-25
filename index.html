@@ -1,61 +1,134 @@
-<!-- Main Text Box (Terms & Conditions - Updated) -->
-<div class="border border-black rounded-lg p-8 mx-auto mt-10 max-w-4xl text-left bg-gray-800 shadow-lg">
-  <h2 class="text-2xl font-bold text-center mb-6">📋 RI Photography – Terms & Conditions</h2>
-  <p class="text-white mb-4">Please read the following terms and conditions before booking:</p>
+"<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RI Photography</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Alike&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Alike", serif;
+      background: linear-gradient(to bottom, #1e293b, #334155);
+      color: white;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    .title-font {
+      font-family: 'Playfair Display', serif;
+    }
+    .theme-font {
+      font-family: "Alike", serif;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
 
-  <ol class="list-decimal list-inside space-y-4 text-white text-base leading-relaxed">
-    <li>
-      <strong>Booking Confirmation:</strong><br>
-      • To confirm the booking, a minimum of 30% advance payment of the package price is required.<br>
-      • No date or time will be reserved without the advance payment.
-    </li>
+  <!-- Top Title + Theme -->
+  <div class="bg-gray-600 text-center py-4">
+    <a href="index.html" class="title-font text-3xl text-white hover:underline transition duration-250 block">
+      RI Photography
+    </a>
+    <p class="theme-font text-white text-sm mt-1">Turning Moments into Timeless Art</p>
+  </div>
 
-    <li>
-      <strong>Booking Cancellation & Date Change:</strong><br>
-      • If the client cancels the booking without a valid reason, they will incur a penalty of 50% of the contract amount.<br>
-      • In case of weather or emergency situations, a one-time date change will be allowed depending on the photographer's availability.
-    </li>
+  <!-- Search Bar -->
+  <div class="flex justify-end pr-4 mt-2">
+    <div class="relative">
+      <input type="text" id="searchInput" placeholder="Search..." class="pl-7 pr-4 py-2 w-40 rounded-full border border-gray-400 focus:outline-black focus:ring-2 focus:ring-black" list="suggestions">
+      <datalist id="suggestions">
+        <option value="Packages">
+        <option value="Personal Portfolio">
+        <option value="Gallery">
+        <option value="Vlog">
+      </datalist>
+    </div>
+  </div>
 
-    <li>
-      <strong>Payment:</strong><br>
-      • The remaining balance must be paid on the day of the shoot or within 2 days.<br>
-      • No images will be delivered until the full payment is received.
-    </li>
+  <!-- Navigation Boxes in One Line -->
+  <div class="flex flex-wrap justify-center gap-3 mt-6 px-4">
+    <a href="portfolio.html" class="border-2 border-green-400 px-4 py-2 hover:bg-green-100 text-white text-sm whitespace-nowrap rounded transition duration-250 animate-pulse">Personal Portfolio</a>
+    <a href="packages.html" class="border-2 border-blue-400 px-4 py-2 hover:bg-blue-100 text-white text-sm whitespace-nowrap rounded transition duration-250 animate-pulse">Packages</a>
+        <a href="gallery.html" class="border-2 border-purple-400 px-4 py-2 hover:bg-purple-100 text-white text-sm whitespace-nowrap rounded transition duration-250 animate-pulse">Booking</a>
+    <a href="vlog.html" class="border-2 border-yellow-400 px-4 py-2 hover:bg-yellow-100 text-white text-sm whitespace-nowrap rounded transition duration-250 animate-pulse">Vlog</a>
+  </div>
 
-    <li>
-      <strong>Image Delivery Timeframe:</strong><br>
-      • Edited images will be delivered within 7-10 business days.<br>
-      • For video or larger event packages, the delivery time may be 15-20 business days.
-    </li>
+  <!-- Image Columns & Main Content --> 
+  <div class="flex flex-col lg:flex-row lg:justify-between items-center px-4 py-8 gap-4">
 
-    <li>
-      <strong>Image Usage Rights:</strong><br>
-      • The photographer has the right to use selected images for portfolio, website, or promotional purposes.<br>
-      • If the client does not want this, they must inform the photographer in writing at the time of booking. Additional charges may apply for this request.
-    </li>
+    <!-- Left Images -->
+    <div class="flex flex-row lg:flex-col gap-4">
+      <a href="gallery.html"><img src="https://i.postimg.cc/sx08dCyX/1746186427065-1.jpg" alt="Portraits" class="w-20 rounded-lg shadow-md hover:scale-90 transition duration-300"></a>
+      <a href="gallery.html"><img src="https://i.postimg.cc/Qtg9yjQQ/IMG-20250525-191508.jpg" class="w-20 rounded-lg shadow-md hover:scale-90 transition duration-300"></a>
+      <a href="gallery.html"><img src="https://i.postimg.cc/3NVTjvkn/FB-IMG-1748144944773.jpg" class="w-20 rounded-lg shadow-md hover:scale-90 transition duration-300"></a>
+    </div>
 
-    <li>
-      <strong>RAW Files & Editing:</strong><br>
-      • Under no circumstances will RAW/unedited files be provided.<br>
-      • The editing style and color selection will be at the photographer's creative discretion.<br>
-      • A one-time revision is allowed for minor changes; additional charges may apply for further revisions.
-    </li>
+    <!-- Main Text Box (with border only) -->
+    <div class="border border-white rounded-lg p-6 mx-4 max-w-xl text-center">
+      <h2 class="text-2xl font-bold mb-4">Welcome to RI Photography</h2>
+      <p class="text-white">Capturing life’s most beautiful moments, one frame at a time. Explore our portfolio, packages, and storytelling visual blogs to experience the journey.</p>
+    </div>
 
-    <li>
-      <strong>Client's Responsibilities:</strong><br>
-      • It is mandatory for the client and related persons to be present on time, cooperate, and maintain the environment.<br>
-      • If anyone fails to cooperate, the photographer will not be responsible for the results.
-    </li>
+    <!-- Right Images -->
+    <div class="flex flex-row lg:flex-col gap-4">
+      <a href="gallery.html"><img src="https://i.postimg.cc/cHCBqgJR/IMG-20250525-191601.jpg" class="w-28 rounded-lg shadow-md hover:scale-105 transition duration-300"></a>
+      <a href="gallery.html"><img src="https://i.postimg.cc/636tBwsL/IMG-3018-1.jpg" class="w-28 rounded-lg shadow-md hover:scale-105 transition duration-300"></a>
+      <a href="gallery.html"><img src="https://i.postimg.cc/pdRtBxdb/1746470085634-1.jpg" class="w-28 rounded-lg shadow-md hover:scale-105 transition duration-300"></a>
+    </div>
+  </div>
+  
+  <!-- Main Text Box (with border only again) -->
+    <div class="border border-green rounded-lg p-6 mx-4 max-w-xl text-center">
+      <h2 class="text-2xl font-bold mb-9">RI Photography – Terms & Conditions_ (Please read it before booking.)</h2>
+      <p class="text-white">
+1. Booking Confirmation:
+i) To confirm the booking, a minimum of 30% advance payment of the package price is required.
+ii) No date or time will be reserved without the advance payment.
 
-    <li>
-      <strong>Backup Storage:</strong><br>
-      • Files will be stored for up to 30 days after image delivery.<br>
-      • After this period, it may not be possible to provide any lost files.
-    </li>
+2. Booking Cancellation & Date Change:
+i) If the client cancels the booking without a valid reason, they will incur a penalty of 50% of the contract amount.
+ii) In case of weather or emergency situations, a one-time date change will be allowed, depending on the photographer's availability.
 
-    <li>
-      <strong>Force Majeure:</strong><br>
-      • In case of natural disasters, health issues, accidents, or any uncontrollable circumstances preventing the photographer from delivering services, both parties will decide on the next steps through mutual agreement.
-    </li>
-  </ol>
-</div>
+3. Payment
+i) The remaining balance must be paid on the day of the shoot or within 2 days.
+ii) No images will be delivered until the full payment is received.
+
+4. Image Delivery Timeframe:
+i) Edited images will be delivered within 7-10 business days.
+ii)  For video or larger event packages, the delivery time may be 15-20 business days.
+
+5. Image Usage Rights
+i) The photographer has the right to use selected images for portfolio, website, or promotional purposes.
+ii) If the client does not want this, they must inform the photographer in writing at the time of booking. Additional charges may apply for this request.
+
+6. RAW Files & Editing
+i) Under no circumstances will RAW/unedited files be provided.
+ii) The editing style and color selection will be at the photographer's creative discretion.
+iii) A one-time revision is allowed for minor changes; additional charges may apply for further revisions.
+
+7. Client's Responsibilities
+i) It is mandatory for the client and related persons to be present on time, cooperate, and maintain the environment.
+ii) If anyone fails to cooperate, the photographer will not be responsible for the results.
+
+8. Backup Storage
+i) Files will be stored for up to 30 days after image delivery.
+ii) After this period, it may not be possible to provide any lost files.
+
+9. Force Majeure
+i) In case of natural disasters, health issues, accidents, or any uncontrollable circumstances preventing the photographer from delivering services, both parties will decide on the next steps through mutual agreement.
+
+</p>
+    </div>
+
+  <!-- Footer Contact Box -->
+  <div class="max-w-sm mx-auto border border-white rounded-lg p-4 text-center my-6">
+    <p>📞 <a href="tel:01736813344" class="text-blue-400 hover:underline">01736813344</a></p>
+    <p>📧 <a href="mailto:riphotography2021@gmail.com" class="text-blue-400 hover:underline">riphotography2021@gmail.com</a></p>
+    <p>🔗 <a href="https://www.facebook.com/share/16g9kcrbMv/" target="_blank" class="text-blue-400 hover:underline">Facebook Page</a></p>
+  </div>
+
+</body>
+</html>" এইখাঁনে তুমি শুধু তার্মস এন্ড কন্ডিসশন নিয়ে কাজ করবে। টার্মস আর কন্ডিসশন ডান আর বাম এর মাজঝামাজঝি জায়গায় থাকবে। লাইন লম্বা করো। আর পয়েন্ট গুলো যেন আলাদা আলাদা তা বুঝা যায়। আর বডারে কাল কালার দিও। এর বাহিরে বাকি যা আছে সব ঠিক রেখো। 
