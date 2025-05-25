@@ -3,39 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gallery</title>
+  <title>Gallery | RI Photography</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
-      font-family: "Times New Roman", Times, serif;
-    }
-    .fade-in {
-      animation: fadeIn 1s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
+      background-color: #1e293b;
+      color: white;
+      font-family: 'Alike', serif;
     }
   </style>
 </head>
-<body class="bg-white text-black p-6">
+<body>
 
-  <h1 class="text-4xl text-center font-bold mb-10 fade-in">Gallery</h1>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 fade-in">
-    <!-- Replace src with your own image links -->
-    <img src="https://via.placeholder.com/400x300" alt="Photo 1" class="rounded shadow hover:scale-105 transition duration-300">
-    <img src="https://via.placeholder.com/400x300" alt="Photo 2" class="rounded shadow hover:scale-105 transition duration-300">
-    <img src="https://via.placeholder.com/400x300" alt="Photo 3" class="rounded shadow hover:scale-105 transition duration-300">
-    <img src="https://via.placeholder.com/400x300" alt="Photo 4" class="rounded shadow hover:scale-105 transition duration-300">
-    <img src="https://via.placeholder.com/400x300" alt="Photo 5" class="rounded shadow hover:scale-105 transition duration-300">
-    <img src="https://via.placeholder.com/400x300" alt="Photo 6" class="rounded shadow hover:scale-105 transition duration-300">
+  <div class="text-center text-3xl font-bold py-6">
+    Gallery
   </div>
 
-  <!-- Back Button -->
-  <div class="text-center mt-10">
-    <a href="index.html" class="text-white bg-black px-6 py-3 rounded hover:bg-gray-800 transition duration-300">← Back to Home</a>
+  <div class="max-w-6xl mx-auto px-4">
+    <div id="gallery" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4"></div>
   </div>
+
+  <script>
+    fetch('gallery-data.json')
+      .then(res => res.json())
+      .then(data => {
+        const gallery = document.getElementById('gallery');
+        data.forEach(item => {
+          const wrapper = document.createElement('div');
+          wrapper.className = "rounded overflow-hidden shadow-md bg-gray-800 hover:scale-105 transition transform duration-300";
+          wrapper.innerHTML = `
+            <img src="${item.src}" alt="${item.category}" class="w-full h-48 object-cover">
+            <div class="text-center py-2 text-sm text-gray-300">${item.category}</div>
+          `;
+          gallery.appendChild(wrapper);
+        });
+      });
+  </script>
 
 </body>
 </html>
