@@ -17,7 +17,7 @@ folders.forEach(folder => {
   
   for (let i = 1; i <= 20; i++) {
     const img = document.createElement('img');
-    img.src = `portfolio/${folder}/image${i}.jpg`; // ছবির লোকেশন
+    img.src = `portfolio/${folder}/image${i}.jpg`; 
     img.alt = `${folder} image ${i}`;
     img.className = "rounded-lg shadow-md hover:scale-105 transition duration-300 w-full h-auto";
 
