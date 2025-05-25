@@ -1,132 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>RI Photography Booking</title>
+  <meta charset="UTF-8">
+  <title>RI Photography Booking Form</title>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-    (function() {
-      emailjs.init("pISh5CiJ8Pkr6BXKD"); // Your User ID
-    })();
-  </script>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f2f2f2;
       padding: 20px;
-      color: #333;
-    }
-    .container {
-      background: white;
-      padding: 30px;
-      max-width: 800px;
-      margin: auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      border-radius: 10px;
     }
     input, select, textarea {
+      display: block;
+      margin: 10px 0;
       width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+      padding: 8px;
     }
     button {
-      background: green;
+      padding: 10px 20px;
+      background: #007bff;
       color: white;
-      padding: 15px;
       border: none;
-      border-radius: 8px;
-      font-size: 16px;
       cursor: pointer;
-      width: 100%;
-      margin-top: 20px;
     }
-    .certificate {
-      display: none;
-      border: 2px solid #ccc;
-      padding: 30px;
-      background: #fff;
-      margin-top: 30px;
+    .success {
+      color: green;
+    }
+    .error {
+      color: red;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>RI Photography – Booking Form</h1>
-    <form id="bookingForm">
-      <label>Client Name</label>
-      <input type="text" name="client_name" required />
 
-      <label>Client Email</label>
-      <input type="email" name="client_email" required />
+<h2>RI Photography Booking Form</h2>
 
-      <label>Client Phone</label>
-      <input type="tel" name="client_phone" required />
+<form id="bookingForm">
+  <input type="text" name="client_name" placeholder="Your Name" required />
+  <input type="email" name="client_email" placeholder="Your Email" required />
+  <input type="tel" name="client_phone" placeholder="Your Phone" required />
+  <input type="date" name="event_date" required />
+  <input type="time" name="event_time" required />
+  <input type="text" name="event_location" placeholder="Event Location" required />
+  <input type="text" name="budget" placeholder="Estimated Budget" required />
 
-      <label>Event Date</label>
-      <input type="date" name="event_date" required />
+  <select name="package" required>
+    <option value="">Select Package</option>
+    <option value="Single - Basic">Single - Basic</option>
+    <option value="Couple - Pro">Couple - Pro</option>
+    <option value="Wedding - Standard">Wedding - Standard</option>
+  </select>
 
-      <label>Event Time</label>
-      <input type="time" name="event_time" required />
+  <textarea name="extra_note" placeholder="Extra Note (Optional)"></textarea>
 
-      <label>Event Location</label>
-      <input type="text" name="event_location" required />
+  <button type="submit">Send Booking</button>
+</form>
 
-      <label>Budget (BDT)</label>
-      <input type="number" name="budget" required />
+<p id="msg"></p>
 
-      <label>Package</label>
-      <select name="package" required>
-        <option value="Basic">Basic</option>
-        <option value="Standard">Standard</option>
-        <option value="Pro">Pro</option>
-        <option value="Customized">Customized</option>
-      </select>
+<script>
+  (function() {
+    emailjs.init("pISh5CiJ8Pkr6BXKD"); // Your User ID
+  })();
 
-      <label>Additional Notes</label>
-      <textarea name="extra_note" placeholder="Optional"></textarea>
+  document.getElementById("bookingForm").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-      <button type="submit">Confirm Booking</button>
-    </form>
+    emailjs.sendForm("service_ri28", "template_1zbt48l", this)
+      .then(function(response) {
+        console.log("SUCCESS!", response.status, response.text);
+        document.getElementById("msg").innerHTML = "Your booking has been sent successfully!";
+        document.getElementById("msg").className = "success";
+        document.getElementById("bookingForm").reset();
+      }, function(error) {
+        console.error("FAILED...", error);
+        document.getElementById("msg").innerHTML = "Failed to send booking. Please try again.";
+        document.getElementById("msg").className = "error";
+      });
+  });
+</script>
 
-    <div class="certificate" id="confirmationBox">
-      <h2>Booking Confirmed!</h2>
-      <p><strong>Name:</strong> <span id="cName"></span></p>
-      <p><strong>Event Date:</strong> <span id="cDate"></span></p>
-      <p><strong>Time:</strong> <span id="cTime"></span></p>
-      <p><strong>Location:</strong> <span id="cLocation"></span></p>
-      <p><strong>Package:</strong> <span id="cPackage"></span></p>
-      <p><strong>Budget:</strong> <span id="cBudget"></span> BDT</p>
-    </div>
-  </div>
-
-  <script>
-    const form = document.getElementById('bookingForm');
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      emailjs.sendForm('service_ri28', 'template_1zbt48l', this)
-        .then(function(response) {
-          alert('Booking confirmed & email sent successfully!');
-          
-          // Show confirmation certificate
-          document.getElementById("cName").innerText = form.client_name.value;
-          document.getElementById("cDate").innerText = form.event_date.value;
-          document.getElementById("cTime").innerText = form.event_time.value;
-          document.getElementById("cLocation").innerText = form.event_location.value;
-          document.getElementById("cPackage").innerText = form.package.value;
-          document.getElementById("cBudget").innerText = form.budget.value;
-          document.getElementById("confirmationBox").style.display = "block";
-
-          form.reset();
-        }, function(error) {
-          alert('Email sending failed. Please try again!');
-          console.error('FAILED...', error);
-        });
-    });
-  </script>
 </body>
 </html>
