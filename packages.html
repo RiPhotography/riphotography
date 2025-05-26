@@ -6,7 +6,7 @@
   <title>Photography Packages - RI Photography</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Animation for the box around the header */
+    /* Pulse animation */
     @keyframes pulse-border {
       0%, 100% {
         box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5);
@@ -18,34 +18,39 @@
 
     .animated-box {
       animation: pulse-border 2.5s infinite;
-      border-radius: 0.75rem; /* Tailwind's rounded-xl */
-      border: 4px solid #3b82f6; /* Tailwind blue-500 */
+      border-radius: 0.75rem;
+      border: 4px solid #3b82f6;
       padding: 0.5rem 1.5rem;
       display: inline-block;
-      color: #1e40af; /* Tailwind blue-900 */
+      color: #1e40af;
       font-weight: 600;
-      font-size: 1.875rem; /* Tailwind text-3xl */
+      font-size: 1.875rem;
       margin-bottom: 1.5rem;
     }
 
-    /* Back button hover animation */
     .btn-animated:hover {
       transform: scale(1.05);
       box-shadow: 0 8px 15px rgba(139, 92, 246, 0.4);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card-animated {
+      animation: pulse-border 3s infinite;
+      border-radius: 0.75rem;
+      border: 3px solid #4f46e5;
     }
   </style>
 </head>
 <body class="bg-white text-gray-800">
 
   <!-- Header -->
-  <a href="#" class="block bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white text-4xl font-bold text-center py-6 shadow-md">
-    RI Photography
-  </a>
-  <p class="text-center text-lg mb-6">Turning Moments into Timeless Art</p>
+  <div class="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white text-center py-6 shadow-md">
+    <h1 class="text-4xl font-bold">RI Photography</h1>
+    <p class="text-lg mt-2">Turning Moments into Timeless Art</p>
+  </div>
 
   <!-- Section Title with Animated Box -->
-  <div class="text-center">
+  <div class="text-center mt-8">
     <div class="animated-box mx-auto">
       Our Photography Packages
     </div>
@@ -55,7 +60,7 @@
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-12 lg:px-20 mb-10">
 
     <!-- Basic Package -->
-    <div class="border-2 border-black p-4 rounded-xl shadow hover:shadow-lg transition duration-300">
+    <div class="card-animated p-4 shadow hover:shadow-lg transition duration-300">
       <h2 class="text-2xl font-bold mb-2">Basic Package</h2>
       <ul class="list-disc list-inside space-y-1">
         <li>1 Photographer</li>
@@ -66,7 +71,7 @@
     </div>
 
     <!-- Standard Package -->
-    <div class="border-2 border-black p-4 rounded-xl shadow hover:shadow-lg transition duration-300">
+    <div class="card-animated p-4 shadow hover:shadow-lg transition duration-300">
       <h2 class="text-2xl font-bold mb-2">Standard Package</h2>
       <img src="https://i.postimg.cc/wvrRzbdD/Beige-and-Gold-Elegant-Wedding-Package-Instagram-Post-20250515-224311-0000.png" alt="Couple Package" class="mb-3 rounded">
       <ul class="list-disc list-inside space-y-1">
@@ -79,7 +84,7 @@
     </div>
 
     <!-- Premium Package -->
-    <div class="border-2 border-black p-4 rounded-xl shadow hover:shadow-lg transition duration-300">
+    <div class="card-animated p-4 shadow hover:shadow-lg transition duration-300">
       <h2 class="text-2xl font-bold mb-2">Premium Package</h2>
       <img src="https://i.postimg.cc/FHFSjSGd/FB-IMG-1748144944773.jpg" alt="Customized Package" class="mb-3 rounded">
       <ul class="list-disc list-inside space-y-1">
@@ -89,7 +94,7 @@
 
   </div>
 
-  <!-- Back Button with animation -->
+  <!-- Back Button -->
   <div class="text-center mb-10">
     <a href="#" class="inline-block bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-semibold py-2 px-6 rounded-full shadow hover:shadow-lg transition duration-300 btn-animated">
       ← Back to Home
