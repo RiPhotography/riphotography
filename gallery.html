@@ -1,228 +1,252 @@
 <!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RI Photography Booking Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            line-height: 1.6;
-        }
-        h1, h2 {
-            text-align: center;
-        }
-        label {
-            display: block;
-            margin-top: 15px;
-        }
-        input, select, textarea {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-        }
-        .submit-section {
-            margin-top: 30px;
-            text-align: center;
-        }
-        .certificate {
-            border: 2px solid #000;
-            padding: 20px;
-            margin-top: 40px;
-            display: none;
-        }
-        .signature {
-            font-family: 'Brush Script MT', cursive;
-        }
-        .signature-section {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 50px;
-        }
-        .terms {
-            page-break-before: always;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RI Photography Booking Form</title>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f2f2f2, #d9e4f5);
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    h2, h3 {
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .certificate {
+      display: none;
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 30px;
+      margin-top: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    .signature {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 24px;
+    }
+    .terms {
+      margin-top: 40px;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-    <h1>RI Photography – Terms & Conditions</h1>
-    <p style="text-align: center;">(Please read before booking)</p><form id="bookingForm">
-    <label>Are you agree with our Terms & Conditions?
-        <select id="agreeTerms">
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-        </select>
-    </label>
+  <div class="container">
+    <h2>RI Photography – Booking Form</h2>
+    <form id="booking-form">
+      <label>Do you accept our Terms & Conditions?</label>
+      <select name="terms_accept" required>
+        <option value="">Select</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select><label>Client Name [Full Name]</label>
+  <input type="text" name="client_name" required>
 
-    <label>Client Name [Full Name]:
-        <input type="text" id="clientName" required>
-    </label>
+  <label>Phone Number</label>
+  <input type="text" name="phone" required>
 
-    <label>Phone Number:
-        <input type="tel" id="phone" required>
-    </label>
+  <label>Email</label>
+  <input type="email" name="email" required>
 
-    <label>Email:
-        <input type="email" id="email" required>
-    </label>
+  <label>I am the</label>
+  <select name="identity" required>
+    <option value="host">Host</option>
+    <option value="organizer">Organizer</option>
+    <option value="model">Model</option>
+  </select>
 
-    <label>I'm _______ or the event:
-        <select id="role">
-            <option>Host</option>
-            <option>Organizer</option>
-            <option>Model</option>
-        </select>
-    </label>
+  <label>Event Category</label>
+  <input type="text" name="event_category" required>
 
-    <label>Event Category:
-        <input type="text" id="category">
-    </label>
+  <label>Package</label>
+  <select name="package" required>
+    <option value="Package 1">Package 1</option>
+    <option value="Package 2">Package 2</option>
+    <option value="Customized">Customized</option>
+  </select>
 
-    <label>Package:
-        <select id="package">
-            <option>Package 1</option>
-            <option>Package 2</option>
-            <option>Customized</option>
-        </select>
-    </label>
+  <label>Date</label>
+  <input type="date" name="date" required>
 
-    <label>Date:
-        <input type="date" id="date">
-    </label>
+  <label>Time</label>
+  <input type="time" name="time" required>
 
-    <label>Time:
-        <input type="time" id="time">
-    </label>
+  <label>Location</label>
+  <input type="text" name="location" required>
 
-    <label>Location:
-        <input type="text" id="location">
-    </label>
+  <label>Payment Status</label>
+  <select name="payment_status" required>
+    <option value="Complete">Complete</option>
+    <option value="Pending">Pending</option>
+  </select>
 
-    <label>Payment Status:
-        <select id="paymentStatus">
-            <option>Complete</option>
-            <option>Pending</option>
-        </select>
-    </label>
+  <label>Confirming Budget (BDT)</label>
+  <input type="number" name="budget" required>
 
-    <label>Confirming Budget (BDT):
-        <input type="number" id="budget">
-    </label>
+  <label>Additional Requirements</label>
+  <textarea name="extra_notes" rows="4"></textarea>
 
-    <label>Additional Requirements:
-        <textarea id="extraNotes" rows="4"></textarea>
-    </label>
+  <label>Are you confirming this booking?</label>
+  <select name="booking_confirm" required>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </select>
 
-    <label>Do you confirm this booking?
-        <select id="finalConfirm">
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-        </select>
-    </label>
-
-    <div class="submit-section">
-        <button type="button" onclick="generateCertificate()">Submit / Book</button>
-    </div>
+  <button type="submit">Submit Booking</button>
 </form>
 
-<div id="confirmationCertificate" class="certificate">
-    <h2>Booking Confirmation Certificate</h2>
-    <p>This certifies that <strong id="confName"></strong> has confirmed a booking with <strong>RI Photography</strong>.</p>
-    <p>Thank you for trusting us to turn your moments into timeless art.</p>
-
-    <div class="signature-section">
-        <div>
-            <p>Client:</p>
-            <p id="clientSign"></p>
-        </div>
-        <div>
-            <p>RI Photography:</p>
-            <p class="signature">RI Rahat</p>
-        </div>
-    </div>
+<div id="certificate" class="certificate">
+  <h3>RI Photography - Booking Confirmation</h3>
+  <div id="certificate-content"></div>
+  <br><br>
+  <div style="display: flex; justify-content: space-between; margin-top: 40px;">
+    <div><strong>Client Signature:</strong><br><span id="client-name"></span></div>
+    <div><strong>RI Photography</strong><br><span class="signature">RI Rahat</span></div>
+  </div>
 </div>
 
 <div class="terms">
-    <h2>Terms & Conditions</h2>
-    <ol>
-        <li><strong>Booking Confirmation:</strong>
-            <ol type="i">
-                <li>To confirm the booking, a minimum of 30% advance payment is required.</li>
-                <li>No date or time will be reserved without the advance payment.</li>
-            </ol>
-        </li>
-        <li><strong>Booking Cancellation & Date Change:</strong>
-            <ol type="i">
-                <li>If the client cancels without a valid reason, they will incur a penalty of 50% of the contract amount.</li>
-                <li>In case of weather/emergency, a one-time date change is allowed based on availability.</li>
-            </ol>
-        </li>
-        <li><strong>Payment:</strong>
-            <ol type="i">
-                <li>Remaining balance must be paid on the day of the shoot or within 2 days.</li>
-                <li>No images will be delivered until full payment is received.</li>
-            </ol>
-        </li>
-        <li><strong>Image Delivery Timeframe:</strong>
-            <ol type="i">
-                <li>Edited images: 7–10 business days.</li>
-                <li>Video or event packages: 15–20 business days.</li>
-            </ol>
-        </li>
-        <li><strong>Image Usage Rights:</strong>
-            <ol type="i">
-                <li>Photographer can use selected images for portfolio/website/promo.</li>
-                <li>Client must inform in writing if not agreed (extra charges may apply).</li>
-            </ol>
-        </li>
-        <li><strong>RAW Files & Editing:</strong>
-            <ol type="i">
-                <li>No RAW/unedited files will be provided.</li>
-                <li>Editing style is photographer’s creative discretion.</li>
-                <li>One-time minor revision allowed; extras may incur charges.</li>
-            </ol>
-        </li>
-        <li><strong>Client's Responsibilities:</strong>
-            <ol type="i">
-                <li>Client must be on time, cooperative, and maintain decorum.</li>
-                <li>Photographer not responsible for non-cooperation impacts.</li>
-            </ol>
-        </li>
-        <li><strong>Backup Storage:</strong>
-            <ol type="i">
-                <li>Files stored up to 30 days after delivery.</li>
-                <li>After that, lost files may not be retrievable.</li>
-            </ol>
-        </li>
-        <li><strong>Force Majeure:</strong>
-            <ol type="i">
-                <li>In case of disaster, health issues, or uncontrollable events, both parties will discuss next steps mutually.</li>
-            </ol>
-        </li>
-    </ol>
-    <p style="text-align:center; margin-top: 40px;">Thank you</p>
+  <h3>Terms & Conditions</h3>
+  <ol>
+    <li>Booking Confirmation:
+      <ul>
+        <li>i) 30% advance required to confirm the booking.</li>
+        <li>ii) No date/time reserved without advance payment.</li>
+      </ul>
+    </li>
+    <li>Cancellation & Date Change:
+      <ul>
+        <li>i) 50% penalty without valid reason for cancellation.</li>
+        <li>ii) One-time date change allowed due to emergency/weather.</li>
+      </ul>
+    </li>
+    <li>Payment:
+      <ul>
+        <li>i) Rest of the payment due on shoot day or within 2 days.</li>
+        <li>ii) No images will be delivered without full payment.</li>
+      </ul>
+    </li>
+    <li>Delivery Time:
+      <ul>
+        <li>i) Edited images within 7-10 business days.</li>
+        <li>ii) Video/larger packages: 15-20 business days.</li>
+      </ul>
+    </li>
+    <li>Image Rights:
+      <ul>
+        <li>i) Photographer may use selected images for portfolio.</li>
+        <li>ii) Inform in writing if not agreed. Extra charge may apply.</li>
+      </ul>
+    </li>
+    <li>RAW Files & Editing:
+      <ul>
+        <li>i) RAW files not provided.</li>
+        <li>ii) Editing style chosen by photographer.</li>
+        <li>iii) One-time minor revision allowed.</li>
+      </ul>
+    </li>
+    <li>Client Responsibilities:
+      <ul>
+        <li>i) Be present on time and cooperate.</li>
+        <li>ii) Photographer not responsible for others' misbehavior.</li>
+      </ul>
+    </li>
+    <li>Backup:
+      <ul>
+        <li>i) Stored for up to 30 days.</li>
+        <li>ii) After that, may not be retrievable.</li>
+      </ul>
+    </li>
+    <li>Force Majeure:
+      <ul>
+        <li>i) Natural disaster/accident/health issue may delay service.</li>
+      </ul>
+    </li>
+  </ol>
 </div>
 
-<script>
-    function generateCertificate() {
-        const agreed = document.getElementById("agreeTerms").value;
-        const finalConfirm = document.getElementById("finalConfirm").value;
-        const name = document.getElementById("clientName").value;
+  </div>  <script>
+    (function(){
+      emailjs.init("pISh5CiJ8Pkr6BXKD");
+    })();
 
-        if (agreed === "no") {
-            alert("We don't work if we don't follow the terms.");
-            return;
-        }
+    document.getElementById("booking-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const form = this;
+      const terms = form.terms_accept.value;
+      const confirm = form.booking_confirm.value;
 
-        if (finalConfirm === "yes" && name) {
-            document.getElementById("confName").innerText = name;
-            document.getElementById("clientSign").innerText = name;
-            document.getElementById("confirmationCertificate").style.display = "block";
-        } else {
-            alert("Please confirm the booking to proceed.");
-        }
-    }
-</script>
+      if (terms !== "yes") {
+        alert("আমরা টার্মস না মানলে কাজ করি না।");
+        return;
+      }
 
-</body>
+      if (confirm !== "yes") {
+        alert("বুকিং কনফার্ম না করলে আমরা ফর্ম গ্রহণ করতে পারি না।");
+        return;
+      }
+
+      emailjs.sendForm('service_ri28', 'template_1zbt48l', form)
+      .then(() => {
+        alert("Booking confirmed! Generating certificate...");
+        const cert = document.getElementById("certificate");
+        const content = document.getElementById("certificate-content");
+
+        content.innerHTML = `
+          <p><strong>Client Name:</strong> ${form.client_name.value}</p>
+          <p><strong>Phone:</strong> ${form.phone.value}</p>
+          <p><strong>Email:</strong> ${form.email.value}</p>
+          <p><strong>Identity:</strong> ${form.identity.value}</p>
+          <p><strong>Event Category:</strong> ${form.event_category.value}</p>
+          <p><strong>Package:</strong> ${form.package.value}</p>
+          <p><strong>Date:</strong> ${form.date.value}</p>
+          <p><strong>Time:</strong> ${form.time.value}</p>
+          <p><strong>Location:</strong> ${form.location.value}</p>
+          <p><strong>Payment Status:</strong> ${form.payment_status.value}</p>
+          <p><strong>Confirmed Budget:</strong> ${form.budget.value} BDT</p>
+          <p><strong>Additional Notes:</strong> ${form.extra_notes.value}</p>
+        `;
+
+        document.getElementById("client-name").innerText = form.client_name.value;
+        cert.style.display = "block";
+        form.reset();
+      }, (error) => {
+        console.error(error);
+        alert("Something went wrong. Please try again later.");
+      });
+    });
+  </script></body>
 </html>
