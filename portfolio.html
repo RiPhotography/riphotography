@@ -7,12 +7,11 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .glow-card {
-      box-shadow: 0 4px 20px rgba(255, 150, 200, 0.15);
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
       transition: all 0.3s ease-in-out;
     }
-
     .glow-card:hover {
-      box-shadow: 0 6px 30px rgba(255, 100, 160, 0.3);
+      box-shadow: 0 6px 30px rgba(255, 255, 255, 0.12);
     }
 
     .glow-button {
@@ -22,21 +21,21 @@
     @keyframes pulse {
       0%, 100% {
         transform: scale(1);
-        box-shadow: 0 0 0 rgba(0,0,0,0);
+        box-shadow: 0 0 0 rgba(255, 255, 255, 0);
       }
       50% {
         transform: scale(1.05);
-        box-shadow: 0 0 15px rgba(31, 41, 55, 0.2);
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
       }
     }
   </style>
 </head>
-<body class="bg-gradient-to-b from-white to-gray-100 text-gray-900 min-h-screen flex flex-col">
+<body class="bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white min-h-screen flex flex-col">
 
   <!-- Header -->
-  <header class="text-center py-10 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white shadow-lg">
+  <header class="text-center py-10 bg-gray-900 shadow-lg">
     <h1 class="text-5xl font-bold mb-2">My Creative Portfolio</h1>
-    <p class="text-lg opacity-80">Explore my favorite photography collections</p>
+    <p class="text-lg text-gray-300">Explore my favorite photography collections</p>
   </header>
 
   <!-- Portfolio Cards -->
@@ -44,7 +43,7 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
       <!-- Portraits -->
-      <a href="portraits.html" class="group glow-card bg-white border border-gray-100 rounded-lg transition transform hover:scale-105">
+      <a href="portraits.html" class="group glow-card bg-white border border-gray-200 rounded-lg transition transform hover:scale-105">
         <img src="https://i.postimg.cc/C5wp6wR1/IMG-0582.jpg" alt="Personal Portraits" class="w-full h-56 object-cover rounded-t-lg">
         <div class="p-5 text-center bg-rose-50 rounded-b-lg">
           <h2 class="text-2xl font-bold text-rose-700">Personal Portraits</h2>
@@ -53,7 +52,7 @@
       </a>
 
       <!-- Wedding Works -->
-      <a href="wedding.html" class="group glow-card bg-white border border-gray-100 rounded-lg transition transform hover:scale-105">
+      <a href="wedding.html" class="group glow-card bg-white border border-gray-200 rounded-lg transition transform hover:scale-105">
         <img src="images/wedding/cover.jpg" alt="Wedding Works" class="w-full h-56 object-cover rounded-t-lg">
         <div class="p-5 text-center bg-rose-50 rounded-b-lg">
           <h2 class="text-2xl font-bold text-rose-700">Wedding Works</h2>
@@ -62,7 +61,7 @@
       </a>
 
       <!-- Street Photography -->
-      <a href="street.html" class="group glow-card bg-white border border-gray-100 rounded-lg transition transform hover:scale-105">
+      <a href="street.html" class="group glow-card bg-white border border-gray-200 rounded-lg transition transform hover:scale-105">
         <img src="images/street/cover.jpg" alt="Street Photography" class="w-full h-56 object-cover rounded-t-lg">
         <div class="p-5 text-center bg-rose-50 rounded-b-lg">
           <h2 class="text-2xl font-bold text-rose-700">Street Photography</h2>
@@ -72,8 +71,8 @@
     </div>
 
     <!-- Back to Home Button -->
-    <div class="mt-16 text-center">
-      <a href="index.html" class="glow-button inline-block bg-gray-900 text-white px-8 py-3 rounded-full hover:bg-gray-700 transition font-semibold">← Back to Home</a>
+    <div class="mt-12 text-center">
+      <a href="index.html" class="glow-button inline-block bg-white text-gray-900 px-8 py-3 rounded-full hover:bg-gray-200 transition font-semibold">← Back to Home</a>
     </div>
   </main>
 
