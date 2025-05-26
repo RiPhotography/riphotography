@@ -6,22 +6,23 @@
   <title>Photography Packages - RI Photography</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-white text-gray-800 p-6">
+<body class="bg-white text-gray-800">
 
   <!-- Header -->
-  <a href="#" class="text-4xl font-bold text-center block mb-2">RI Photography</a>
+  <a href="#" class="block bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white text-4xl font-bold text-center py-6 shadow-md">
+    RI Photography
+  </a>
   <p class="text-center text-lg mb-6">Turning Moments into Timeless Art</p>
 
   <!-- Section Title -->
-  <h1 class="text-3xl font-semibold mb-4 border-b pb-2">Our Photography Packages</h1>
+  <h1 class="text-3xl font-semibold mb-6 text-center border-b pb-3 w-fit mx-auto">Our Photography Packages</h1>
 
-  <!-- Single Package -->
-  <div class="mb-6">
-    <h2 class="text-2xl font-bold mb-2">Single Package</h2>
+  <!-- Packages Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-12 lg:px-20 mb-10">
 
     <!-- Basic Package -->
-    <div class="border-2 border-black p-4 rounded-lg shadow hover:shadow-lg transition duration-300 mb-4">
-      <h3 class="text-xl font-semibold mb-2">Basic Package</h3>
+    <div class="border-2 border-black p-4 rounded-xl shadow hover:shadow-lg transition duration-300">
+      <h2 class="text-2xl font-bold mb-2">Basic Package</h2>
       <ul class="list-disc list-inside space-y-1">
         <li>1 Photographer</li>
         <li>3 Hours Coverage</li>
@@ -31,8 +32,8 @@
     </div>
 
     <!-- Standard Package -->
-    <div class="border-2 border-black p-4 rounded-lg shadow hover:shadow-lg transition duration-300 mb-4">
-      <h3 class="text-xl font-semibold mb-2">Standard Package</h3>
+    <div class="border-2 border-black p-4 rounded-xl shadow hover:shadow-lg transition duration-300">
+      <h2 class="text-2xl font-bold mb-2">Standard Package</h2>
       <img src="https://i.postimg.cc/wvrRzbdD/Beige-and-Gold-Elegant-Wedding-Package-Instagram-Post-20250515-224311-0000.png" alt="Couple Package" class="mb-3 rounded">
       <ul class="list-disc list-inside space-y-1">
         <li>1 Photographer</li>
@@ -44,17 +45,22 @@
     </div>
 
     <!-- Premium Package -->
-    <div class="border-2 border-black p-4 rounded-lg shadow hover:shadow-lg transition duration-300">
-      <h3 class="text-xl font-semibold mb-2">Premium Package</h3>
+    <div class="border-2 border-black p-4 rounded-xl shadow hover:shadow-lg transition duration-300">
+      <h2 class="text-2xl font-bold mb-2">Premium Package</h2>
       <img src="https://i.postimg.cc/FHFSjSGd/FB-IMG-1748144944773.jpg" alt="Customized Package" class="mb-3 rounded">
       <ul class="list-disc list-inside space-y-1">
         <li>You can customize any package</li>
       </ul>
     </div>
+
   </div>
 
   <!-- Back Button -->
-  <a href="#" class="text-blue-600 hover:underline mt-6 block">← Back to Home</a>
+  <div class="text-center mb-10">
+    <a href="#" class="inline-block bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-semibold py-2 px-6 rounded-full shadow hover:shadow-lg transition duration-300">
+      ← Back to Home
+    </a>
+  </div>
 
 </body>
 </html>
