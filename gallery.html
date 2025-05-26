@@ -1,29 +1,71 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>RI Photography Booking</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Booking - RI Photography</title>
   <style>
-    html, body {
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      height: 100%;
-      background-color: #000;
+      background: #f7f7f7;
+      color: #333;
     }
-    .tally-embed {
-      width: 100%;
-      height: 100%;
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+    h2 {
+      color: #4CAF50;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+    iframe {
       border: none;
+      width: 100%;
+      min-height: 1600px;
+      border-radius: 8px;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
-  <iframe
-    class="tally-embed"
-    src="https://tally.so/r/3NQpRB?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-    title="RI Photography Booking Form"
-    loading="lazy"
-    allowfullscreen
-  ></iframe>
+  <header>RI Photography Booking</header>
+
+  <div class="container">
+    <h2>Booking Form</h2>
+    <p>Please fill out the form below to book your preferred photography session. We will contact you shortly.</p>
+
+    <iframe 
+      src="https://docs.google.com/forms/d/e/1FAIpQLScuIKfXiYyi01UG78uliICxEoN4FLuxJz6Fhc3Zn1hqG3JqCg/viewform?embedded=true"
+      title="RI Photography Booking Form"
+      ></iframe>
+  </div>
+
+  <footer>
+    &copy; 2025 RI Photography | All Rights Reserved
+  </footer>
 </body>
 </html>
