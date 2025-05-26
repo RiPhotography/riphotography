@@ -7,65 +7,54 @@
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
       background: #f7f7f7;
-      color: #333;
+      margin: 0;
+      padding: 30px;
+      text-align: center;
     }
-    header {
+    button {
       background-color: #4CAF50;
       color: white;
-      padding: 20px;
-      text-align: center;
-      font-size: 2rem;
-      font-weight: bold;
-    }
-    .container {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 20px;
-      background: white;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      font-size: 1.5rem;
+      padding: 15px 40px;
+      border: none;
       border-radius: 8px;
-    }
-    h2 {
-      color: #4CAF50;
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
       margin-bottom: 20px;
     }
-    iframe {
-      border: none;
-      width: 100%;
-      min-height: 1600px;
-      border-radius: 8px;
+    button:hover {
+      background-color: #45a049;
     }
-    footer {
-      text-align: center;
-      padding: 15px;
-      font-size: 0.9rem;
-      color: #666;
-      margin-top: 40px;
+    iframe {
+      width: 100%;
+      max-width: 900px;
+      height: 1600px;
+      border: none;
+      border-radius: 8px;
+      display: none;
+      margin: 0 auto;
     }
   </style>
 </head>
 <body>
-  <header>RI Photography Booking</header>
 
-  <div class="container">
-    <h2>Booking Form</h2>
-    <p>Please fill out the form below to book your preferred photography session. We will contact you shortly.</p>
+  <button id="bookNowBtn">Book Now</button>
 
-    <iframe 
-      src="https://docs.google.com/forms/d/e/1FAIpQLScuIKfXiYyi01UG78uliICxEoN4FLuxJz6Fhc3Zn1hqG3JqCg/viewform?embedded=true"
-      title="RI Photography Booking Form"
-      ></iframe>
-  </div>
+  <iframe id="bookingForm" src="https://docs.google.com/forms/d/e/1FAIpQLScuIKfXiYyi01UG78uliICxEoN4FLuxJz6Fhc3Zn1hqG3JqCg/viewform?embedded=true" title="RI Photography Booking Form"></iframe>
 
-  <footer>
-    &copy; 2025 RI Photography | All Rights Reserved
-  </footer>
+  <script>
+    document.getElementById('bookNowBtn').addEventListener('click', function() {
+      const form = document.getElementById('bookingForm');
+      if (form.style.display === "none" || form.style.display === "") {
+        form.style.display = "block";
+        this.textContent = "Close Form";
+      } else {
+        form.style.display = "none";
+        this.textContent = "Book Now";
+      }
+    });
+  </script>
+
 </body>
 </html>
