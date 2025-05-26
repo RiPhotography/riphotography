@@ -1,174 +1,228 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RI Photography Booking</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 700px;
-      margin: auto;
-      background: #fff;
-      padding: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      border-radius: 10px;
-    }
-    h2, h3 {
-      text-align: center;
-      color: #333;
-    }
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-    }
-    input, select, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    .hidden {
-      display: none;
-    }
-    button {
-      margin-top: 20px;
-      background-color: #333;
-      color: #fff;
-      padding: 12px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      width: 100%;
-    }
-    .certificate {
-      margin-top: 40px;
-      border: 2px solid #000;
-      padding: 20px;
-      background-color: #fff;
-    }
-    .signature {
-      font-family: 'Brush Script MT', cursive;
-      font-size: 24px;
-      float: right;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RI Photography Booking Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        .submit-section {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .certificate {
+            border: 2px solid #000;
+            padding: 20px;
+            margin-top: 40px;
+            display: none;
+        }
+        .signature {
+            font-family: 'Brush Script MT', cursive;
+        }
+        .signature-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        .terms {
+            page-break-before: always;
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-  <h2>RI Photography – Booking Form</h2>
-  <form id="bookingForm" action="https://formsubmit.co/riphotography2021@gmail.com" method="POST">
-    <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
-    <input type="hidden" name="_captcha" value="false"><label>আপনি কি আমাদের টার্মস এন্ড কন্ডিশন এ রাজি আছেন?</label>
-<select id="agreeTerms">
-  <option value="yes">Yes</option>
-  <option value="no">No</option>
-</select>
+    <h1>RI Photography – Terms & Conditions</h1>
+    <p style="text-align: center;">(Please read before booking)</p><form id="bookingForm">
+    <label>Are you agree with our Terms & Conditions?
+        <select id="agreeTerms">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+    </label>
 
-<label>Client Name [Full Name]</label>
-<input type="text" id="clientName" name="Client Name" required>
+    <label>Client Name [Full Name]:
+        <input type="text" id="clientName" required>
+    </label>
 
-<label>Phone Number</label>
-<input type="tel" id="phone" name="Phone" required>
+    <label>Phone Number:
+        <input type="tel" id="phone" required>
+    </label>
 
-<label>Email</label>
-<input type="email" id="email" name="Email" required>
+    <label>Email:
+        <input type="email" id="email" required>
+    </label>
 
-<label>I'm _________ of the event</label>
-<select id="identity" name="Identity">
-  <option>Host</option>
-  <option>Organizer</option>
-  <option>Model</option>
-</select>
+    <label>I'm _______ or the event:
+        <select id="role">
+            <option>Host</option>
+            <option>Organizer</option>
+            <option>Model</option>
+        </select>
+    </label>
 
-<label>Event Category</label>
-<select id="eventCategory" name="Event Category">
-  <option>Outdoor</option>
-  <option>Indoor</option>
-  <option>Wedding</option>
-  <option>Customized</option>
-</select>
+    <label>Event Category:
+        <input type="text" id="category">
+    </label>
 
-<label>Package</label>
-<select id="package" name="Package">
-  <option>Package 1</option>
-  <option>Package 2</option>
-  <option>Customized</option>
-</select>
+    <label>Package:
+        <select id="package">
+            <option>Package 1</option>
+            <option>Package 2</option>
+            <option>Customized</option>
+        </select>
+    </label>
 
-<label>Date</label>
-<input type="date" id="eventDate" name="Event Date" required>
+    <label>Date:
+        <input type="date" id="date">
+    </label>
 
-<label>Time</label>
-<input type="time" id="eventTime" name="Event Time" required>
+    <label>Time:
+        <input type="time" id="time">
+    </label>
 
-<label>Location</label>
-<input type="text" id="location" name="Location" required>
+    <label>Location:
+        <input type="text" id="location">
+    </label>
 
-<label>Payment Status</label>
-<select id="paymentStatus" name="Payment Status">
-  <option>Complete</option>
-  <option>Pending</option>
-</select>
+    <label>Payment Status:
+        <select id="paymentStatus">
+            <option>Complete</option>
+            <option>Pending</option>
+        </select>
+    </label>
 
-<label>Confirming Budget (BDT)</label>
-<input type="number" id="budget" name="Budget" required>
+    <label>Confirming Budget (BDT):
+        <input type="number" id="budget">
+    </label>
 
-<label>Extra Requirements</label>
-<textarea id="extra" name="Extra Requirements" rows="4"></textarea>
+    <label>Additional Requirements:
+        <textarea id="extraNotes" rows="4"></textarea>
+    </label>
 
-<label>আপনি কি বুকিং কনফার্ম করছেন?</label>
-<select id="confirmBooking" name="Confirm Booking">
-  <option>Yes</option>
-  <option>No</option>
-</select>
+    <label>Do you confirm this booking?
+        <select id="finalConfirm">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+    </label>
 
-<button type="submit">Submit Booking</button>
+    <div class="submit-section">
+        <button type="button" onclick="generateCertificate()">Submit / Book</button>
+    </div>
+</form>
 
-  </form>  <div class="certificate hidden" id="confirmation">
-    <h3>RI Photography – Booking Confirmation</h3>
-    <p id="certContent"></p>
-    <p style="margin-top: 40px;">
-      Client: <span id="clientSign"></span><br>
-      <span class="signature">RI Rahat</span>
-    </p>
-  </div>
-</div><script>
-  const form = document.getElementById('bookingForm');
-  const confirmation = document.getElementById('confirmation');
-  const certContent = document.getElementById('certContent');
-  const clientSign = document.getElementById('clientSign');
+<div id="confirmationCertificate" class="certificate">
+    <h2>Booking Confirmation Certificate</h2>
+    <p>This certifies that <strong id="confName"></strong> has confirmed a booking with <strong>RI Photography</strong>.</p>
+    <p>Thank you for trusting us to turn your moments into timeless art.</p>
 
-  form.addEventListener('submit', function(e) {
-    if (document.getElementById('agreeTerms').value === 'no') {
-      alert('আমরা টার্মস না মানলে কাজ করি না।');
-      e.preventDefault();
-      return;
+    <div class="signature-section">
+        <div>
+            <p>Client:</p>
+            <p id="clientSign"></p>
+        </div>
+        <div>
+            <p>RI Photography:</p>
+            <p class="signature">RI Rahat</p>
+        </div>
+    </div>
+</div>
+
+<div class="terms">
+    <h2>Terms & Conditions</h2>
+    <ol>
+        <li><strong>Booking Confirmation:</strong>
+            <ol type="i">
+                <li>To confirm the booking, a minimum of 30% advance payment is required.</li>
+                <li>No date or time will be reserved without the advance payment.</li>
+            </ol>
+        </li>
+        <li><strong>Booking Cancellation & Date Change:</strong>
+            <ol type="i">
+                <li>If the client cancels without a valid reason, they will incur a penalty of 50% of the contract amount.</li>
+                <li>In case of weather/emergency, a one-time date change is allowed based on availability.</li>
+            </ol>
+        </li>
+        <li><strong>Payment:</strong>
+            <ol type="i">
+                <li>Remaining balance must be paid on the day of the shoot or within 2 days.</li>
+                <li>No images will be delivered until full payment is received.</li>
+            </ol>
+        </li>
+        <li><strong>Image Delivery Timeframe:</strong>
+            <ol type="i">
+                <li>Edited images: 7–10 business days.</li>
+                <li>Video or event packages: 15–20 business days.</li>
+            </ol>
+        </li>
+        <li><strong>Image Usage Rights:</strong>
+            <ol type="i">
+                <li>Photographer can use selected images for portfolio/website/promo.</li>
+                <li>Client must inform in writing if not agreed (extra charges may apply).</li>
+            </ol>
+        </li>
+        <li><strong>RAW Files & Editing:</strong>
+            <ol type="i">
+                <li>No RAW/unedited files will be provided.</li>
+                <li>Editing style is photographer’s creative discretion.</li>
+                <li>One-time minor revision allowed; extras may incur charges.</li>
+            </ol>
+        </li>
+        <li><strong>Client's Responsibilities:</strong>
+            <ol type="i">
+                <li>Client must be on time, cooperative, and maintain decorum.</li>
+                <li>Photographer not responsible for non-cooperation impacts.</li>
+            </ol>
+        </li>
+        <li><strong>Backup Storage:</strong>
+            <ol type="i">
+                <li>Files stored up to 30 days after delivery.</li>
+                <li>After that, lost files may not be retrievable.</li>
+            </ol>
+        </li>
+        <li><strong>Force Majeure:</strong>
+            <ol type="i">
+                <li>In case of disaster, health issues, or uncontrollable events, both parties will discuss next steps mutually.</li>
+            </ol>
+        </li>
+    </ol>
+    <p style="text-align:center; margin-top: 40px;">Thank you</p>
+</div>
+
+<script>
+    function generateCertificate() {
+        const agreed = document.getElementById("agreeTerms").value;
+        const finalConfirm = document.getElementById("finalConfirm").value;
+        const name = document.getElementById("clientName").value;
+
+        if (agreed === "no") {
+            alert("We don't work if we don't follow the terms.");
+            return;
+        }
+
+        if (finalConfirm === "yes" && name) {
+            document.getElementById("confName").innerText = name;
+            document.getElementById("clientSign").innerText = name;
+            document.getElementById("confirmationCertificate").style.display = "block";
+        } else {
+            alert("Please confirm the booking to proceed.");
+        }
     }
+</script>
 
-    const data = {
-      name: document.getElementById('clientName').value,
-      category: document.getElementById('eventCategory').value,
-      date: document.getElementById('eventDate').value,
-      time: document.getElementById('eventTime').value,
-      location: document.getElementById('location').value,
-      package: document.getElementById('package').value,
-      payment: document.getElementById('paymentStatus').value,
-      budget: document.getElementById('budget').value,
-      extra: document.getElementById('extra').value,
-    };
-
-    certContent.innerHTML = `This is to confirm that <strong>${data.name}</strong> has successfully booked RI Photography for a(n) <strong>${data.category}</strong> event on <strong>${data.date}</strong> at <strong>${data.time}</strong>, to be held at <strong>${data.location}</strong>. Package selected: <strong>${data.package}</strong>. Payment Status: <strong>${data.payment}</strong>. Budget Confirmed: <strong>${data.budget} BDT</strong>.<br><br>Extra Notes: ${data.extra}`;
-
-    clientSign.innerText = data.name;
-    confirmation.classList.remove('hidden');
-    form.classList.add('hidden');
-  });
-</script></body>
+</body>
 </html>
