@@ -5,6 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Photography Packages - RI Photography</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Animation for the box around the header */
+    @keyframes pulse-border {
+      0%, 100% {
+        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5);
+      }
+      50% {
+        box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+      }
+    }
+
+    .animated-box {
+      animation: pulse-border 2.5s infinite;
+      border-radius: 0.75rem; /* Tailwind's rounded-xl */
+      border: 4px solid #3b82f6; /* Tailwind blue-500 */
+      padding: 0.5rem 1.5rem;
+      display: inline-block;
+      color: #1e40af; /* Tailwind blue-900 */
+      font-weight: 600;
+      font-size: 1.875rem; /* Tailwind text-3xl */
+      margin-bottom: 1.5rem;
+    }
+
+    /* Back button hover animation */
+    .btn-animated:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 15px rgba(139, 92, 246, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  </style>
 </head>
 <body class="bg-white text-gray-800">
 
@@ -14,8 +44,12 @@
   </a>
   <p class="text-center text-lg mb-6">Turning Moments into Timeless Art</p>
 
-  <!-- Section Title -->
-  <h1 class="text-3xl font-semibold mb-6 text-center border-b pb-3 w-fit mx-auto">Our Photography Packages</h1>
+  <!-- Section Title with Animated Box -->
+  <div class="text-center">
+    <div class="animated-box mx-auto">
+      Our Photography Packages
+    </div>
+  </div>
 
   <!-- Packages Grid -->
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-12 lg:px-20 mb-10">
@@ -55,9 +89,9 @@
 
   </div>
 
-  <!-- Back Button -->
+  <!-- Back Button with animation -->
   <div class="text-center mb-10">
-    <a href="#" class="inline-block bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-semibold py-2 px-6 rounded-full shadow hover:shadow-lg transition duration-300">
+    <a href="#" class="inline-block bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-semibold py-2 px-6 rounded-full shadow hover:shadow-lg transition duration-300 btn-animated">
       ← Back to Home
     </a>
   </div>
