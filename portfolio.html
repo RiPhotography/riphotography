@@ -7,18 +7,26 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .glow-card {
-      border: 1px solid rgba(147, 197, 253, 0.4); /* Soft blue border */
-      box-shadow: 0 0 12px rgba(147, 197, 253, 0.15); /* Light blue glow */
-      transition: all 0.3s ease-in-out;
+      border: 2px solid rgba(147, 197, 253, 0.3); /* Soft blue border */
+      box-shadow: 0 0 15px rgba(147, 197, 253, 0.15); /* Light blue glow */
+      transition: all 0.4s ease;
     }
 
     .glow-card:hover {
-      box-shadow: 0 0 25px rgba(147, 197, 253, 0.35);
-      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(147, 197, 253, 0.35);
+      transform: translateY(-5px) scale(1.03);
+      border-color: rgba(147, 197, 253, 0.7);
     }
 
     .glow-button {
+      background: linear-gradient(to right, #4f46e5, #3b82f6, #06b6d4);
+      color: white;
       animation: pulse 2s infinite;
+    }
+
+    .glow-button:hover {
+      background: linear-gradient(to right, #06b6d4, #3b82f6, #4f46e5);
+      transform: scale(1.05);
     }
 
     @keyframes pulse {
@@ -75,7 +83,7 @@
 
     <!-- Back to Home Button -->
     <div class="mt-12 text-center">
-      <a href="index.html" class="glow-button inline-block bg-white text-gray-900 px-8 py-3 rounded-full hover:bg-gray-200 transition font-semibold">← Back to Home</a>
+      <a href="index.html" class="glow-button inline-block px-8 py-3 rounded-full transition font-semibold">← Back to Home</a>
     </div>
   </main>
 
