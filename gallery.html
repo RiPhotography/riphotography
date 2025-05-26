@@ -1,252 +1,31 @@
-<!DOCTYPE html><html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RI Photography Booking Form</title>
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #f2f2f2, #d9e4f5);
-      margin: 0;
-      padding: 20px;
-    }
-    .container {
-      max-width: 800px;
-      margin: auto;
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    }
-    h2, h3 {
-      text-align: center;
-    }
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-    }
-    input, select, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    button {
-      margin-top: 20px;
-      padding: 15px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    .certificate {
-      display: none;
-      background: #fff;
-      border: 1px solid #ccc;
-      padding: 30px;
-      margin-top: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
-    .signature {
-      font-family: 'Brush Script MT', cursive;
-      font-size: 24px;
-    }
-    .terms {
-      margin-top: 40px;
-      font-size: 14px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h2>RI Photography – Booking Form</h2>
-    <form id="booking-form">
-      <label>Do you accept our Terms & Conditions?</label>
-      <select name="terms_accept" required>
-        <option value="">Select</option>
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-      </select><label>Client Name [Full Name]</label>
-  <input type="text" name="client_name" required>
-
-  <label>Phone Number</label>
-  <input type="text" name="phone" required>
-
-  <label>Email</label>
-  <input type="email" name="email" required>
-
-  <label>I am the</label>
-  <select name="identity" required>
-    <option value="host">Host</option>
-    <option value="organizer">Organizer</option>
-    <option value="model">Model</option>
-  </select>
-
-  <label>Event Category</label>
-  <input type="text" name="event_category" required>
-
-  <label>Package</label>
-  <select name="package" required>
-    <option value="Package 1">Package 1</option>
-    <option value="Package 2">Package 2</option>
-    <option value="Customized">Customized</option>
-  </select>
-
-  <label>Date</label>
-  <input type="date" name="date" required>
-
-  <label>Time</label>
-  <input type="time" name="time" required>
-
-  <label>Location</label>
-  <input type="text" name="location" required>
-
-  <label>Payment Status</label>
-  <select name="payment_status" required>
-    <option value="Complete">Complete</option>
-    <option value="Pending">Pending</option>
-  </select>
-
-  <label>Confirming Budget (BDT)</label>
-  <input type="number" name="budget" required>
-
-  <label>Additional Requirements</label>
-  <textarea name="extra_notes" rows="4"></textarea>
-
-  <label>Are you confirming this booking?</label>
-  <select name="booking_confirm" required>
-    <option value="yes">Yes</option>
-    <option value="no">No</option>
-  </select>
-
-  <button type="submit">Submit Booking</button>
-</form>
-
-<div id="certificate" class="certificate">
-  <h3>RI Photography - Booking Confirmation</h3>
-  <div id="certificate-content"></div>
-  <br><br>
-  <div style="display: flex; justify-content: space-between; margin-top: 40px;">
-    <div><strong>Client Signature:</strong><br><span id="client-name"></span></div>
-    <div><strong>RI Photography</strong><br><span class="signature">RI Rahat</span></div>
-  </div>
+<!-- Tally.so Embed Form -->
+<div style="max-width: 100%; height: 100vh;">
+  <iframe 
+    data-tally-src="https://tally.so/r/3NQpRB?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+    loading="lazy"
+    width="100%"
+    height="100%"
+    frameborder="0"
+    marginheight="0"
+    marginwidth="0"
+    title="Booking Form"
+  ></iframe>
 </div>
 
-<div class="terms">
-  <h3>Terms & Conditions</h3>
-  <ol>
-    <li>Booking Confirmation:
-      <ul>
-        <li>i) 30% advance required to confirm the booking.</li>
-        <li>ii) No date/time reserved without advance payment.</li>
-      </ul>
-    </li>
-    <li>Cancellation & Date Change:
-      <ul>
-        <li>i) 50% penalty without valid reason for cancellation.</li>
-        <li>ii) One-time date change allowed due to emergency/weather.</li>
-      </ul>
-    </li>
-    <li>Payment:
-      <ul>
-        <li>i) Rest of the payment due on shoot day or within 2 days.</li>
-        <li>ii) No images will be delivered without full payment.</li>
-      </ul>
-    </li>
-    <li>Delivery Time:
-      <ul>
-        <li>i) Edited images within 7-10 business days.</li>
-        <li>ii) Video/larger packages: 15-20 business days.</li>
-      </ul>
-    </li>
-    <li>Image Rights:
-      <ul>
-        <li>i) Photographer may use selected images for portfolio.</li>
-        <li>ii) Inform in writing if not agreed. Extra charge may apply.</li>
-      </ul>
-    </li>
-    <li>RAW Files & Editing:
-      <ul>
-        <li>i) RAW files not provided.</li>
-        <li>ii) Editing style chosen by photographer.</li>
-        <li>iii) One-time minor revision allowed.</li>
-      </ul>
-    </li>
-    <li>Client Responsibilities:
-      <ul>
-        <li>i) Be present on time and cooperate.</li>
-        <li>ii) Photographer not responsible for others' misbehavior.</li>
-      </ul>
-    </li>
-    <li>Backup:
-      <ul>
-        <li>i) Stored for up to 30 days.</li>
-        <li>ii) After that, may not be retrievable.</li>
-      </ul>
-    </li>
-    <li>Force Majeure:
-      <ul>
-        <li>i) Natural disaster/accident/health issue may delay service.</li>
-      </ul>
-    </li>
-  </ol>
-</div>
-
-  </div>  <script>
-    (function(){
-      emailjs.init("pISh5CiJ8Pkr6BXKD");
-    })();
-
-    document.getElementById("booking-form").addEventListener("submit", function(event) {
-      event.preventDefault();
-      const form = this;
-      const terms = form.terms_accept.value;
-      const confirm = form.booking_confirm.value;
-
-      if (terms !== "yes") {
-        alert("আমরা টার্মস না মানলে কাজ করি না।");
-        return;
-      }
-
-      if (confirm !== "yes") {
-        alert("বুকিং কনফার্ম না করলে আমরা ফর্ম গ্রহণ করতে পারি না।");
-        return;
-      }
-
-      emailjs.sendForm('service_ri28', 'template_1zbt48l', form)
-      .then(() => {
-        alert("Booking confirmed! Generating certificate...");
-        const cert = document.getElementById("certificate");
-        const content = document.getElementById("certificate-content");
-
-        content.innerHTML = `
-          <p><strong>Client Name:</strong> ${form.client_name.value}</p>
-          <p><strong>Phone:</strong> ${form.phone.value}</p>
-          <p><strong>Email:</strong> ${form.email.value}</p>
-          <p><strong>Identity:</strong> ${form.identity.value}</p>
-          <p><strong>Event Category:</strong> ${form.event_category.value}</p>
-          <p><strong>Package:</strong> ${form.package.value}</p>
-          <p><strong>Date:</strong> ${form.date.value}</p>
-          <p><strong>Time:</strong> ${form.time.value}</p>
-          <p><strong>Location:</strong> ${form.location.value}</p>
-          <p><strong>Payment Status:</strong> ${form.payment_status.value}</p>
-          <p><strong>Confirmed Budget:</strong> ${form.budget.value} BDT</p>
-          <p><strong>Additional Notes:</strong> ${form.extra_notes.value}</p>
-        `;
-
-        document.getElementById("client-name").innerText = form.client_name.value;
-        cert.style.display = "block";
-        form.reset();
-      }, (error) => {
-        console.error(error);
-        alert("Something went wrong. Please try again later.");
-      });
-    });
-  </script></body>
-</html>
+<script>
+  var d = document, w = "https://tally.so/widgets/embed.js", v = function() {
+    if (!d.querySelector('script[src="' + w + '"]')) {
+      var s = d.createElement("script");
+      s.src = w;
+      s.onload = function() {
+        Tally.loadEmbeds();
+      };
+      d.body.appendChild(s);
+    }
+  };
+  if (document.readyState === "complete") {
+    v();
+  } else {
+    window.addEventListener("load", v);
+  }
+</script>
