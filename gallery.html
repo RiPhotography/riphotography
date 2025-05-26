@@ -1,18 +1,174 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Booking Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RI Photography Booking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    h2, h3 {
+      text-align: center;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .hidden {
+      display: none;
+    }
+    button {
+      margin-top: 20px;
+      background-color: #333;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+    .certificate {
+      margin-top: 40px;
+      border: 2px solid #000;
+      padding: 20px;
+      background-color: #fff;
+    }
+    .signature {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 24px;
+      float: right;
+    }
+  </style>
 </head>
 <body>
+<div class="container">
+  <h2>RI Photography – Booking Form</h2>
+  <form id="bookingForm" action="https://formsubmit.co/riphotography2021@gmail.com" method="POST">
+    <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+    <input type="hidden" name="_captcha" value="false"><label>আপনি কি আমাদের টার্মস এন্ড কন্ডিশন এ রাজি আছেন?</label>
+<select id="agreeTerms">
+  <option value="yes">Yes</option>
+  <option value="no">No</option>
+</select>
 
-  <h1>Book for Your Shoot</h1>
+<label>Client Name [Full Name]</label>
+<input type="text" id="clientName" name="Client Name" required>
 
-  <!-- Google Form Embed -->
-  <iframe src="https://docs.google.com/forms/d/18plRHem0EMcmgDEDiuGDfx11B6d5a5ekmKleHmKqnWs/edit?usp=drivesdk"
-          width="640" height="1200" frameborder="0" marginheight="0" marginwidth="0">
-    Loading…
-  </iframe>
+<label>Phone Number</label>
+<input type="tel" id="phone" name="Phone" required>
 
-</body>
+<label>Email</label>
+<input type="email" id="email" name="Email" required>
+
+<label>I'm _________ of the event</label>
+<select id="identity" name="Identity">
+  <option>Host</option>
+  <option>Organizer</option>
+  <option>Model</option>
+</select>
+
+<label>Event Category</label>
+<select id="eventCategory" name="Event Category">
+  <option>Outdoor</option>
+  <option>Indoor</option>
+  <option>Wedding</option>
+  <option>Customized</option>
+</select>
+
+<label>Package</label>
+<select id="package" name="Package">
+  <option>Package 1</option>
+  <option>Package 2</option>
+  <option>Customized</option>
+</select>
+
+<label>Date</label>
+<input type="date" id="eventDate" name="Event Date" required>
+
+<label>Time</label>
+<input type="time" id="eventTime" name="Event Time" required>
+
+<label>Location</label>
+<input type="text" id="location" name="Location" required>
+
+<label>Payment Status</label>
+<select id="paymentStatus" name="Payment Status">
+  <option>Complete</option>
+  <option>Pending</option>
+</select>
+
+<label>Confirming Budget (BDT)</label>
+<input type="number" id="budget" name="Budget" required>
+
+<label>Extra Requirements</label>
+<textarea id="extra" name="Extra Requirements" rows="4"></textarea>
+
+<label>আপনি কি বুকিং কনফার্ম করছেন?</label>
+<select id="confirmBooking" name="Confirm Booking">
+  <option>Yes</option>
+  <option>No</option>
+</select>
+
+<button type="submit">Submit Booking</button>
+
+  </form>  <div class="certificate hidden" id="confirmation">
+    <h3>RI Photography – Booking Confirmation</h3>
+    <p id="certContent"></p>
+    <p style="margin-top: 40px;">
+      Client: <span id="clientSign"></span><br>
+      <span class="signature">RI Rahat</span>
+    </p>
+  </div>
+</div><script>
+  const form = document.getElementById('bookingForm');
+  const confirmation = document.getElementById('confirmation');
+  const certContent = document.getElementById('certContent');
+  const clientSign = document.getElementById('clientSign');
+
+  form.addEventListener('submit', function(e) {
+    if (document.getElementById('agreeTerms').value === 'no') {
+      alert('আমরা টার্মস না মানলে কাজ করি না।');
+      e.preventDefault();
+      return;
+    }
+
+    const data = {
+      name: document.getElementById('clientName').value,
+      category: document.getElementById('eventCategory').value,
+      date: document.getElementById('eventDate').value,
+      time: document.getElementById('eventTime').value,
+      location: document.getElementById('location').value,
+      package: document.getElementById('package').value,
+      payment: document.getElementById('paymentStatus').value,
+      budget: document.getElementById('budget').value,
+      extra: document.getElementById('extra').value,
+    };
+
+    certContent.innerHTML = `This is to confirm that <strong>${data.name}</strong> has successfully booked RI Photography for a(n) <strong>${data.category}</strong> event on <strong>${data.date}</strong> at <strong>${data.time}</strong>, to be held at <strong>${data.location}</strong>. Package selected: <strong>${data.package}</strong>. Payment Status: <strong>${data.payment}</strong>. Budget Confirmed: <strong>${data.budget} BDT</strong>.<br><br>Extra Notes: ${data.extra}`;
+
+    clientSign.innerText = data.name;
+    confirmation.classList.remove('hidden');
+    form.classList.add('hidden');
+  });
+</script></body>
 </html>
