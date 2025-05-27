@@ -6,24 +6,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Personal Portraits</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lightbox2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/css/lightbox.min.css" rel="stylesheet" />
 </head>
 <body class="bg-gray-100 text-black p-6">
   <h1 class="text-3xl font-bold text-center mb-8">Personal Portraits</h1>
 
   <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
-    <img src="https://i.postimg.cc/PxNDvM2t/FB-IMG-1748235766745.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
-    <img src="https://i.postimg.cc/tT7S5w9w/FB-IMG-1748235762871.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
-    <img src="https://i.postimg.cc/gJ5MBsJJ/FB-IMG-1748235760673.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
-    <img src="https://i.postimg.cc/VvC7ytrF/FB-IMG-1748235756318.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
-    <img src="https://i.postimg.cc/NG3J6dSC/FB-IMG-1748235753078.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
-    <img src="https://i.postimg.cc/L8TxM2XG/FB-IMG-1748235749557.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
-    <img src="https://i.postimg.cc/J042kvSs/FB-IMG-1748235796593.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
-    <img src="https://i.postimg.cc/rFHPDhjp/FB-IMG-1748235793977.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
-    <img src="https://i.postimg.cc/Cxy4y9Jb/FB-IMG-1748235791453.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
-    <!-- বাকি ছবিগুলো একইভাবে যুক্ত করুন নিচের ফরম্যাটে -->
+    <a href="https://i.postimg.cc/PxNDvM2t/FB-IMG-1748235766745.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/PxNDvM2t/FB-IMG-1748235766745.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/tT7S5w9w/FB-IMG-1748235762871.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/tT7S5w9w/FB-IMG-1748235762871.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/gJ5MBsJJ/FB-IMG-1748235760673.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/gJ5MBsJJ/FB-IMG-1748235760673.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/VvC7ytrF/FB-IMG-1748235756318.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/VvC7ytrF/FB-IMG-1748235756318.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/NG3J6dSC/FB-IMG-1748235753078.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/NG3J6dSC/FB-IMG-1748235753078.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/L8TxM2XG/FB-IMG-1748235749557.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/L8TxM2XG/FB-IMG-1748235749557.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/J042kvSs/FB-IMG-1748235796593.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/J042kvSs/FB-IMG-1748235796593.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/rFHPDhjp/FB-IMG-1748235793977.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/rFHPDhjp/FB-IMG-1748235793977.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/Cxy4y9Jb/FB-IMG-1748235791453.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/Cxy4y9Jb/FB-IMG-1748235791453.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
+    <!-- বাকি ছবিগুলো একইভাবে নিচের ফরম্যাটে যুক্ত করুন -->
     <!--
-    <img src="IMAGE_LINK" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    <a href="FULL_IMAGE_URL" data-lightbox="portraits">
+      <img src="THUMBNAIL_IMAGE_URL" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
     -->
   </div>
+
+  <!-- Lightbox2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/js/lightbox.min.js"></script>
 </body>
 </html>
