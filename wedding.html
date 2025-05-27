@@ -19,6 +19,10 @@
       to   { box-shadow: 0 0 20px #0ff, 0 0 30px #f0f, 0 0 40px #fff; }
     }
 
+    .back-link {
+      transition: all 0.3s ease-in-out;
+    }
+
     .back-link:hover {
       transform: scale(1.05);
       background-color: #4b5563;
@@ -27,9 +31,21 @@
     html {
       scroll-behavior: smooth;
     }
+
+    /* Fade-in animation on page load */
+    .fade-in {
+      opacity: 0;
+      animation: fadeInEffect 1s ease-in-out forwards;
+    }
+
+    @keyframes fadeInEffect {
+      to {
+        opacity: 1;
+      }
+    }
   </style>
 </head>
-<body class="bg-gradient-to-b from-black to-gray-900 text-white min-h-screen p-4 sm:p-6">
+<body class="bg-gradient-to-b from-black to-gray-900 text-white min-h-screen p-4 sm:p-6 fade-in">
 
   <!-- Header with glowing white box -->
   <div onclick="location.reload();" class="bg-white p-4 rounded-lg mb-8 glow-box cursor-pointer">
@@ -63,9 +79,9 @@
   </div>
 
   <!-- Back to Portfolio and Home -->
-  <div class="text-center mt-10 space-x-4">
-    <a href="portfolio.html" class="back-link inline-block text-white bg-gray-800 px-6 py-3 rounded transition-transform duration-300 ease-in-out">← Back to Portfolio</a>
-    <a href="index.html" class="back-link inline-block text-white bg-gray-800 px-6 py-3 rounded transition-transform duration-300 ease-in-out">← Back to Home</a>
+  <div class="text-center mt-10 flex justify-center space-x-4">
+    <a href="portfolio.html" class="back-link text-white bg-gray-800 px-6 py-3 rounded shadow-md">← Back to Portfolio</a>
+    <a href="index.html" class="back-link text-white bg-gray-800 px-6 py-3 rounded shadow-md">← Back to Home</a>
   </div>
 
 </body>
