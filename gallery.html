@@ -16,6 +16,7 @@
 
     .cartoon-container {
       margin-bottom: 20px;
+      cursor: pointer;
     }
 
     .cartoon-container img {
@@ -27,23 +28,6 @@
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(10px); }
-    }
-
-    button {
-      background-color: #4CAF50;
-      color: white;
-      font-size: 1.5rem;
-      padding: 15px 40px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      margin-bottom: 40px;
-      margin-top: 20px;
-    }
-
-    button:hover {
-      background-color: #45a049;
     }
 
     iframe {
@@ -60,26 +44,18 @@
 </head>
 <body>
 
-  <div class="cartoon-container">
+  <div class="cartoon-container" onclick="toggleForm()">
     <img src="https://i.postimg.cc/Qt2SNNyD/1000031635-removebg-preview.png" alt="Click Below Cartoon">
-    <p style="font-weight: bold; color: #cccccc;">Click below to book your moment!</p>
+    <p style="font-weight: bold; color: #cccccc;">Click the cartoon to book your moment!</p>
   </div>
-
-  <button id="bookNowBtn">Book Now</button>
 
   <iframe id="bookingForm" src="https://docs.google.com/forms/d/e/1FAIpQLScuIKfXiYyi01UG78uliICxEoN4FLuxJz6Fhc3Zn1hqG3JqCg/viewform?embedded=true" title="RI Photography Booking Form"></iframe>
 
   <script>
-    document.getElementById('bookNowBtn').addEventListener('click', function() {
+    function toggleForm() {
       const form = document.getElementById('bookingForm');
-      if (form.style.display === "none" || form.style.display === "") {
-        form.style.display = "block";
-        this.textContent = "Close Form";
-      } else {
-        form.style.display = "none";
-        this.textContent = "Book Now";
-      }
-    });
+      form.style.display = (form.style.display === "none" || form.style.display === "") ? "block" : "none";
+    }
   </script>
 
 </body>
