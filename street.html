@@ -23,38 +23,24 @@
       }
     }
 
-    .back-button {
-      background: linear-gradient(45deg, #ff6ec4, #7873f5, #4ADE80, #FACC15, #F472B6);
-      background-size: 400% 400%;
-      animation: gradientFlow 5s ease infinite;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border-radius: 0.5rem;
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .back-button:hover {
-      transform: scale(1.05);
-    }
-
-    @keyframes gradientFlow {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
-
     html {
       scroll-behavior: smooth;
     }
 
+    /* Fade-in animation */
     .fade-in {
-      opacity: 0;
-      animation: fadeIn ease 1s forwards;
+      animation: fadeIn 1.2s ease-in-out;
     }
 
     @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
@@ -90,8 +76,12 @@
 
   <!-- Buttons -->
   <div class="text-center mt-10 mb-6 flex justify-center gap-4">
-    <a href="portfolio.html" class="back-button inline-block">← Back to Portfolio</a>
-    <a href="index.html" class="back-button inline-block">← Back to Home</a>
+    <a href="portfolio.html" class="px-4 py-2 border border-gray-400 text-white rounded hover:bg-white hover:text-black transition duration-300 text-sm">
+      ← Back to Portfolio
+    </a>
+    <a href="index.html" class="px-4 py-2 border border-gray-400 text-white rounded hover:bg-white hover:text-black transition duration-300 text-sm">
+      ← Back to Home
+    </a>
   </div>
 
 </body>
