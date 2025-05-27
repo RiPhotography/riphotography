@@ -6,7 +6,6 @@
   <title>My Creative Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Page fade-in animation */
     body {
       animation: fadeIn 1s ease-in-out both;
     }
@@ -16,7 +15,6 @@
       to { opacity: 1; }
     }
 
-    /* Glow and hover effect for cards */
     .glow-card {
       border: 2px solid transparent;
       box-shadow: 0 0 15px rgba(147, 197, 253, 0.15);
@@ -45,9 +43,8 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* Glowing border for heading text */
     .glow-heading {
-      font-size: 2.25rem; /* text-3xl */
+      font-size: 2.25rem;
       font-weight: 700;
       color: #fff;
       border: 2px solid #3b82f6;
@@ -67,7 +64,6 @@
       }
     }
 
-    /* Glowing animated button */
     .glow-button {
       background: linear-gradient(to right, #4f46e5, #3b82f6, #06b6d4);
       color: white;
@@ -89,6 +85,14 @@
         box-shadow: 0 0 15px rgba(147, 197, 253, 0.25);
       }
     }
+
+    /* Ensure 3 cards always in one row even on mobile */
+    @media (max-width: 768px) {
+      .force-3-cols {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        overflow-x: auto;
+      }
+    }
   </style>
 </head>
 <body class="bg-gray-200 text-gray-900 min-h-screen flex flex-col">
@@ -100,11 +104,11 @@
   </header>
 
   <!-- Portfolio Cards -->
-  <main class="flex-grow container mx-auto px-6 py-12">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+  <main class="flex-grow container mx-auto px-2 md:px-6 py-12">
+    <div class="grid force-3-cols gap-4 md:gap-8">
 
       <!-- Portraits -->
-      <a href="portraits.html" class="group glow-card bg-white rounded-lg overflow-hidden">
+      <a href="portraits.html" class="group glow-card bg-white rounded-lg overflow-hidden min-w-[250px]">
         <img src="https://i.postimg.cc/C5wp6wR1/IMG-0582.jpg" alt="Personal Portraits" class="w-full h-56 object-cover">
         <div class="p-5 text-center bg-rose-50">
           <h2 class="text-xl font-bold text-rose-700">Personal Portraits</h2>
@@ -113,7 +117,7 @@
       </a>
 
       <!-- Wedding Works -->
-      <a href="wedding.html" class="group glow-card bg-white rounded-lg overflow-hidden">
+      <a href="wedding.html" class="group glow-card bg-white rounded-lg overflow-hidden min-w-[250px]">
         <img src="images/wedding/cover.jpg" alt="Wedding Works" class="w-full h-56 object-cover">
         <div class="p-5 text-center bg-rose-50">
           <h2 class="text-xl font-bold text-rose-700">Wedding Works</h2>
@@ -122,7 +126,7 @@
       </a>
 
       <!-- Street Photography -->
-      <a href="street.html" class="group glow-card bg-white rounded-lg overflow-hidden">
+      <a href="street.html" class="group glow-card bg-white rounded-lg overflow-hidden min-w-[250px]">
         <img src="images/street/cover.jpg" alt="Street Photography" class="w-full h-56 object-cover">
         <div class="p-5 text-center bg-rose-50">
           <h2 class="text-xl font-bold text-rose-700">Street Photography</h2>
