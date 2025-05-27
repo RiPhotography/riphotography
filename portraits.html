@@ -26,20 +26,24 @@
       }
     }
 
-    .btn-animated {
-      background: linear-gradient(135deg, #f97316, #e11d48, #6366f1);
-      background-size: 200% 200%;
-      animation: rainbow 4s ease infinite;
+    .classic-button {
+      background: linear-gradient(45deg, #ff4d4d, #ffcc00, #4dff4d, #4d4dff, #cc00cc);
+      background-size: 300% 300%;
+      animation: gradient 6s ease infinite;
       color: white;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      font-size: 0.875rem; /* text-sm */
+      padding: 0.5rem 1rem; /* px-4 py-2 */
+      border-radius: 9999px; /* rounded-full */
+      font-weight: 600; /* font-semibold */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
     }
 
-    .btn-animated:hover {
+    .classic-button:hover {
       transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
     }
 
-    @keyframes rainbow {
+    @keyframes gradient {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
@@ -49,30 +53,53 @@
 <body class="bg-gray-200 text-black p-6">
 
   <div class="bg-black py-6 mb-10 rounded-lg shadow-lg text-center">
-    <a href="#" class="inline-block px-6 py-3 bg-black text-white text-3xl font-bold rounded glow-box">
+    <a href="" class="inline-block px-6 py-3 bg-black text-white text-3xl font-bold rounded glow-box">
       Personal Portraits
     </a>
   </div>
 
   <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
-    <!-- Example images -->
     <a href="https://i.postimg.cc/K8bbGqgr/IMG20250526165338.jpg" data-lightbox="portraits">
       <img src="https://i.postimg.cc/K8bbGqgr/IMG20250526165338.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/PxNDvM2t/FB-IMG-1748235766745.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/PxNDvM2t/FB-IMG-1748235766745.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/tT7S5w9w/FB-IMG-1748235762871.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/tT7S5w9w/FB-IMG-1748235762871.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/gJ5MBsJJ/FB-IMG-1748235760673.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/gJ5MBsJJ/FB-IMG-1748235760673.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/VvC7ytrF/FB-IMG-1748235756318.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/VvC7ytrF/FB-IMG-1748235756318.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/NG3J6dSC/FB-IMG-1748235753078.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/NG3J6dSC/FB-IMG-1748235753078.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/L8TxM2XG/FB-IMG-1748235749557.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/L8TxM2XG/FB-IMG-1748235749557.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/J042kvSs/FB-IMG-1748235796593.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/J042kvSs/FB-IMG-1748235796593.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/rFHPDhjp/FB-IMG-1748235793977.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/rFHPDhjp/FB-IMG-1748235793977.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
     </a>
     <a href="https://i.postimg.cc/Cxy4y9Jb/FB-IMG-1748235791453.jpg" data-lightbox="portraits">
       <img src="https://i.postimg.cc/Cxy4y9Jb/FB-IMG-1748235791453.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
     </a>
   </div>
 
-  <!-- Back to Portfolio & Home Buttons -->
+  <!-- Navigation Buttons -->
   <div class="mt-10 text-center flex justify-center gap-4 flex-wrap">
-    <a href="/home.html"> <!-- এখানে মূল হোমপেইজের লিংক দিন -->
-      <button class="btn-animated px-4 py-2 rounded-full text-sm font-medium shadow-md">
+    <a href="https://riphotography.github.io/riphotography/index.html">
+      <button class="classic-button">
         Home
       </button>
     </a>
-    <a href="/portfolio/index.html"> <!-- এখানে পোর্টফলিওর পেইজের সঠিক লিংক দিন -->
-      <button class="btn-animated px-4 py-2 rounded-full text-sm font-medium shadow-md">
+    <a href="index.html">
+      <button class="classic-button">
         Back to Portfolio
       </button>
     </a>
