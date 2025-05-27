@@ -2,48 +2,137 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My Creative Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-50 text-gray-800 font-sans p-4">
+  <style>
+    body {
+      animation: fadeIn 1s ease-in-out both;
+    }
 
-  <header class="text-center mb-8">
-    <h1 class="text-2xl font-bold border-b-4 border-indigo-500 inline-block pb-1">My Creative Portfolio</h1>
-    <p class="mt-2 text-sm">Explore my favorite photography collections</p>
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .glow-card {
+      border: 2px solid transparent;
+      box-shadow: 0 0 15px rgba(147, 197, 253, 0.15);
+      transition: all 0.4s ease;
+      position: relative;
+      z-index: 0;
+    }
+
+    .glow-card::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, #3b82f6, #9333ea, #06b6d4, #3b82f6);
+      z-index: -1;
+      filter: blur(5px);
+      animation: animated-border 6s linear infinite;
+      border-radius: 0.5rem;
+    }
+
+    @keyframes animated-border {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .glow-heading {
+      font-size: 1.5rem; /* ছোট করা হলো */
+      font-weight: 700;
+      color: #fff;
+      border: 2px solid #3b82f6;
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.65);
+      animation: pulse-border 2s infinite ease-in-out;
+    }
+
+    @keyframes pulse-border {
+      0%, 100% {
+        box-shadow: 0 0 6px rgba(59, 130, 246, 0.5);
+      }
+      50% {
+        box-shadow: 0 0 14px rgba(59, 130, 246, 1);
+      }
+    }
+
+    .glow-button {
+      background: linear-gradient(to right, #4f46e5, #3b82f6, #06b6d4);
+      color: white;
+      animation: pulse 2s infinite;
+    }
+
+    .glow-button:hover {
+      background: linear-gradient(to right, #06b6d4, #3b82f6, #4f46e5);
+      transform: scale(1.05);
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(147, 197, 253, 0);
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(147, 197, 253, 0.25);
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-200 text-gray-900 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="text-center py-6 bg-black shadow-lg">
+    <h1 class="glow-heading">My Creative Portfolio</h1>
+    <p class="text-sm text-gray-300 mt-1">Explore my favorite photography collections</p>
   </header>
 
-  <!-- Personal Portraits -->
-  <section class="mb-8">
-    <h2 class="text-lg font-semibold text-indigo-600 border-l-4 border-indigo-400 pl-2 mb-3">Personal Portraits</h2>
-    <div class="grid grid-cols-2 gap-3">
-      <img src="https://via.placeholder.com/300x400" alt="Portrait 1" class="rounded shadow-md" />
-      <img src="https://via.placeholder.com/300x400" alt="Portrait 2" class="rounded shadow-md" />
-    </div>
-  </section>
+  <!-- Portfolio Cards -->
+  <main class="flex-grow container mx-auto px-4 py-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
 
-  <!-- Wedding Works -->
-  <section class="mb-8">
-    <h2 class="text-lg font-semibold text-pink-600 border-l-4 border-pink-400 pl-2 mb-3">Wedding Works</h2>
-    <div class="grid grid-cols-2 gap-3">
-      <img src="https://via.placeholder.com/300x400" alt="Wedding 1" class="rounded shadow-md" />
-      <img src="https://via.placeholder.com/300x400" alt="Wedding 2" class="rounded shadow-md" />
-    </div>
-  </section>
+      <!-- Portraits -->
+      <a href="portraits.html" class="group glow-card bg-white rounded-lg overflow-hidden">
+        <img src="https://i.postimg.cc/C5wp6wR1/IMG-0582.jpg" alt="Personal Portraits" class="w-full h-56 object-cover">
+        <div class="p-4 text-center bg-rose-50">
+          <h2 class="text-lg font-bold text-rose-700">Personal Portraits</h2>
+          <p class="text-sm text-rose-600 mt-2">Stylized individual portraits</p>
+        </div>
+      </a>
 
-  <!-- Street Photography -->
-  <section class="mb-8">
-    <h2 class="text-lg font-semibold text-yellow-600 border-l-4 border-yellow-400 pl-2 mb-3">Street Photography</h2>
-    <div class="grid grid-cols-2 gap-3">
-      <img src="https://via.placeholder.com/300x400" alt="Street 1" class="rounded shadow-md" />
-      <img src="https://via.placeholder.com/300x400" alt="Street 2" class="rounded shadow-md" />
-    </div>
-  </section>
+      <!-- Wedding Works -->
+      <a href="wedding.html" class="group glow-card bg-white rounded-lg overflow-hidden">
+        <img src="images/wedding/cover.jpg" alt="Wedding Works" class="w-full h-56 object-cover">
+        <div class="p-4 text-center bg-rose-50">
+          <h2 class="text-lg font-bold text-rose-700">Wedding Works</h2>
+          <p class="text-sm text-rose-600 mt-2">Romantic celebrations & memories</p>
+        </div>
+      </a>
 
-  <!-- Back to Home -->
-  <div class="text-center mt-6">
-    <a href="index.html" class="inline-block text-sm text-white bg-indigo-500 px-4 py-2 rounded shadow hover:bg-indigo-600 transition">← Back to Home</a>
-  </div>
+      <!-- Street Photography -->
+      <a href="street.html" class="group glow-card bg-white rounded-lg overflow-hidden">
+        <img src="images/street/cover.jpg" alt="Street Photography" class="w-full h-56 object-cover">
+        <div class="p-4 text-center bg-rose-50">
+          <h2 class="text-lg font-bold text-rose-700">Street Photography</h2>
+          <p class="text-sm text-rose-600 mt-2">Candid street moments & city life</p>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Back to Home Button -->
+    <div class="mt-10 text-center">
+      <a href="index.html" class="glow-button inline-block px-6 py-2 rounded-full transition font-semibold">← Back to Home</a>
+    </div>
+  </main>
 
 </body>
 </html>
