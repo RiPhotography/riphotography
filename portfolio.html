@@ -6,6 +6,16 @@
   <title>My Creative Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    /* Page fade-in animation */
+    body {
+      animation: fadeIn 1s ease-in-out both;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
     /* Glow and hover effect for cards */
     .glow-card {
       border: 2px solid transparent;
@@ -35,7 +45,29 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* Colorful glowing back button */
+    /* Glowing border for heading text */
+    .glow-heading {
+      font-size: 2.25rem; /* text-3xl */
+      font-weight: 700;
+      color: #fff;
+      border: 2px solid #3b82f6;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 15px rgba(59, 130, 246, 0.75);
+      animation: pulse-border 2s infinite ease-in-out;
+    }
+
+    @keyframes pulse-border {
+      0%, 100% {
+        box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(59, 130, 246, 1);
+      }
+    }
+
+    /* Glowing animated button */
     .glow-button {
       background: linear-gradient(to right, #4f46e5, #3b82f6, #06b6d4);
       color: white;
@@ -59,12 +91,12 @@
     }
   </style>
 </head>
-<body class="bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white min-h-screen flex flex-col">
+<body class="bg-gray-200 text-gray-900 min-h-screen flex flex-col">
 
   <!-- Header -->
-  <header class="text-center py-10 bg-gray-900 shadow-lg">
-    <h1 class="text-5xl font-bold mb-2">My Creative Portfolio</h1>
-    <p class="text-lg text-gray-300">Explore my favorite photography collections</p>
+  <header class="text-center py-8 bg-black shadow-lg">
+    <h1 class="glow-heading">My Creative Portfolio</h1>
+    <p class="text-sm text-gray-300 mt-2">Explore my favorite photography collections</p>
   </header>
 
   <!-- Portfolio Cards -->
@@ -75,7 +107,7 @@
       <a href="portraits.html" class="group glow-card bg-white rounded-lg overflow-hidden">
         <img src="https://i.postimg.cc/C5wp6wR1/IMG-0582.jpg" alt="Personal Portraits" class="w-full h-56 object-cover">
         <div class="p-5 text-center bg-rose-50">
-          <h2 class="text-2xl font-bold text-rose-700">Personal Portraits</h2>
+          <h2 class="text-xl font-bold text-rose-700">Personal Portraits</h2>
           <p class="text-sm text-rose-600 mt-2">Stylized individual portraits</p>
         </div>
       </a>
@@ -84,7 +116,7 @@
       <a href="wedding.html" class="group glow-card bg-white rounded-lg overflow-hidden">
         <img src="images/wedding/cover.jpg" alt="Wedding Works" class="w-full h-56 object-cover">
         <div class="p-5 text-center bg-rose-50">
-          <h2 class="text-2xl font-bold text-rose-700">Wedding Works</h2>
+          <h2 class="text-xl font-bold text-rose-700">Wedding Works</h2>
           <p class="text-sm text-rose-600 mt-2">Romantic celebrations & memories</p>
         </div>
       </a>
@@ -93,10 +125,11 @@
       <a href="street.html" class="group glow-card bg-white rounded-lg overflow-hidden">
         <img src="images/street/cover.jpg" alt="Street Photography" class="w-full h-56 object-cover">
         <div class="p-5 text-center bg-rose-50">
-          <h2 class="text-2xl font-bold text-rose-700">Street Photography</h2>
+          <h2 class="text-xl font-bold text-rose-700">Street Photography</h2>
           <p class="text-sm text-rose-600 mt-2">Candid street moments & city life</p>
         </div>
       </a>
+
     </div>
 
     <!-- Back to Home Button -->
