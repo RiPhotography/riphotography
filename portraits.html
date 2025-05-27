@@ -11,38 +11,29 @@
   <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/css/lightbox.min.css" rel="stylesheet" />
 
   <style>
-    /* Animated blue glow */
     .glow-box {
-      position: relative;
-    }
-    .glow-box::before {
-      content: "";
-      position: absolute;
-      top: -4px;
-      left: -4px;
-      right: -4px;
-      bottom: -4px;
-      border-radius: 0.5rem;
-      background: linear-gradient(45deg, #3b82f6, #60a5fa, #2563eb, #3b82f6);
-      z-index: -1;
-      filter: blur(8px);
-      animation: glow 3s linear infinite;
+      border: 2px solid #00f;
+      box-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f;
+      animation: glow 2s infinite alternate;
     }
 
     @keyframes glow {
-      0% { opacity: 0.6; }
-      50% { opacity: 1; }
-      100% { opacity: 0.6; }
+      0% {
+        box-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 15px #00f;
+      }
+      100% {
+        box-shadow: 0 0 20px #00f, 0 0 30px #00f, 0 0 40px #00f;
+      }
     }
 
-    /* Colorful animated button */
-    .rainbow-button {
-      background: linear-gradient(270deg, #ff6ec4, #7873f5, #1fd1f9, #c1ff72, #f9f871);
-      background-size: 1000% 1000%;
-      animation: rainbow 8s ease infinite;
+    .back-button {
+      background: linear-gradient(45deg, #ff4d4d, #ffcc00, #4dff4d, #4d4dff, #cc00cc);
+      background-size: 300% 300%;
+      animation: gradient 6s ease infinite;
+      color: white;
     }
 
-    @keyframes rainbow {
+    @keyframes gradient {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
@@ -51,22 +42,49 @@
 </head>
 <body class="bg-gray-200 text-black p-6">
 
-  <!-- Header with glowing box -->
-  <div class="glow-box mx-auto w-fit px-6 py-4 rounded-lg shadow-lg mb-8 bg-black">
-    <h1 class="text-3xl font-bold text-white text-center">Personal Portraits</h1>
+  <div class="bg-black py-6 mb-10 rounded-lg shadow-lg text-center">
+    <div class="inline-block px-6 py-3 bg-black text-white text-3xl font-bold rounded glow-box">
+      Personal Portraits
+    </div>
   </div>
 
-  <!-- Portraits Grid -->
-  <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
-    <!-- Your image entries here -->
-    <!-- ... (same as before) ... -->
-  </div>
-
-  <!-- Back to Top Button -->
-  <div class="mt-10 flex justify-center">
-    <a href="#top" class="rainbow-button text-white font-semibold py-3 px-6 rounded-full shadow-lg transform transition hover:scale-105">
-      Back to Home
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
+    <!-- All your images remain same -->
+    <a href="https://i.postimg.cc/PxNDvM2t/FB-IMG-1748235766745.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/PxNDvM2t/FB-IMG-1748235766745.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
     </a>
+    <a href="https://i.postimg.cc/tT7S5w9w/FB-IMG-1748235762871.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/tT7S5w9w/FB-IMG-1748235762871.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/gJ5MBsJJ/FB-IMG-1748235760673.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/gJ5MBsJJ/FB-IMG-1748235760673.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/VvC7ytrF/FB-IMG-1748235756318.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/VvC7ytrF/FB-IMG-1748235756318.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/NG3J6dSC/FB-IMG-1748235753078.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/NG3J6dSC/FB-IMG-1748235753078.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/L8TxM2XG/FB-IMG-1748235749557.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/L8TxM2XG/FB-IMG-1748235749557.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/J042kvSs/FB-IMG-1748235796593.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/J042kvSs/FB-IMG-1748235796593.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/rFHPDhjp/FB-IMG-1748235793977.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/rFHPDhjp/FB-IMG-1748235793977.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/Cxy4y9Jb/FB-IMG-1748235791453.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/Cxy4y9Jb/FB-IMG-1748235791453.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
+  </div>
+
+  <!-- Back to Home Button -->
+  <div class="mt-10 text-center">
+    <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+            class="back-button px-6 py-3 rounded-full text-lg font-semibold shadow-lg">
+      Back to Home
+    </button>
   </div>
 
   <!-- Lightbox2 JS -->
