@@ -6,33 +6,71 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Wedding Works</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+  <style>
+    .glow {
+      box-shadow: 0 0 10px #fff, 0 0 20px #f0f, 0 0 30px #0ff;
+      animation: glowPulse 2s infinite alternate;
+    }
+
+    @keyframes glowPulse {
+      from { box-shadow: 0 0 10px #fff, 0 0 20px #f0f, 0 0 30px #0ff; }
+      to   { box-shadow: 0 0 20px #0ff, 0 0 30px #f0f, 0 0 40px #fff; }
+    }
+
+    /* Smooth scroll to top */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
-<body class="bg-white text-black p-6">
-  <h1 class="text-3xl font-bold text-center mb-8">Wedding Works</h1>
+<body class="bg-gradient-to-b from-black to-gray-900 text-white min-h-screen p-6">
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-    <a href="https://i.postimg.cc/Cxmk3Dbj/FB-IMG-1748353641946.jpg" data-lightbox="portraits">
-      <img src="https://i.postimg.cc/Cxmk3Dbj/FB-IMG-1748353641946.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
-    </a>
-    <a href="https://i.postimg.cc/bv4DPRr2/FB-IMG-1748353659127.jpg" data-lightbox="portraits">
-      <img src="https://i.postimg.cc/bv4DPRr2/FB-IMG-1748353659127.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
-    </a>
-    <a href="https://i.postimg.cc/kGm26XxJ/FB-IMG-1748353661011.jpg" data-lightbox="portraits">
-      <img src="" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
-    </a>
-    <a href="https://i.postimg.cc/kGm26XxJ/FB-IMG-1748353661011.jpg" data-lightbox="portraits">
-      <img src="https://i.postimg.cc/XvBqsyLN/FB-IMG-1748353665596.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
-    </a>
-    <a href="https://i.postimg.cc/XvBqsyLN/FB-IMG-1748353665596.jpg" data-lightbox="portraits">
-      <img src="" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
-    </a>
-    <a href="https://i.postimg.cc/ZKJ9Jnbj/FB-IMG-1748353663213.jpg" data-lightbox="portraits">
-      <img src="https://i.postimg.cc/ZKJ9Jnbj/FB-IMG-1748353663213.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
-    </a>
+  <!-- Header with glowing effect -->
+  <div class="bg-black p-4 rounded-lg mb-8 flex items-center justify-between">
+    <h1 class="text-3xl font-bold text-center w-full">Wedding Works</h1>
+    <div class="w-4 h-4 ml-4 rounded-full glow"></div>
   </div>
 
+  <!-- Scrollable image gallery -->
+  <div class="overflow-x-auto">
+    <div class="flex gap-4">
+      <!-- Image 1 -->
+      <a href="https://i.postimg.cc/Cxmk3Dbj/FB-IMG-1748353641946.jpg" data-lightbox="portraits">
+        <img src="https://i.postimg.cc/Cxmk3Dbj/FB-IMG-1748353641946.jpg" class="w-40 h-60 object-cover rounded border-2 border-black" alt="Portrait 1">
+      </a>
+      <!-- Image 2 -->
+      <a href="https://i.postimg.cc/bv4DPRr2/FB-IMG-1748353659127.jpg" data-lightbox="portraits">
+        <img src="https://i.postimg.cc/bv4DPRr2/FB-IMG-1748353659127.jpg" class="w-40 h-60 object-cover rounded border-2 border-black" alt="Portrait 2">
+      </a>
+      <!-- Image 3 -->
+      <a href="https://i.postimg.cc/kGm26XxJ/FB-IMG-1748353661011.jpg" data-lightbox="portraits">
+        <img src="https://i.postimg.cc/kGm26XxJ/FB-IMG-1748353661011.jpg" class="w-40 h-60 object-cover rounded border-2 border-black" alt="Portrait 3">
+      </a>
+      <!-- Image 4 -->
+      <a href="https://i.postimg.cc/XvBqsyLN/FB-IMG-1748353665596.jpg" data-lightbox="portraits">
+        <img src="https://i.postimg.cc/XvBqsyLN/FB-IMG-1748353665596.jpg" class="w-40 h-60 object-cover rounded border-2 border-black" alt="Portrait 4">
+      </a>
+      <!-- Image 5 -->
+      <a href="https://i.postimg.cc/ZKJ9Jnbj/FB-IMG-1748353663213.jpg" data-lightbox="portraits">
+        <img src="https://i.postimg.cc/ZKJ9Jnbj/FB-IMG-1748353663213.jpg" class="w-40 h-60 object-cover rounded border-2 border-black" alt="Portrait 5">
+      </a>
+    </div>
+  </div>
+
+  <!-- Back to Portfolio -->
   <div class="text-center mt-10">
-    <a href="portfolio.html" class="text-white bg-black px-6 py-3 rounded hover:bg-gray-800 transition">← Back to Portfolio</a>
+    <a href="portfolio.html" class="text-white bg-gray-800 px-6 py-3 rounded hover:bg-gray-700 transition">← Back to Portfolio</a>
   </div>
+
+  <!-- Back to Top & Refresh -->
+  <div class="text-center mt-6">
+    <button onclick="location.reload(); window.scrollTo({top: 0, behavior: 'smooth'});" 
+            class="bg-black text-white px-6 py-3 rounded hover:bg-gray-700 transition">
+      Back to Home
+    </button>
+  </div>
+
 </body>
 </html>
