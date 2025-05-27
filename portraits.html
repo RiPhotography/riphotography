@@ -11,6 +11,27 @@
   <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/css/lightbox.min.css" rel="stylesheet" />
 
   <style>
+    body {
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    window.onbeforeunload = () => {
+      document.body.style.animation = 'fadeOut 0.5s ease forwards';
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+      }
+    }
+
     .glow-box {
       border: 2px solid #00f;
       box-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f;
@@ -31,10 +52,10 @@
       background-size: 300% 300%;
       animation: gradient 6s ease infinite;
       color: white;
-      font-size: 0.875rem;
-      padding: 0.5rem 1rem;
-      border-radius: 9999px;
-      font-weight: 600;
+      font-size: 0.875rem; /* text-sm */
+      padding: 0.5rem 1rem; /* px-4 py-2 */
+      border-radius: 9999px; /* rounded-full */
+      font-weight: 600; /* font-semibold */
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       transition: transform 0.2s;
     }
@@ -98,7 +119,7 @@
         Home
       </button>
     </a>
-    <a href="https://riphotography.github.io/riphotography/portraits.html">
+    <a href="https://riphotography.github.io/riphotography/portfolio.html">
       <button class="classic-button">
         Back to Portfolio
       </button>
@@ -107,5 +128,21 @@
 
   <!-- Lightbox2 JS -->
   <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/js/lightbox.min.js"></script>
+
+  <script>
+    // Fade-out effect before navigating away
+    document.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
+          e.preventDefault();
+          document.body.style.animation = 'fadeOut 0.5s ease forwards';
+          setTimeout(() => {
+            window.location.href = href;
+          }, 500);
+        }
+      });
+    });
+  </script>
 </body>
 </html>
