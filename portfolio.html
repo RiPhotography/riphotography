@@ -1,44 +1,138 @@
-<!-- Header -->
-<header class="text-center py-6 bg-black shadow-lg">
-  <a href="#" class="glow-heading block">My Creative Portfolio</a>
-  <p class="text-sm text-gray-300 mt-1">Explore my favorite photography collections</p>
-</header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Creative Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      animation: fadeIn 1s ease-in-out both;
+    }
 
-<!-- Portfolio Cards -->
-<main class="flex-grow container mx-auto px-4 py-10">
-  <div class="grid grid-cols-2 gap-4 md:gap-6">
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
-    <!-- Portraits -->
-    <a href="portraits.html" class="group glow-card bg-white rounded-lg overflow-hidden">
-      <img src="https://i.postimg.cc/C5wp6wR1/IMG-0582.jpg" alt="Personal Portraits" class="w-full h-56 object-cover">
-      <div class="p-4 text-center bg-rose-50">
-        <h2 class="text-lg font-bold text-rose-700">Personal Portraits</h2>
-        <p class="text-sm text-rose-600 mt-2">Stylized individual portraits</p>
-      </div>
-    </a>
+    .glow-card {
+      border: 2px solid transparent;
+      box-shadow: 0 0 15px rgba(147, 197, 253, 0.15);
+      transition: all 0.4s ease;
+      position: relative;
+      z-index: 0;
+    }
 
-    <!-- Wedding Works -->
-    <a href="wedding.html" class="group glow-card bg-white rounded-lg overflow-hidden">
-      <img src="images/wedding/cover.jpg" alt="Wedding Works" class="w-full h-56 object-cover">
-      <div class="p-4 text-center bg-rose-50">
-        <h2 class="text-lg font-bold text-rose-700">Wedding Works</h2>
-        <p class="text-sm text-rose-600 mt-2">Romantic celebrations & memories</p>
-      </div>
-    </a>
+    .glow-card::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, #3b82f6, #9333ea, #06b6d4, #3b82f6);
+      z-index: -1;
+      filter: blur(5px);
+      animation: animated-border 6s linear infinite;
+      border-radius: 0.5rem;
+    }
 
-    <!-- Street Photography -->
-    <a href="street.html" class="group glow-card bg-white rounded-lg overflow-hidden">
-      <img src="images/street/cover.jpg" alt="Street Photography" class="w-full h-56 object-cover">
-      <div class="p-4 text-center bg-rose-50">
-        <h2 class="text-lg font-bold text-rose-700">Street Photography</h2>
-        <p class="text-sm text-rose-600 mt-2">Candid street moments & city life</p>
-      </div>
-    </a>
+    @keyframes animated-border {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-  </div>
+    .glow-heading {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      border: 2px solid #3b82f6;
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.65);
+      animation: pulse-border 2s infinite ease-in-out;
+    }
 
-  <!-- Back to Home Button -->
-  <div class="mt-10 text-center">
-    <a href="index.html" class="glow-button inline-block px-6 py-2 rounded-full transition font-semibold">← Back to Home</a>
-  </div>
-</main>
+    @keyframes pulse-border {
+      0%, 100% {
+        box-shadow: 0 0 6px rgba(59, 130, 246, 0.5);
+      }
+      50% {
+        box-shadow: 0 0 14px rgba(59, 130, 246, 1);
+      }
+    }
+
+    .glow-button {
+      background: linear-gradient(to right, #4f46e5, #3b82f6, #06b6d4);
+      color: white;
+      animation: pulse 2s infinite;
+    }
+
+    .glow-button:hover {
+      background: linear-gradient(to right, #06b6d4, #3b82f6, #4f46e5);
+      transform: scale(1.05);
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(147, 197, 253, 0);
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(147, 197, 253, 0.25);
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-200 text-gray-900 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="text-center py-6 bg-black shadow-lg">
+    <a href="#" class="glow-heading">My Creative Portfolio</a>
+    <p class="text-sm text-gray-300 mt-1">Explore my favorite photography collections</p>
+  </header>
+
+  <!-- Portfolio Cards -->
+  <main class="flex-grow container mx-auto px-4 py-10">
+    <div class="grid grid-cols-2 gap-4 md:gap-6">
+
+      <!-- Portraits -->
+      <a href="portraits.html" class="group glow-card bg-white rounded-lg overflow-hidden">
+        <img src="https://i.postimg.cc/C5wp6wR1/IMG-0582.jpg" alt="Personal Portraits" class="w-full h-56 object-cover">
+        <div class="p-4 text-center bg-rose-50">
+          <h2 class="text-lg font-bold text-rose-700">Personal Portraits</h2>
+          <p class="text-sm text-rose-600 mt-2">Stylized individual portraits</p>
+        </div>
+      </a>
+
+      <!-- Wedding Works -->
+      <a href="wedding.html" class="group glow-card bg-white rounded-lg overflow-hidden">
+        <img src="images/wedding/cover.jpg" alt="Wedding Works" class="w-full h-56 object-cover">
+        <div class="p-4 text-center bg-rose-50">
+          <h2 class="text-lg font-bold text-rose-700">Wedding Works</h2>
+          <p class="text-sm text-rose-600 mt-2">Romantic celebrations & memories</p>
+        </div>
+      </a>
+
+      <!-- Street Photography -->
+      <a href="street.html" class="group glow-card bg-white rounded-lg overflow-hidden">
+        <img src="images/street/cover.jpg" alt="Street Photography" class="w-full h-56 object-cover">
+        <div class="p-4 text-center bg-rose-50">
+          <h2 class="text-lg font-bold text-rose-700">Street Photography</h2>
+          <p class="text-sm text-rose-600 mt-2">Candid street moments & city life</p>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Back to Home Button -->
+    <div class="mt-10 text-center">
+      <a href="index.html" class="glow-button inline-block px-6 py-2 rounded-full transition font-semibold">← Back to Home</a>
+    </div>
+  </main>
+
+</body>
+</html>
