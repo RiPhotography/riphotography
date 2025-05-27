@@ -6,32 +6,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Street Photography</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Glowing heading border */
+    .glow-border {
+      border: 2px solid white;
+      box-shadow: 0 0 10px #fff, 0 0 20px #0ff, 0 0 30px #f0f;
+      animation: glowEffect 2s infinite alternate;
+    }
+
+    @keyframes glowEffect {
+      0% {
+        box-shadow: 0 0 5px #fff, 0 0 10px #0ff, 0 0 15px #f0f;
+      }
+      100% {
+        box-shadow: 0 0 20px #f0f, 0 0 30px #0ff, 0 0 40px #fff;
+      }
+    }
+
+    /* Animated colorful button */
+    .rainbow-button {
+      background: linear-gradient(45deg, #ff4e50, #f9d423, #1e90ff, #ff69b4, #00ffcc);
+      background-size: 300% 300%;
+      animation: rainbow 4s ease infinite;
+      color: white;
+    }
+
+    @keyframes rainbow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
-<body class="bg-white text-black p-6">
-  <h1 class="text-3xl font-bold text-center mb-8">Street Photography</h1>
+<body class="bg-gray-200 text-black p-6">
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-    <a href="https://i.postimg.cc/RF35zc8y/FB-IMG-1748358398109.jpg" data-lightbox="portraits">
-      <img src="https://i.postimg.cc/RF35zc8y/FB-IMG-1748358398109.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
-    </a>
-    <a href="https://i.postimg.cc/wMJC199k/FB-IMG-1748358400199.jpg" data-lightbox="portraits">
-      <img src="https://i.postimg.cc/wMJC199k/FB-IMG-1748358400199.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
-    </a>
-    <a href=" " data-lightbox="portraits">
-      <img src=" " class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
-    </a>
-    <a href="https://i.postimg.cc/RVxrjJTp/FB-IMG-1748358402319.jpg" data-lightbox="portraits">
-      <img src="https://i.postimg.cc/RVxrjJTp/FB-IMG-1748358402319.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
-    </a>
-    <a href="https://i.postimg.cc/LsXGztH5/FB-IMG-1748358404549.jpg" data-lightbox="portraits">
-      <img src="https://i.postimg.cc/LsXGztH5/FB-IMG-1748358404549.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
-     </a>
-      <a href="https://i.postimg.cc/W4HCSd3n/FB-IMG-1748358406981.jpg" data-lightbox="portraits">
-      <img src="https://i.postimg.cc/W4HCSd3n/FB-IMG-1748358406981.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
-    </a>
-
-  <div class="text-center mt-10">
-    <a href="portfolio.html" class="text-white bg-black px-6 py-3 rounded hover:bg-gray-800 transition">← Back to Portfolio</a>
+  <!-- Heading -->
+  <div onclick="location.reload();" class="bg-black p-4 mb-8 rounded-lg cursor-pointer glow-border">
+    <h1 class="text-3xl font-bold text-center text-white">Street Photography</h1>
   </div>
+
+  <!-- Responsive Grid for Photos -->
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+    <a href="https://i.postimg.cc/RF35zc8y/FB-IMG-1748358398109.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/RF35zc8y/FB-IMG-1748358398109.jpg" class="rounded shadow-md border border-black w-full h-48 object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/wMJC199k/FB-IMG-1748358400199.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/wMJC199k/FB-IMG-1748358400199.jpg" class="rounded shadow-md border border-black w-full h-48 object-cover" alt="Portrait">
+    </a>
+    <a href="#" data-lightbox="portraits">
+      <img src="#" class="rounded shadow-md border border-black w-full h-48 object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/RVxrjJTp/FB-IMG-1748358402319.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/RVxrjJTp/FB-IMG-1748358402319.jpg" class="rounded shadow-md border border-black w-full h-48 object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/LsXGztH5/FB-IMG-1748358404549.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/LsXGztH5/FB-IMG-1748358404549.jpg" class="rounded shadow-md border border-black w-full h-48 object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/W4HCSd3n/FB-IMG-1748358406981.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/W4HCSd3n/FB-IMG-1748358406981.jpg" class="rounded shadow-md border border-black w-full h-48 object-cover" alt="Portrait">
+    </a>
+  </div>
+
+  <!-- Back Button -->
+  <div class="text-center mt-10">
+    <a href="portfolio.html" class="rainbow-button inline-block px-6 py-3 rounded shadow-lg transition-transform duration-300 hover:scale-105">← Back to Portfolio</a>
+  </div>
+
 </body>
 </html>
