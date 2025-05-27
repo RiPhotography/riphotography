@@ -12,6 +12,22 @@
       padding: 30px;
       text-align: center;
     }
+
+    .cartoon-container {
+      margin-bottom: 20px;
+    }
+
+    .cartoon-container img {
+      max-width: 200px;
+      height: auto;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
+    }
+
     button {
       background-color: #4CAF50;
       color: white;
@@ -21,11 +37,14 @@
       border-radius: 8px;
       cursor: pointer;
       transition: background-color 0.3s ease;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
+      margin-top: 20px;
     }
+
     button:hover {
       background-color: #45a049;
     }
+
     iframe {
       width: 100%;
       max-width: 900px;
@@ -38,6 +57,11 @@
   </style>
 </head>
 <body>
+
+  <div class="cartoon-container">
+    <img src="https://i.postimg.cc/SQHbcZ2q/point-down.gif" alt="Click Below Cartoon">
+    <p style="font-weight: bold; color: #333;">Click below to book your moment!</p>
+  </div>
 
   <button id="bookNowBtn">Book Now</button>
 
