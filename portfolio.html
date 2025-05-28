@@ -13,6 +13,7 @@
     .glow-card:hover {
       box-shadow: 0 0 20px rgba(255, 0, 128, 0.8);
     }
+
     .glow-heading {
       border: 2px solid white;
       padding: 0.5rem 1rem;
@@ -20,7 +21,10 @@
       animation: glow 1.5s infinite alternate;
       display: inline-block;
       cursor: pointer;
+      background-color: black;
+      color: white;
     }
+
     @keyframes glow {
       from {
         box-shadow: 0 0 10px #fff;
@@ -33,10 +37,15 @@
 </head>
 <body class="bg-gray-100 font-sans">
   <div class="max-w-6xl mx-auto p-6">
-    <h1 onclick="location.reload()" class="text-4xl font-extrabold text-center mb-6 text-white bg-black glow-heading">
-      My Creative Portfolio
-    </h1>
+    <!-- Heading Bar -->
+    <div class="text-center mb-6">
+      <h1 onclick="location.reload()" class="text-4xl font-extrabold glow-heading">
+        My Creative Portfolio
+      </h1>
+    </div>
+
     <p class="text-center mb-8 text-rose-700 text-lg">Explore my favorite photography collections</p>
+
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
       <!-- Portraits -->
       <a href="portraits.html" class="group glow-card bg-white rounded-lg overflow-hidden">
