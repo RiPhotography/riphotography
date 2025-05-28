@@ -16,18 +16,23 @@
 
     .glow-heading {
       border: 2px solid white;
-      padding: 0.5rem 1rem;
-      border-radius: 0.5rem;
+      padding: 0.5rem 1.5rem;
+      border-radius: 0.75rem;
       animation: glow 1.5s infinite alternate;
-      display: inline-block;
-      cursor: pointer;
       background-color: black;
       color: white;
+      display: inline-block;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .glow-heading:hover {
+      transform: scale(1.03);
     }
 
     @keyframes glow {
       from {
-        box-shadow: 0 0 10px #fff;
+        box-shadow: 0 0 10px #ffffff;
       }
       to {
         box-shadow: 0 0 20px #ff007f, 0 0 30px #ff007f;
