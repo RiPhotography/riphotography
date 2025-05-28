@@ -5,27 +5,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Functions - My Creative Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    /* Glow Animation for Heading */
+    .glow-heading {
+      border: 2px solid white;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      animation: glow 1.5s infinite alternate;
+      display: inline-block;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .glow-heading:hover {
+      transform: scale(1.02);
+    }
+
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 10px #fff;
+      }
+      to {
+        box-shadow: 0 0 20px #ff007f, 0 0 30px #ff007f;
+      }
+    }
+
+    /* Page fade-in animation */
+    .fade-in {
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Button hover animation */
+    .animated-button {
+      transition: all 0.3s ease;
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+
+    .animated-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+  </style>
 </head>
-<body class="bg-rose-100 font-sans">
+<body class="bg-rose-100 font-sans fade-in">
 
   <div class="max-w-4xl mx-auto p-6">
-    <h1 class="text-4xl font-extrabold text-center mb-6 text-rose-800">Functions!</h1>
+    <!-- Heading with glowing effect -->
+    <h1 onclick="location.reload()" class="text-4xl font-extrabold text-center mb-6 text-white bg-black glow-heading">
+      Functions!
+    </h1>
+
     <p class="text-center mb-8 text-rose-700 text-lg">Events, celebrations & special programs</p>
 
     <img src="https://i.postimg.cc/KcJHrZcj/FB-IMG-1748376246102.jpg" alt="Functions" class="w-full h-72 object-cover rounded-lg shadow-lg mb-8" />
 
     <div class="text-rose-700 text-base leading-relaxed">
       <p>
-        Welcome to the Functions gallery, showcasing vibrant cultural events, memorable celebrations, and special indoor moments captured through the lens.
-        Here you will find a collection of photographs that reflect the joyous spirit and intricate details of various functions.
+        Welcome to the Functions gallery, showcasing vibrant cultural events.
       </p>
       <p class="mt-4">
         Whether it’s weddings, festivals, or community programs, every shot tells a unique story filled with emotion and life.
       </p>
     </div>
 
-    <div class="mt-10 text-center">
-      <a href="index.html" class="glow-button inline-block px-6 py-2 rounded-full bg-rose-700 text-white font-semibold hover:bg-rose-900 transition">← Back to Home</a>
+    <!-- Buttons -->
+    <div class="mt-10 text-center space-x-4">
+      <a href="index.html" class="animated-button inline-block px-6 py-2 rounded-full bg-rose-700 text-white font-semibold hover:bg-rose-900 transition">← Home</a>
+      <a href="https://riphotography.github.io/riphotography/portfolio.html" class="animated-button inline-block px-6 py-2 rounded-full bg-rose-700 text-white font-semibold hover:bg-rose-900 transition">← Back to Portfolio</a>
     </div>
   </div>
 
