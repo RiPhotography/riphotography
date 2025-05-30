@@ -1,36 +1,35 @@
+<!-- functions.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Functions - My Creative Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/fslightbox/index.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Functions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
   <style>
-    .glow-heading {
-      border: 2px solid white;
-      padding: 0.5rem 1.5rem;
-      border-radius: 0.5rem;
-      animation: glow 1.5s infinite alternate;
-      display: inline-block;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-    .glow-heading:hover {
-      transform: scale(1.05);
+    .glow-border {
+      border: 3px solid white;
+      animation: glow 2s infinite alternate;
     }
 
     @keyframes glow {
-      from {
-        box-shadow: 0 0 10px #fff;
+      0% {
+        box-shadow: 0 0 5px #fff, 0 0 10px #0ff, 0 0 15px #0ff;
       }
-      to {
-        box-shadow: 0 0 20px #ff007f, 0 0 30px #ff007f;
+      100% {
+        box-shadow: 0 0 10px #0ff, 0 0 15px #0ff, 0 0 20px #fff;
       }
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Fade-in animation */
     .fade-in {
-      animation: fadeIn 1s ease-out forwards;
+      animation: fadeIn 1.2s ease-in-out;
     }
 
     @keyframes fadeIn {
@@ -43,62 +42,46 @@
         transform: translateY(0);
       }
     }
-
-    .animated-button {
-      background: linear-gradient(45deg, #ff416c, #ff4b2b);
-      transition: all 0.4s ease;
-      color: white;
-      font-weight: 600;
-      padding: 0.5rem 1.5rem;
-      border-radius: 9999px;
-      display: inline-block;
-    }
-
-    .animated-button:hover {
-      background: linear-gradient(45deg, #1cd8d2, #93edc7);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
-
-    .image-hover:hover {
-      transform: scale(1.03);
-      transition: transform 0.3s ease;
-    }
   </style>
 </head>
-<body class="bg-rose-100 font-sans fade-in">
+<body class="bg-gray-800 text-black min-h-screen fade-in">
 
-  <div class="max-w-6xl mx-auto p-6">
-    <!-- Heading -->
-    <div class="text-center mb-6">
-      <h1 onclick="location.reload()" class="text-4xl font-extrabold text-white bg-black glow-heading">
-        Functions!
-      </h1>
-      <p class="text-rose-700 text-lg mt-2">Events, celebrations & special programs</p>
-    </div>
+  <!-- Header -->
+  <div onclick="location.reload();" class="bg-black py-6 cursor-pointer flex justify-center">
+    <h1 class="text-3xl font-bold text-white glow-border px-6 py-2 rounded">
+      Functions
+    </h1>
+  </div>
 
-    <!-- Image Grid with 3 columns always -->
-    <div class="grid grid-cols-3 gap-4">
-      <a href="https://i.postimg.cc/KcJHrZcj/FB-IMG-1748376246102.jpg" data-fslightbox="gallery">
-        <img src="https://i.postimg.cc/KcJHrZcj/FB-IMG-1748376246102.jpg" alt="Event 1" class="rounded-lg shadow-md w-full aspect-[3/2] object-cover image-hover">
+  <!-- Gallery -->
+  <div class="p-6">
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <a href="https://i.postimg.cc/RF35zc8y/FB-IMG-1748358398109.jpg" data-lightbox="portraits">
+        <img src="https://i.postimg.cc/RF35zc8y/FB-IMG-1748358398109.jpg" class="rounded shadow-md border border-black w-full h-48 object-cover" alt="Portrait">
       </a>
-      <a href="https://i.postimg.cc/LsXGztH5/FB-IMG-1748358404549.jpg" data-fslightbox="gallery">
-        <img src="https://i.postimg.cc/LsXGztH5/FB-IMG-1748358404549.jpg" alt="Event 2" class="rounded-lg shadow-md w-full aspect-[3/2] object-cover image-hover">
+      <a href="https://i.postimg.cc/wMJC199k/FB-IMG-1748358400199.jpg" data-lightbox="portraits">
+        <img src="https://i.postimg.cc/wMJC199k/FB-IMG-1748358400199.jpg" class="rounded shadow-md border border-black w-full h-48 object-cover" alt="Portrait">
       </a>
-      <a href="https://i.postimg.cc/Y0kVkWs0/FB-IMG-1748358409634.jpg" data-fslightbox="gallery">
-        <img src="https://i.postimg.cc/Y0kVkWs0/FB-IMG-1748358409634.jpg" alt="Event 3" class="rounded-lg shadow-md w-full aspect-[3/2] object-cover image-hover">
+      <a href="https://i.postimg.cc/RVxrjJTp/FB-IMG-1748358402319.jpg" data-lightbox="portraits">
+        <img src="https://i.postimg.cc/RVxrjJTp/FB-IMG-1748358402319.jpg" class="rounded shadow-md border border-black w-full h-48 object-cover" alt="Portrait">
       </a>
-      <a href="https://i.postimg.cc/k56Dmsx6/FB-IMG-1748358392055.jpg" data-fslightbox="gallery">
-        <img src="https://i.postimg.cc/k56Dmsx6/FB-IMG-1748358392055.jpg" alt="Event 4" class="rounded-lg shadow-md w-full aspect-[3/2] object-cover image-hover">
+      <a href="https://i.postimg.cc/LsXGztH5/FB-IMG-1748358404549.jpg" data-lightbox="portraits">
+        <img src="https://i.postimg.cc/LsXGztH5/FB-IMG-1748358404549.jpg" class="rounded shadow-md border border-black w-full h-48 object-cover" alt="Portrait">
       </a>
-      <!-- আরও ছবি চাইলে এখানেই যোগ করতে পারো -->
+      <a href="https://i.postimg.cc/W4HCSd3n/FB-IMG-1748358406981.jpg" data-lightbox="portraits">
+        <img src="https://i.postimg.cc/W4HCSd3n/FB-IMG-1748358406981.jpg" class="rounded shadow-md border border-black w-full h-48 object-cover" alt="Portrait">
+      </a>
     </div>
+  </div>
 
-    <!-- Navigation Buttons -->
-    <div class="mt-10 text-center space-x-4">
-      <a href="index.html" class="animated-button">← Home</a>
-      <a href="https://riphotography.github.io/riphotography/portfolio.html" class="animated-button">← Back to Portfolio</a>
-    </div>
+  <!-- Buttons -->
+  <div class="text-center mt-10 mb-6 flex justify-center gap-4">
+    <a href="portfolio.html" class="px-4 py-2 border border-gray-400 text-white rounded hover:bg-white hover:text-black transition duration-300 text-sm">
+      ← Back to Portfolio
+    </a>
+    <a href="index.html" class="px-4 py-2 border border-gray-400 text-white rounded hover:bg-white hover:text-black transition duration-300 text-sm">
+      ← Back to Home
+    </a>
   </div>
 
 </body>
