@@ -44,7 +44,7 @@
 
     .gallery-img {
       width: 100%;
-      height: 150px;
+      height: 160px;
       object-fit: cover;
       border-radius: 0.5rem;
       border: 1px solid black;
@@ -55,7 +55,6 @@
       transform: scale(1.03);
     }
 
-    /* Section Title Box Animation */
     @keyframes pulse-border {
       0%, 100% {
         box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5);
@@ -79,7 +78,7 @@
   </style>
 </head>
 
-<body class="bg-white text-gray-900">
+<body class="bg-gray-100 text-gray-900">
 
   <!-- Heading -->
   <div class="bg-black py-6 mb-10 rounded-lg shadow-lg text-center">
@@ -89,7 +88,7 @@
   </div>
 
   <!-- Gallery Grid -->
-  <div class="grid grid-cols-3 gap-2 px-4">
+  <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-3 px-4">
     <a href="https://i.postimg.cc/K8bbGqgr/IMG20250526165338.jpg" data-lightbox="portraits">
       <img src="https://i.postimg.cc/K8bbGqgr/IMG20250526165338.jpg" alt="Portrait" class="gallery-img">
     </a>
@@ -99,10 +98,10 @@
     <a href="https://i.postimg.cc/k56Dmsx6/FB-IMG-1748358392055.jpg" data-lightbox="portraits">
       <img src="https://i.postimg.cc/k56Dmsx6/FB-IMG-1748358392055.jpg" alt="Portrait" class="gallery-img">
     </a>
-    <!-- More images can be added the same way -->
+    <!-- আরও ছবি এভাবেই যুক্ত করতে পারবেন -->
   </div>
 
-  <!-- Section Title with Animated Box -->
+  <!-- Section Title -->
   <div class="text-center mt-10">
     <div class="animated-box mx-auto">
       Our Photography Packages
