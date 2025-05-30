@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Functions - My Creative Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/fslightbox/index.js"></script>
   <style>
-    /* Glow Animation for Heading */
     .glow-heading {
       border: 2px solid white;
       padding: 0.5rem 1.5rem;
@@ -29,7 +29,6 @@
       }
     }
 
-    /* Page fade-in animation */
     .fade-in {
       animation: fadeIn 1s ease-out forwards;
     }
@@ -45,7 +44,6 @@
       }
     }
 
-    /* Colorful Animated Buttons */
     .animated-button {
       background: linear-gradient(45deg, #ff416c, #ff4b2b);
       transition: all 0.4s ease;
@@ -62,7 +60,6 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
 
-    /* Image hover effect */
     .image-hover:hover {
       transform: scale(1.03);
       transition: transform 0.3s ease;
@@ -72,7 +69,7 @@
 <body class="bg-rose-100 font-sans fade-in">
 
   <div class="max-w-6xl mx-auto p-6">
-    <!-- Centered Heading -->
+    <!-- Heading -->
     <div class="text-center mb-6">
       <h1 onclick="location.reload()" class="text-4xl font-extrabold text-white bg-black glow-heading">
         Functions!
@@ -80,12 +77,21 @@
       <p class="text-rose-700 text-lg mt-2">Events, celebrations & special programs</p>
     </div>
 
-    <!-- Photo Gallery Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <img src="https://i.postimg.cc/KcJHrZcj/FB-IMG-1748376246102.jpg" alt="Event 1" class="rounded-lg shadow-md h-48 w-full object-cover image-hover">
-      <img src="https://i.postimg.cc/LsXGztH5/FB-IMG-1748358404549.jpg" alt="Event 2" class="rounded-lg shadow-md h-48 w-full object-cover image-hover">
-      <img src="https://i.postimg.cc/Y0kVkWs0/FB-IMG-1748358409634.jpg" alt="Event 3" class="rounded-lg shadow-md h-48 w-full object-cover image-hover">
-      <img src="https://i.postimg.cc/k56Dmsx6/FB-IMG-1748358392055.jpg" alt="Event 4" class="rounded-lg shadow-md h-48 w-full object-cover image-hover">
+    <!-- Image Grid with 3 columns always -->
+    <div class="grid grid-cols-3 gap-4">
+      <a href="https://i.postimg.cc/KcJHrZcj/FB-IMG-1748376246102.jpg" data-fslightbox="gallery">
+        <img src="https://i.postimg.cc/KcJHrZcj/FB-IMG-1748376246102.jpg" alt="Event 1" class="rounded-lg shadow-md w-full aspect-[3/2] object-cover image-hover">
+      </a>
+      <a href="https://i.postimg.cc/LsXGztH5/FB-IMG-1748358404549.jpg" data-fslightbox="gallery">
+        <img src="https://i.postimg.cc/LsXGztH5/FB-IMG-1748358404549.jpg" alt="Event 2" class="rounded-lg shadow-md w-full aspect-[3/2] object-cover image-hover">
+      </a>
+      <a href="https://i.postimg.cc/Y0kVkWs0/FB-IMG-1748358409634.jpg" data-fslightbox="gallery">
+        <img src="https://i.postimg.cc/Y0kVkWs0/FB-IMG-1748358409634.jpg" alt="Event 3" class="rounded-lg shadow-md w-full aspect-[3/2] object-cover image-hover">
+      </a>
+      <a href="https://i.postimg.cc/k56Dmsx6/FB-IMG-1748358392055.jpg" data-fslightbox="gallery">
+        <img src="https://i.postimg.cc/k56Dmsx6/FB-IMG-1748358392055.jpg" alt="Event 4" class="rounded-lg shadow-md w-full aspect-[3/2] object-cover image-hover">
+      </a>
+      <!-- আরও ছবি চাইলে এখানেই যোগ করতে পারো -->
     </div>
 
     <!-- Navigation Buttons -->
