@@ -6,114 +6,138 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rag Day</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+  <!-- Lightbox2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/css/lightbox.min.css" rel="stylesheet" />
 
   <style>
-    /* Glowing border animation */
-    @keyframes glow-border {
-      0% {
-        box-shadow: 0 0 5px #3b82f6, 0 0 10px #3b82f6, 0 0 15px #3b82f6;
+    body {
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    window.onbeforeunload = () => {
+      document.body.style.animation = 'fadeOut 0.5s ease forwards';
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
       }
-      50% {
-        box-shadow: 0 0 10px #6366f1, 0 0 20px #6366f1, 0 0 25px #6366f1;
-      }
-      100% {
-        box-shadow: 0 0 5px #3b82f6, 0 0 10px #3b82f6, 0 0 15px #3b82f6;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
       }
     }
 
     .glow-box {
-      border: 3px solid #3b82f6;
-      padding: 0.5rem 1.5rem;
-      border-radius: 0.75rem;
-      animation: glow-border 2s infinite;
-      display: inline-block;
-      transition: transform 0.2s ease;
+      border: 2px solid #00f;
+      box-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f;
+      animation: glow 2s infinite alternate;
     }
 
-    .glow-box:hover {
-      transform: scale(1.05);
-    }
-
-    .btn-animated:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 15px rgba(139, 92, 246, 0.4);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .gallery-img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 0.5rem;
-      border: 1px solid black;
-      transition: transform 0.3s ease;
-    }
-
-    .gallery-img:hover {
-      transform: scale(1.03);
-    }
-
-    @keyframes pulse-border {
-      0%, 100% {
-        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5);
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 15px #00f;
       }
-      50% {
-        box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+      100% {
+        box-shadow: 0 0 20px #00f, 0 0 30px #00f, 0 0 40px #00f;
       }
     }
 
-    .animated-box {
-      animation: pulse-border 2.5s infinite;
-      border-radius: 0.75rem;
-      border: 4px solid #3b82f6;
-      padding: 0.5rem 1.5rem;
-      display: inline-block;
-      color: #1e40af;
-      font-weight: 600;
-      font-size: 1.875rem;
-      margin-bottom: 1.5rem;
+    .classic-button {
+      background: linear-gradient(45deg, #ff4d4d, #ffcc00, #4dff4d, #4d4dff, #cc00cc);
+      background-size: 300% 300%;
+      animation: gradient 6s ease infinite;
+      color: white;
+      font-size: 0.875rem; /* text-sm */
+      padding: 0.5rem 1rem; /* px-4 py-2 */
+      border-radius: 9999px; /* rounded-full */
+      font-weight: 600; /* font-semibold */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+
+    .classic-button:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
   </style>
 </head>
+<body class="bg-gray-200 text-black p-6">
 
-<body class="bg-gray-100 text-gray-900">
-
-  <!-- Heading -->
   <div class="bg-black py-6 mb-10 rounded-lg shadow-lg text-center">
-    <span class="glow-box text-white text-3xl font-bold">
+    <a href="" class="inline-block px-6 py-3 bg-black text-white text-3xl font-bold rounded glow-box">
       Rag Day
-    </span>
+    </a>
   </div>
 
-  <!-- Gallery Grid -->
-  <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-3 px-4">
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
     <a href="https://i.postimg.cc/K8bbGqgr/IMG20250526165338.jpg" data-lightbox="portraits">
-      <img src="https://i.postimg.cc/K8bbGqgr/IMG20250526165338.jpg" alt="Portrait" class="gallery-img">
+      <img src="https://i.postimg.cc/K8bbGqgr/IMG20250526165338.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
     </a>
-    <a href="https://i.postimg.cc/Y0kVkWs0/FB-IMG-1748358409634.jpg" data-lightbox="portraits">
-      <img src="https://i.postimg.cc/Y0kVkWs0/FB-IMG-1748358409634.jpg" alt="Portrait" class="gallery-img">
+    <a href="https://i.postimg.cc/PxNDvM2t/FB-IMG-1748235766745.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/PxNDvM2t/FB-IMG-1748235766745.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
     </a>
-    <a href="https://i.postimg.cc/k56Dmsx6/FB-IMG-1748358392055.jpg" data-lightbox="portraits">
-      <img src="https://i.postimg.cc/k56Dmsx6/FB-IMG-1748358392055.jpg" alt="Portrait" class="gallery-img">
+    <a href="https://i.postimg.cc/tT7S5w9w/FB-IMG-1748235762871.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/tT7S5w9w/FB-IMG-1748235762871.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
     </a>
-    <!-- আরও ছবি এভাবেই যুক্ত করতে পারবেন -->
+    <a href="https://i.postimg.cc/gJ5MBsJJ/FB-IMG-1748235760673.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/gJ5MBsJJ/FB-IMG-1748235760673.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/VvC7ytrF/FB-IMG-1748235756318.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/VvC7ytrF/FB-IMG-1748235756318.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/NG3J6dSC/FB-IMG-1748235753078.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/NG3J6dSC/FB-IMG-1748235753078.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/L8TxM2XG/FB-IMG-1748235749557.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/L8TxM2XG/FB-IMG-1748235749557.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
+    <a href="https://i.postimg.cc/J042kvSs/FB-IMG-1748235796593.jpg" data-lightbox="portraits">
+      <img src="https://i.postimg.cc/J042kvSs/FB-IMG-1748235796593.jpg" class="rounded shadow-md border border-black w-full h-auto object-cover" alt="Portrait">
+    </a>
+   
   </div>
 
-  <!-- Section Title -->
-  <div class="text-center mt-10">
-    <div class="animated-box mx-auto">
-      Our Photography Packages
-    </div>
-  </div>
-
-  <!-- Back Button -->
-  <div class="text-center mb-10">
-    <a href="#" class="inline-block bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-semibold py-2 px-6 rounded-full shadow hover:shadow-lg transition duration-300 btn-animated">
-      ← Back to Home
+  <!-- Navigation Buttons -->
+  <div class="mt-10 text-center flex justify-center gap-4 flex-wrap">
+    <a href="https://riphotography.github.io/riphotography/index.html">
+      <button class="classic-button">
+        Home
+      </button>
+    </a>
+    <a href="https://riphotography.github.io/riphotography/portfolio.html">
+      <button class="classic-button">
+        Back to Portfolio
+      </button>
     </a>
   </div>
 
+  <!-- Lightbox2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/js/lightbox.min.js"></script>
+
+  <script>
+    // Fade-out effect before navigating away
+    document.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
+          e.preventDefault();
+          document.body.style.animation = 'fadeOut 0.5s ease forwards';
+          setTimeout(() => {
+            window.location.href = href;
+          }, 500);
+        }
+      });
+    });
+  </script>
 </body>
 </html>
