@@ -1,1 +1,105 @@
+-<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Photography Packages - RI Photography</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Pulse animation */
+    @keyframes pulse-border {
+      0%, 100% {
+        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5);
+      }
+      50% {
+        box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+      }
+    }
 
+    .animated-box {
+      animation: pulse-border 2.5s infinite;
+      border-radius: 0.75rem;
+      border: 4px solid #3b82f6;
+      padding: 0.5rem 1.5rem;
+      display: inline-block;
+      color: #1e40af;
+      font-weight: 600;
+      font-size: 1.875rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-animated:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 15px rgba(139, 92, 246, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card-animated {
+      animation: pulse-border 3s infinite;
+      border-radius: 0.75rem;
+      border: 3px solid #4f46e5;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Header -->
+  <div class="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white text-center py-6 shadow-md">
+    <h1 class="text-4xl font-bold">RI Photography</h1>
+    <p class="text-lg mt-2">Turning Moments into Timeless Art</p>
+  </div>
+
+  <!-- Section Title with Animated Box -->
+  <div class="text-center mt-8">
+    <div class="animated-box mx-auto">
+      Our Photography Packages
+    </div>
+  </div>
+
+  <!-- Packages Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-12 lg:px-20 mb-10">
+
+    <!-- Basic Package -->
+    <div class="card-animated p-4 shadow hover:shadow-lg transition duration-300">
+      <h2 class="text-2xl font-bold mb-2">Basic Package</h2>
+      <ul class="list-disc list-inside space-y-1">
+        <li>1 Photographer</li>
+        <li>3 Hours Coverage</li>
+        <li>100 Edited Photos</li>
+        <li>Delivery within 5 days</li>
+      </ul>
+    </div>
+
+    <!-- Standard Package -->
+    <div class="card-animated p-4 shadow hover:shadow-lg transition duration-300">
+      <h2 class="text-2xl font-bold mb-2">Standard Package</h2>
+      <img src="https://i.postimg.cc/wvrRzbdD/Beige-and-Gold-Elegant-Wedding-Package-Instagram-Post-20250515-224311-0000.png" alt="Couple Package" class="mb-3 rounded">
+      <ul class="list-disc list-inside space-y-1">
+        <li>1 Photographer</li>
+        <li>4 Hours Coverage</li>
+        <li>150 Edited Photos</li>
+        <li>All Raw images</li>
+        <li>Delivery within 7 days</li>
+      </ul>
+    </div>
+
+    <!-- Premium Package -->
+    <div class="card-animated p-4 shadow hover:shadow-lg transition duration-300">
+      <h2 class="text-2xl font-bold mb-2">Premium Package</h2>
+      <img src="https://i.postimg.cc/FHFSjSGd/FB-IMG-1748144944773.jpg" alt="Customized Package" class="mb-3 rounded">
+      <ul class="list-disc list-inside space-y-1">
+        <li>You can customize any package</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Back Button -->
+  <div class="text-center mb-10">
+    <a href="#" class="inline-block bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-semibold py-2 px-6 rounded-full shadow hover:shadow-lg transition duration-300 btn-animated">
+      ← Back to Home
+    </a>
+  </div>
+
+</body>
+</html>
