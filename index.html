@@ -7,7 +7,7 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #000;
+      background-color: #0f0f0f;
       color: #fff;
       overflow-x: hidden;
     }
@@ -20,6 +20,12 @@
     }
     .logo {
       height: 60px;
+    }
+    .site-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-left: 1rem;
+      color: #e0b0ff;
     }
     nav a {
       margin: 0 15px;
@@ -36,7 +42,7 @@
     .slides {
       display: flex;
       width: 300%;
-      animation: slide 15s infinite;
+      animation: slide 15s linear infinite;
     }
     .slides img {
       width: 100vw;
@@ -45,9 +51,32 @@
     }
     @keyframes slide {
       0% { transform: translateX(0); }
-      33% { transform: translateX(-100vw); }
-      66% { transform: translateX(-200vw); }
+      33.33% { transform: translateX(-100vw); }
+      66.66% { transform: translateX(-200vw); }
       100% { transform: translateX(0); }
+    }
+    .overlay-nav {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      z-index: 1;
+    }
+    .overlay-nav a {
+      padding: 8px 15px;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+      background: linear-gradient(45deg, #ff0080, #7928ca);
+      animation: borderPulse 2s infinite alternate;
+    }
+    @keyframes borderPulse {
+      0% { border-color: #ff0080; }
+      100% { border-color: #7928ca; }
     }
     .center-text {
       text-align: center;
@@ -79,21 +108,39 @@
       font-size: 1.8rem;
       color: #e0b0ff;
     }
-    .gallery, .reviews {
+    .gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
       padding: 0 1rem;
     }
-    .gallery img, .review-card {
+    .gallery img {
       width: 45%;
-      background-color: #222;
       border-radius: 10px;
-      padding: 1rem;
+    }
+    .reviews {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      padding: 0 1rem 3rem;
     }
     .review-card {
+      display: flex;
+      align-items: center;
+      background-color: #1a1a1a;
+      padding: 1rem;
+      border-radius: 10px;
+      width: 80%;
+      gap: 1rem;
       color: #ccc;
+    }
+    .review-card img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 50%;
     }
     footer {
       text-align: center;
@@ -106,7 +153,10 @@
 </head>
 <body>
   <header>
-    <img src="/mnt/data/file-4pZAhUBkSd5Qab2C5F1rMb" alt="RI Logo" class="logo">
+    <div style="display: flex; align-items: center;">
+      <img src="/mnt/data/file-4pZAhUBkSd5Qab2C5F1rMb" alt="RI Logo" class="logo">
+      <div class="site-title">RI Photography</div>
+    </div>
     <nav>
       <a href="#portfolio">Portfolio</a>
       <a href="#booking">Booking</a>
@@ -114,6 +164,12 @@
       <a href="#vlog">Vlog</a>
     </nav>
   </header>  <section class="slider">
+    <div class="overlay-nav">
+      <a href="#portfolio">Portfolio</a>
+      <a href="#packages">Packages</a>
+      <a href="#vlog">Vlog</a>
+      <a href="#booking">Booking</a>
+    </div>
     <div class="slides">
       <img src="https://via.placeholder.com/1200x800?text=Slide+1" alt="Slide 1">
       <img src="https://via.placeholder.com/1200x800?text=Slide+2" alt="Slide 2">
@@ -122,7 +178,7 @@
   </section>  <section class="center-text">
     <h1># Turning Moments into Timeless Art</h1>
     <p>Capturing emotions, stories, and love through our lens</p>
-    <a href="#booking"><button class="btn">Book a Session</button></a>
+    <a href="https://riphotography.github.io/riphotography/index.html#booking"><button class="btn">Book a Session</button></a>
   </section>  <section class="quote">
     <p>“Every click tells a tale, every frame captures a forever.”<br>— RI</p>
   </section>  <section id="portfolio">
@@ -136,12 +192,18 @@
   </section>  <section class="reviews">
     <h2 class="section-title">Client Reviews</h2>
     <div class="review-card">
-      <p>“RI Photography made our wedding magical. Every moment was beautifully captured and edited with care.”</p>
-      <p>— Jui & Rahat</p>
+      <img src="https://via.placeholder.com/80" alt="Client 1">
+      <div>
+        <p>“RI Photography made our wedding magical. Every moment was beautifully captured and edited with care.”</p>
+        <p>— Jui & Rahat</p>
+      </div>
     </div>
     <div class="review-card">
-      <p>“The team was professional and friendly. Our photos turned out better than we could have imagined.”</p>
-      <p>— Ayesha & Karim</p>
+      <img src="https://via.placeholder.com/80" alt="Client 2">
+      <div>
+        <p>“The team was professional and friendly. Our photos turned out better than we could have imagined.”</p>
+        <p>— Ayesha & Karim</p>
+      </div>
     </div>
   </section>  <footer>
     <p>📞 +8801234567890 | ✉️ riphotography@email.com | 🌐 fb.com/RIphotographyBD</p>
