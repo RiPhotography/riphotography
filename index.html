@@ -59,27 +59,28 @@
 
   <!-- Hero Section -->
   <section class="relative">
-    <div class="swiper mySwiper h-90 md:h-110">
+    <!-- Swiper Container -->
+    <div class="swiper mySwiper h-[70vh] md:h-[80vh]">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="https://i.postimg.cc/sx08dCyX/1746186427065-1.jpg" class="w-full h-80 md:h-110 object-cover" alt="Slide 1">
+          <img src="https://i.postimg.cc/sx08dCyX/1746186427065-1.jpg" class="w-full h-full object-contain" alt="Slide 1">
         </div>
         <div class="swiper-slide">
-          <img src="https://i.postimg.cc/Qtg9yjQQ/IMG-20250525-191508.jpg" class="w-full h-80 md:h-105 object-cover" alt="Slide 2">
+          <img src="https://i.postimg.cc/Qtg9yjQQ/IMG-20250525-191508.jpg" class="w-full h-full object-contain" alt="Slide 2">
         </div>
         <div class="swiper-slide">
-          <img src="https://i.postimg.cc/3NVTjvkn/FB-IMG-1748144944773.jpg" class="w-full h-80 md:h-100 object-cover" alt="Slide 3">
+          <img src="https://i.postimg.cc/3NVTjvkn/FB-IMG-1748144944773.jpg" class="w-full h-full object-contain" alt="Slide 3">
         </div>
       </div>
       <div class="swiper-pagination"></div>
     </div>
 
     <!-- Overlay Text -->
-    <div class="absolute inset-0 flex items-center justify-center">
-      <div class="text-center text-white bg-black bg-opacity-50 px-6 py-6 rounded">
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <div class="text-center text-white bg-black/50 px-6 py-6 rounded">
         <h1 class="text-2xl md:text-4xl font-bold title-font"># Memories that will last a lifetime</h1>
         <p class="mt-2 md:mt-4 text-base md:text-lg">Capturing life's most beautiful moments, one frame at a time.</p>
-        <a href="portfolio.html" class="mt-4 inline-block bg-white text-gray-800 px-4 py-2 rounded-full hover:bg-gray-200">View Portfolio</a>
+        <a href="portfolio.html" class="pointer-events-auto mt-4 inline-block bg-white text-gray-800 px-4 py-2 rounded-full hover:bg-gray-200">View Portfolio</a>
       </div>
     </div>
   </section>
@@ -124,23 +125,55 @@
     </div>
   </section>
 
-  <!-- Testimonials -->
+  <!-- Testimonials & Cartoon Stats -->
   <section class="py-12 bg-white">
-    <div class="max-w-5xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold title-font mb-8">Client Testimonials</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="flex items-center bg-gray-100 p-6 rounded-lg shadow-md text-left">
-          <img src="https://via.placeholder.com/100" alt="Client 1" class="w-24 h-24 rounded-full mr-6">
-          <div>
-            <p class="text-gray-700 italic">"RI Photography captured our wedding beautifully. Every photo tells a story, and we couldn't be happier with the results."</p>
-            <p class="mt-4 font-bold text-gray-800">— Amanda & Smith Jacobson</p>
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold title-font text-center mb-8">Client Testimonials</h2>
+      <div class="md:flex md:space-x-8">
+        <!-- Testimonials Grid -->
+        <div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="flex items-center bg-gray-100 p-6 rounded-lg shadow-md text-left">
+            <img src="https://via.placeholder.com/100" alt="Client 1" class="w-24 h-24 rounded-full mr-6">
+            <div>
+              <p class="text-gray-700 italic">"RI Photography captured our wedding beautifully. Every photo tells a story, and we couldn't be happier with the results."</p>
+              <p class="mt-4 font-bold text-gray-800">— Amanda &amp; Smith Jacobson</p>
+            </div>
+          </div>
+          <div class="flex items-center bg-gray-100 p-6 rounded-lg shadow-md text-left">
+            <img src="https://via.placeholder.com/100" alt="Client 2" class="w-24 h-24 rounded-full mr-6">
+            <div>
+              <p class="text-gray-700 italic">"Professional, creative, and truly passionate about their work. Highly recommended!"</p>
+              <p class="mt-4 font-bold text-gray-800">— Nuzhat &amp; Samshad</p>
+            </div>
           </div>
         </div>
-        <div class="flex items-center bg-gray-100 p-6 rounded-lg shadow-md text-left">
-          <img src="https://via.placeholder.com/100" alt="Client 2" class="w-24 h-24 rounded-full mr-6">
-          <div>
-            <p class="text-gray-700 italic">"Professional, creative, and truly passionate about their work. Highly recommended!"</p>
-            <p class="mt-4 font-bold text-gray-800">— Nuzhat & Samshad</p>
+
+        <!-- Cartoon Stat -->
+        <div class="flex-shrink-0 flex flex-col items-center justify-center mt-8 md:mt-0">
+          <!-- Cartoon Character Leaning -->
+          <svg width="120" height="200" viewBox="0 0 120 200" xmlns="http://www.w3.org/2000/svg" class="transform -rotate-6">
+            <!-- Wall -->
+            <rect x="0" y="0" width="10" height="200" fill="#e5e7eb" />
+            <!-- Head -->
+            <circle cx="70" cy="40" r="25" fill="#fde68a" stroke="#000" stroke-width="2" />
+            <!-- Eyes -->
+            <circle cx="62" cy="35" r="4" fill="#000" />
+            <circle cx="78" cy="35" r="4" fill="#000" />
+            <!-- Smile -->
+            <path d="M60 48 Q70 58 80 48" stroke="#000" stroke-width="2" fill="none" />
+            <!-- Body -->
+            <line x1="70" y1="65" x2="70" y2="130" stroke="#000" stroke-width="4" />
+            <!-- Arms -->
+            <line x1="70" y1="85" x2="40" y2="95" stroke="#000" stroke-width="4" />
+            <line x1="70" y1="85" x2="100" y2="75" stroke="#000" stroke-width="4" />
+            <!-- Legs -->
+            <line x1="70" y1="130" x2="50" y2="180" stroke="#000" stroke-width="4" />
+            <line x1="70" y1="130" x2="90" y2="180" stroke="#000" stroke-width="4" />
+          </svg>
+          <!-- Stat Box -->
+          <div class="mt-4 bg-gray-100 px-6 py-3 rounded-lg shadow-md text-center">
+            <p class="font-bold text-gray-800">হ্যাপি ক্লায়েন্ট</p>
+            <p class="text-sm text-gray-600">(২০ জন)</p>
           </div>
         </div>
       </div>
@@ -166,20 +199,4 @@
   </footer>
 
   <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-  </script>
-
-</body>
-</html>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/sw
