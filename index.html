@@ -12,51 +12,89 @@
     }
   </style>
 </head><body class="bg-white text-gray-800">
-  <!-- Hero Section -->
-  <section class="h-screen bg-cover bg-center flex items-center justify-center text-center" style="background-image: url('https://your-image-url.com/hero.jpg');">
-    <div class="bg-black bg-opacity-50 p-10 rounded-xl">
-      <h1 class="text-5xl text-white font-bold mb-4">Turning Moments into Timeless Art</h1>
-      <p class="text-white text-lg mb-6">Capturing emotions, stories, and love through our lens</p>
-      <a href="#contact" class="bg-white text-black px-6 py-3 rounded-full font-semibold shadow-lg">Book a Session</a>
-    </div>
-  </section>  <!-- Services Section -->  <section class="py-16 px-6 bg-gray-100">
-    <h2 class="text-4xl font-bold text-center mb-10">Our Services</h2>
-    <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-      <div class="bg-white p-6 rounded-xl shadow">
-        <h3 class="text-2xl font-semibold mb-4">Wedding Photography</h3>
-        <p>Documenting your special day with elegance and timeless beauty.</p>
-      </div>
-      <div class="bg-white p-6 rounded-xl shadow">
-        <h3 class="text-2xl font-semibold mb-4">Couple/Pre-Wedding</h3>
-        <p>Cherishing your bond through soulful frames.</p>
-      </div>
-      <div class="bg-white p-6 rounded-xl shadow">
-        <h3 class="text-2xl font-semibold mb-4">Birthday & Events</h3>
-        <p>Capturing the joy of celebrations, candid and colorful.</p>
+  <!-- Navbar -->
+  <header class="fixed top-0 w-full z-50 bg-transparent backdrop-blur-md shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="/" class="text-2xl font-bold text-white">
+        <img src="https://your-logo-url.com/logo.png" alt="RI Logo" class="h-10 inline">
+      </a>
+      <nav class="hidden md:flex space-x-6">
+        <a href="#portfolio" class="text-white font-semibold border-b-2 border-transparent hover:border-pink-500 transition">Portfolio</a>
+        <a href="#booking" class="text-white font-semibold border-b-2 border-transparent hover:border-yellow-500 transition">Booking</a>
+        <a href="#packages" class="text-white font-semibold border-b-2 border-transparent hover:border-blue-500 transition">Packages</a>
+        <a href="#contact" class="text-white font-semibold border-b-2 border-transparent hover:border-green-500 transition">Contact</a>
+      </nav>
+      <div class="md:hidden">
+        <button id="menu-btn" class="text-white text-3xl focus:outline-none">&#9776;</button>
       </div>
     </div>
-  </section>  <!-- Gallery Section -->  <section class="py-16 px-6">
-    <h2 class="text-4xl font-bold text-center mb-10">Gallery</h2>
-    <div class="grid md:grid-cols-3 gap-4 max-w-6xl mx-auto">
-      <img src="https://your-image-url.com/photo1.jpg" alt="Gallery Image 1" class="rounded-xl shadow" />
-      <img src="https://your-image-url.com/photo2.jpg" alt="Gallery Image 2" class="rounded-xl shadow" />
-      <img src="https://your-image-url.com/photo3.jpg" alt="Gallery Image 3" class="rounded-xl shadow" />
+    <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-80 text-white px-4 py-3 space-y-2">
+      <a href="#portfolio" class="block">Portfolio</a>
+      <a href="#booking" class="block">Booking</a>
+      <a href="#packages" class="block">Packages</a>
+      <a href="#contact" class="block">Contact</a>
     </div>
-  </section>  <!-- Testimonials Section -->  <section class="py-16 px-6 bg-gray-100">
-    <h2 class="text-4xl font-bold text-center mb-10">What Clients Say</h2>
-    <div class="max-w-4xl mx-auto text-center">
-      <blockquote class="italic">“RI Photography made our wedding magical. Every moment was beautifully captured and edited with care.”</blockquote>
-      <p class="mt-4 font-semibold">— Jui & Rahat</p>
+  </header>  <!-- Slideshow -->  <section class="pt-16">
+    <div class="relative w-full h-screen overflow-hidden">
+      <div class="absolute inset-0 animate-fade-slide" id="slider">
+        <img src="https://your-image-url.com/photo1.jpg" alt="Slide 1" class="w-full h-full object-cover">
+      </div>
+      <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-white text-center">
+        <h1 class="text-5xl font-bold mb-4">Turning Moments into Timeless Art</h1>
+        <p class="text-lg mb-6">Capturing emotions, stories, and love through our lens</p>
+        <a href="#booking" class="bg-white text-black px-6 py-3 rounded-full font-semibold shadow-lg">Book a Session</a>
+      </div>
     </div>
-  </section>  <!-- Contact Section -->  <section id="contact" class="py-16 px-6">
+  </section>  <!-- Advice Section -->  <section class="bg-white py-12 text-center px-6">
+    <blockquote class="italic text-xl max-w-3xl mx-auto">“প্রতিটি ক্যামেরার ক্লিকের পেছনে থাকে একটি গল্প—RI Photography সেই গল্পগুলোকে জীবন্ত করে তোলে।”</blockquote>
+    <p class="mt-4 font-semibold text-lg">— প্রীত রেজা</p>
+  </section>  <!-- Recent Works -->  <section id="portfolio" class="py-16 px-6 bg-gray-100">
+    <h2 class="text-4xl font-bold text-center mb-10">Recent Work</h2>
+    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <img src="https://your-image-url.com/recent1.jpg" alt="Recent 1" class="rounded-xl shadow">
+      <img src="https://your-image-url.com/recent2.jpg" alt="Recent 2" class="rounded-xl shadow">
+      <img src="https://your-image-url.com/recent3.jpg" alt="Recent 3" class="rounded-xl shadow">
+    </div>
+  </section>  <!-- Client Reviews -->  <section class="py-16 px-6">
+    <h2 class="text-4xl font-bold text-center mb-10">Client Reviews</h2>
+    <div class="max-w-6xl mx-auto space-y-10">
+      <div class="md:flex items-center gap-8">
+        <img src="https://your-image-url.com/client1.jpg" alt="Client 1" class="w-40 h-40 rounded-full object-cover">
+        <p class="mt-4 md:mt-0">“RI Photography made our wedding magical. Every moment was beautifully captured and edited with care.”<br><span class="font-semibold">— Jui & Rahat</span></p>
+      </div>
+      <div class="md:flex items-center gap-8 flex-row-reverse">
+        <img src="https://your-image-url.com/client2.jpg" alt="Client 2" class="w-40 h-40 rounded-full object-cover">
+        <p class="mt-4 md:mt-0">“The team was professional, creative, and punctual. Loved the outcome of our couple shoot!”<br><span class="font-semibold">— Mim & Arif</span></p>
+      </div>
+    </div>
+  </section>  <!-- Contact -->  <section id="contact" class="py-16 px-6 bg-gray-100">
     <h2 class="text-4xl font-bold text-center mb-10">Get in Touch</h2>
     <form class="max-w-2xl mx-auto grid grid-cols-1 gap-6">
-      <input type="text" placeholder="Your Name" class="border border-gray-300 rounded-lg p-3" />
-      <input type="email" placeholder="Your Email" class="border border-gray-300 rounded-lg p-3" />
+      <input type="text" placeholder="Your Name" class="border border-gray-300 rounded-lg p-3">
+      <input type="email" placeholder="Your Email" class="border border-gray-300 rounded-lg p-3">
       <textarea rows="5" placeholder="Your Message" class="border border-gray-300 rounded-lg p-3"></textarea>
       <button type="submit" class="bg-black text-white px-6 py-3 rounded-full shadow-lg hover:bg-gray-800">Send Message</button>
     </form>
   </section>  <!-- Footer -->  <footer class="bg-black text-white text-center py-6">
     <p>&copy; 2025 RI Photography. All rights reserved.</p>
-  </footer>
-</body></html>
+  </footer>  <script>
+    const images = [
+      'https://your-image-url.com/photo1.jpg',
+      'https://your-image-url.com/photo2.jpg',
+      'https://your-image-url.com/photo3.jpg'
+    ];
+    let current = 0;
+    const slider = document.getElementById('slider');
+
+    setInterval(() => {
+      current = (current + 1) % images.length;
+      slider.innerHTML = `<img src="${images[current]}" class="w-full h-full object-cover" />`;
+    }, 4000);
+
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script></body></html>
