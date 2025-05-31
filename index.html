@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RI Photography</title>
   <style>
     body {
@@ -9,30 +9,29 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #000;
       color: #fff;
+      overflow-x: hidden;
     }
     header {
+      background-color: #111;
+      padding: 1rem 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background-color: #111;
-      padding: 10px 20px;
     }
-    header img {
+    .logo {
       height: 60px;
     }
     nav a {
-      color: #ccc;
-      margin: 0 10px;
+      margin: 0 15px;
+      color: #fff;
       text-decoration: none;
       font-weight: bold;
     }
-    nav a:hover {
-      color: #fff;
-    }
     .slider {
       position: relative;
+      width: 100%;
+      height: 80vh;
       overflow: hidden;
-      height: 400px;
     }
     .slides {
       display: flex;
@@ -41,7 +40,7 @@
     }
     .slides img {
       width: 100vw;
-      height: 400px;
+      height: 80vh;
       object-fit: cover;
     }
     @keyframes slide {
@@ -50,105 +49,102 @@
       66% { transform: translateX(-200vw); }
       100% { transform: translateX(0); }
     }
-    .tagline {
+    .center-text {
       text-align: center;
-      margin: 40px 20px 20px;
+      padding: 3rem 1rem;
     }
-    .tagline h1 {
-      font-size: 2em;
-      color: #e0b3ff;
+    .center-text h1 {
+      font-size: 2.5rem;
+      color: #e0b0ff;
     }
-    .tagline p {
-      color: #ccc;
-      font-style: italic;
-    }
-    .cta {
-      text-align: center;
-      margin: 20px;
-    }
-    .cta a {
-      background-color: #ff33cc;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      font-weight: bold;
+    .btn {
+      background-color: #e0b0ff;
+      color: #000;
+      padding: 0.75rem 2rem;
+      border: none;
       border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 1rem;
     }
-    .section {
-      padding: 40px 20px;
-    }
-    .section h2 {
+    .quote {
+      font-style: italic;
+      margin: 3rem auto;
       text-align: center;
-      margin-bottom: 20px;
-      color: #ffccff;
+      max-width: 600px;
     }
-    .works, .reviews {
+    .section-title {
+      text-align: center;
+      margin: 2rem 0 1rem;
+      font-size: 1.8rem;
+      color: #e0b0ff;
+    }
+    .gallery, .reviews {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
+      padding: 0 1rem;
     }
-    .works img, .reviews .review {
+    .gallery img, .review-card {
       width: 45%;
-      background: #222;
-      padding: 10px;
-      border-radius: 8px;
+      background-color: #222;
+      border-radius: 10px;
+      padding: 1rem;
     }
-    .reviews .review p {
+    .review-card {
       color: #ccc;
     }
     footer {
-      background: #111;
-      color: #ccc;
       text-align: center;
-      padding: 20px;
-    }
-    footer a {
-      color: #ffccff;
-      text-decoration: none;
+      padding: 2rem;
+      background-color: #111;
+      color: #aaa;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="/mnt/data/file-4pZAhUBkSd5Qab2C5F1rMb" alt="RI Logo">
+    <img src="/mnt/data/file-4pZAhUBkSd5Qab2C5F1rMb" alt="RI Logo" class="logo">
     <nav>
       <a href="#portfolio">Portfolio</a>
       <a href="#booking">Booking</a>
       <a href="#packages">Packages</a>
       <a href="#vlog">Vlog</a>
     </nav>
-  </header>  <div class="slider">
+  </header>  <section class="slider">
     <div class="slides">
-      <img src="image1.jpg" alt="Slide 1">
-      <img src="image2.jpg" alt="Slide 2">
-      <img src="image3.jpg" alt="Slide 3">
+      <img src="https://via.placeholder.com/1200x800?text=Slide+1" alt="Slide 1">
+      <img src="https://via.placeholder.com/1200x800?text=Slide+2" alt="Slide 2">
+      <img src="https://via.placeholder.com/1200x800?text=Slide+3" alt="Slide 3">
     </div>
-  </div>  <div class="tagline">
+  </section>  <section class="center-text">
     <h1># Turning Moments into Timeless Art</h1>
-    <p>“We don’t just take photos, we freeze emotions in time.”<br>— RI</p>
-  </div>  <div class="cta">
-    <a href="/booking.html">Book a Session</a>
-  </div>  <div class="section" id="portfolio">
-    <h2>Recent Works</h2>
-    <div class="works">
-      <img src="work1a.jpg" alt="Work 1a">
-      <img src="work1b.jpg" alt="Work 1b">
-      <img src="work2a.jpg" alt="Work 2a">
-      <img src="work2b.jpg" alt="Work 2b">
+    <p>Capturing emotions, stories, and love through our lens</p>
+    <a href="#booking"><button class="btn">Book a Session</button></a>
+  </section>  <section class="quote">
+    <p>“Every click tells a tale, every frame captures a forever.”<br>— RI</p>
+  </section>  <section id="portfolio">
+    <h2 class="section-title">Recent Works</h2>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/500x400?text=Work+1" alt="Work 1">
+      <img src="https://via.placeholder.com/500x400?text=Work+2" alt="Work 2">
+      <img src="https://via.placeholder.com/500x400?text=Work+3" alt="Work 3">
+      <img src="https://via.placeholder.com/500x400?text=Work+4" alt="Work 4">
     </div>
-  </div>  <div class="section" id="reviews">
-    <h2>Client Reviews</h2>
-    <div class="reviews">
-      <div class="review">
-        <p>“RI Photography made our wedding magical. Every moment was beautifully captured and edited with care.”<br>— Jui & Rahat</p>
-      </div>
-      <div class="review">
-        <p>“The team was professional and friendly. Our photos turned out better than we could have imagined.”<br>— Ayesha & Karim</p>
-      </div>
+  </section>  <section class="reviews">
+    <h2 class="section-title">Client Reviews</h2>
+    <div class="review-card">
+      <p>“RI Photography made our wedding magical. Every moment was beautifully captured and edited with care.”</p>
+      <p>— Jui & Rahat</p>
     </div>
-  </div>  <footer>
-    <p>📞 017xxxxxxxx | 📧 riphotography@email.com | <a href="https://facebook.com/riphotography">Facebook Page</a></p>
+    <div class="review-card">
+      <p>“The team was professional and friendly. Our photos turned out better than we could have imagined.”</p>
+      <p>— Ayesha & Karim</p>
+    </div>
+  </section>  <footer>
+    <p>📞 +8801234567890 | ✉️ riphotography@email.com | 🌐 fb.com/RIphotographyBD</p>
     <p>© 2025 RI Photography. All rights reserved.</p>
   </footer>
 </body>
