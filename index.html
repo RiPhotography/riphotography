@@ -1,243 +1,84 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RI Photography</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0a0a0a;
-      color: #fff;
-      overflow-x: hidden;
-    }
-    header {
-      background-color: #111;
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo-container {
-      display: flex;
-      align-items: center;
-    }
-    .logo {
-      height: 60px;
-      margin-right: 10px;
-    }
-    .site-name {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #e0b0ff;
-    }
-    nav a {
-      margin: 0 15px;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      position: relative;
-    }
-    nav a::after {
-      content: '';
-      position: absolute;
-      width: 0%;
-      height: 2px;
-      bottom: -5px;
-      left: 0;
-      background-color: #e0b0ff;
-      transition: width 0.3s;
-    }
-    nav a:hover::after {
-      width: 100%;
-    }
-    .slider {
-      position: relative;
-      width: 100%;
-      height: 80vh;
-      overflow: hidden;
-    }
-    .slides {
-      display: flex;
-      width: 300%;
-      animation: slide 15s infinite linear;
-    }
-    .slides img {
-      width: 100vw;
-      height: 80vh;
-      object-fit: cover;
-    }
-    @keyframes slide {
-      0% { transform: translateX(0); }
-      33% { transform: translateX(-100vw); }
-      66% { transform: translateX(-200vw); }
-      100% { transform: translateX(0); }
-    }
-    .slider-overlay {
-      position: absolute;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 20px;
-    }
-    .slider-overlay a {
-      padding: 10px 20px;
-      border: 2px solid;
-      border-image: linear-gradient(45deg, #e0b0ff, #ff69b4, #00ffff, #e0b0ff) 1;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      animation: borderColor 5s linear infinite;
-    }
-    @keyframes borderColor {
-      0% { border-color: #e0b0ff; }
-      25% { border-color: #ff69b4; }
-      50% { border-color: #00ffff; }
-      75% { border-color: #ff69b4; }
-      100% { border-color: #e0b0ff; }
-    }
-    .center-text {
-      text-align: center;
-      padding: 3rem 1rem;
-    }
-    .center-text h1 {
-      font-size: 2.5rem;
-      color: #e0b0ff;
-    }
-    .btn {
-      background-color: #e0b0ff;
-      color: #000;
-      padding: 0.75rem 2rem;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-      margin-top: 1rem;
-      text-decoration: none;
-    }
-    .quote {
-      font-style: italic;
-      margin: 3rem auto;
-      text-align: center;
-      max-width: 600px;
-    }
-    .section-title {
-      text-align: center;
-      margin: 2rem 0 1rem;
-      font-size: 1.8rem;
-      color: #e0b0ff;
-    }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 0 1rem;
-    }
-    .gallery img {
-      width: 45%;
-      border-radius: 10px;
-    }
-    .reviews {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      padding: 0 1rem;
-    }
-    .review-card {
-      display: flex;
-      background-color: #222;
-      border-radius: 10px;
-      padding: 1rem;
-      width: 80%;
-      align-items: center;
-    }
-    .review-card img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-right: 20px;
-    }
-    .review-text {
-      color: #ccc;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background-color: #111;
-      color: #aaa;
-      font-size: 0.9rem;
+      font-family: 'Poppins', sans-serif;
     }
   </style>
 </head>
-<body>
-  <header>
-    <div class="logo-container">
-      <img src="/mnt/data/file-4pZAhUBkSd5Qab2C5F1rMb" alt="RI Logo" class="logo">
-      <span class="site-name">RI Photography</span>
-    </div>
-    <nav>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#packages">Packages</a>
-      <a href="#vlog">Vlog</a>
-      <a href="#booking">Booking</a>
-    </nav>
-  </header>
-  <section class="slider">
-    <div class="slides">
-      <img src="https://via.placeholder.com/1200x800?text=Slide+1" alt="Slide 1">
-      <img src="https://via.placeholder.com/1200x800?text=Slide+2" alt="Slide 2">
-      <img src="https://via.placeholder.com/1200x800?text=Slide+3" alt="Slide 3">
-    </div>
-    <div class="slider-overlay">
-      <a href="#portfolio">Portfolio</a>
-      <a href="#packages">Packages</a>
-      <a href="#vlog">Vlog</a>
-      <a href="#booking">Booking</a>
+
+<body class="bg-white text-gray-800">
+  <!-- Hero Section -->
+  <section class="h-screen bg-cover bg-center flex items-center justify-center text-center" style="background-image: url('https://your-image-url.com/hero.jpg');">
+    <div class="bg-black bg-opacity-50 p-10 rounded-xl">
+      <h1 class="text-5xl text-white font-bold mb-4">Turning Moments into Timeless Art</h1>
+      <p class="text-white text-lg mb-6">Capturing emotions, stories, and love through our lens</p>
+      <a href="#contact" class="bg-white text-black px-6 py-3 rounded-full font-semibold shadow-lg">Book a Session</a>
     </div>
   </section>
-  <section class="center-text">
-    <h1># Turning Moments into Timeless Art</h1>
-    <p>Capturing emotions, stories, and love through our lens</p>
-    <a href="https://riphotography.github.io/riphotography/index.html#booking" class="btn">Book a Session</a>
-  </section>
-  <section class="quote">
-    <p>“Every click tells a tale, every frame captures a forever.”<br>— RI</p>
-  </section>
-  <section id="portfolio">
-    <h2 class="section-title">Recent Works</h2>
-    <div class="gallery">
-      <img src="https://via.placeholder.com/500x400?text=Work+1" alt="Work 1">
-      <img src="https://via.placeholder.com/500x400?text=Work+2" alt="Work 2">
-      <img src="https://via.placeholder.com/500x400?text=Work+3" alt="Work 3">
-      <img src="https://via.placeholder.com/500x400?text=Work+4" alt="Work 4">
-    </div>
-  </section>
-  <section class="reviews">
-    <h2 class="section-title">Client Reviews</h2>
-    <div class="review-card">
-      <img src="https://via.placeholder.com/100?text=Client+1" alt="Client 1">
-      <div class="review-text">
-        <p>“RI Photography made our wedding magical. Every moment was beautifully captured and edited with care.”</p>
-        <p>— Jui & Rahat</p>
+
+  <!-- Services Section -->
+  <section class="py-16 px-6 bg-gray-100">
+    <h2 class="text-4xl font-bold text-center mb-10">Our Services</h2>
+    <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="text-2xl font-semibold mb-4">Wedding Photography</h3>
+        <p>Documenting your special day with elegance and timeless beauty.</p>
       </div>
-    </div>
-    <div class="review-card">
-      <img src="https://via.placeholder.com/100?text=Client+2" alt="Client 2">
-      <div class="review-text">
-        <p>“The team was professional and friendly. Our photos turned out better than we could have imagined.”</p>
-        <p>— Ayesha & Karim</p>
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="text-2xl font-semibold mb-4">Couple/Pre-Wedding</h3>
+        <p>Cherishing your bond through soulful frames.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="text-2xl font-semibold mb-4">Birthday & Events</h3>
+        <p>Capturing the joy of celebrations, candid and colorful.</p>
       </div>
     </div>
   </section>
-  <footer>
-    <p>📞 +8801234567890 | ✉️ riphotography@email.com | 🌐 fb.com/RIphotographyBD</p>
-    <p>© 2025 RI Photography. All rights reserved.</p>
+
+  <!-- Gallery Section -->
+  <section class="py-16 px-6">
+    <h2 class="text-4xl font-bold text-center mb-10">Gallery</h2>
+    <div class="grid md:grid-cols-3 gap-4 max-w-6xl mx-auto">
+      <img src="https://your-image-url.com/photo1.jpg" alt="Gallery Image 1" class="rounded-xl shadow" />
+      <img src="https://your-image-url.com/photo2.jpg" alt="Gallery Image 2" class="rounded-xl shadow" />
+      <img src="https://your-image-url.com/photo3.jpg" alt="Gallery Image 3" class="rounded-xl shadow" />
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-16 px-6 bg-gray-100">
+    <h2 class="text-4xl font-bold text-center mb-10">What Clients Say</h2>
+    <div class="max-w-4xl mx-auto text-center">
+      <blockquote class="italic">“RI Photography made our wedding magical. Every moment was beautifully captured and edited with care.”</blockquote>
+      <p class="mt-4 font-semibold">— Jui & Rahat</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 px-6">
+    <h2 class="text-4xl font-bold text-center mb-10">Get in Touch</h2>
+    <form class="max-w-2xl mx-auto grid grid-cols-1 gap-6">
+      <input type="text" placeholder="Your Name" class="border border-gray-300 rounded-lg p-3" />
+      <input type="email" placeholder="Your Email" class="border border-gray-300 rounded-lg p-3" />
+      <textarea rows="5" placeholder="Your Message" class="border border-gray-300 rounded-lg p-3"></textarea>
+      <button type="submit" class="bg-black text-white px-6 py-3 rounded-full shadow-lg hover:bg-gray-800">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white text-center py-6">
+    <p>&copy; 2025 RI Photography. All rights reserved.</p>
   </footer>
 </body>
+
 </html>
