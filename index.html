@@ -1,138 +1,155 @@
-<!DOCTYPE html>
-<html lang="bn">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RI Photography</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #111;
+      padding: 10px 20px;
+    }
+    header img {
+      height: 60px;
+    }
+    nav a {
+      color: #ccc;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+    .slider {
+      position: relative;
+      overflow: hidden;
+      height: 400px;
+    }
+    .slides {
+      display: flex;
+      width: 300%;
+      animation: slide 15s infinite;
+    }
+    .slides img {
+      width: 100vw;
+      height: 400px;
+      object-fit: cover;
+    }
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      33% { transform: translateX(-100vw); }
+      66% { transform: translateX(-200vw); }
+      100% { transform: translateX(0); }
+    }
+    .tagline {
+      text-align: center;
+      margin: 40px 20px 20px;
+    }
+    .tagline h1 {
+      font-size: 2em;
+      color: #e0b3ff;
+    }
+    .tagline p {
+      color: #ccc;
+      font-style: italic;
+    }
+    .cta {
+      text-align: center;
+      margin: 20px;
+    }
+    .cta a {
+      background-color: #ff33cc;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+    .section {
+      padding: 40px 20px;
+    }
+    .section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ffccff;
+    }
+    .works, .reviews {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .works img, .reviews .review {
+      width: 45%;
+      background: #222;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    .reviews .review p {
+      color: #ccc;
+    }
+    footer {
+      background: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+    }
+    footer a {
+      color: #ffccff;
+      text-decoration: none;
     }
   </style>
 </head>
-<body class="bg-white text-gray-800">
-
-  <!-- Header -->
-  <header class="fixed top-0 left-0 w-full z-50 bg-white bg-opacity-80 backdrop-blur-md shadow-md">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="index.html" class="text-2xl font-bold text-gray-900 hover:text-gray-700">RI Photography</a>
-      <nav class="hidden md:flex space-x-6">
-        <a href="#portfolio" class="relative text-gray-700 hover:text-black transition duration-300 border-b-2 border-transparent hover:border-blue-500">Portfolio</a>
-        <a href="#booking" class="relative text-gray-700 hover:text-black transition duration-300 border-b-2 border-transparent hover:border-green-500">Booking</a>
-        <a href="#packages" class="relative text-gray-700 hover:text-black transition duration-300 border-b-2 border-transparent hover:border-purple-500">Packages</a>
-      </nav>
-      <!-- Mobile Menu -->
-      <div class="md:hidden">
-        <button @click="open = !open" class="text-gray-700 focus:outline-none" x-data="{ open: false }">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16" />
-            <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M6 18L18 6M6 6l12 12" />
-          </svg>
-          <div x-show="open" class="absolute right-4 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-50">
-            <a href="#portfolio" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Portfolio</a>
-            <a href="#booking" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Booking</a>
-            <a href="#packages" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Packages</a>
-          </div>
-        </button>
+<body>
+  <header>
+    <img src="/mnt/data/file-4pZAhUBkSd5Qab2C5F1rMb" alt="RI Logo">
+    <nav>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#booking">Booking</a>
+      <a href="#packages">Packages</a>
+      <a href="#vlog">Vlog</a>
+    </nav>
+  </header>  <div class="slider">
+    <div class="slides">
+      <img src="image1.jpg" alt="Slide 1">
+      <img src="image2.jpg" alt="Slide 2">
+      <img src="image3.jpg" alt="Slide 3">
+    </div>
+  </div>  <div class="tagline">
+    <h1># Turning Moments into Timeless Art</h1>
+    <p>“We don’t just take photos, we freeze emotions in time.”<br>— RI</p>
+  </div>  <div class="cta">
+    <a href="/booking.html">Book a Session</a>
+  </div>  <div class="section" id="portfolio">
+    <h2>Recent Works</h2>
+    <div class="works">
+      <img src="work1a.jpg" alt="Work 1a">
+      <img src="work1b.jpg" alt="Work 1b">
+      <img src="work2a.jpg" alt="Work 2a">
+      <img src="work2b.jpg" alt="Work 2b">
+    </div>
+  </div>  <div class="section" id="reviews">
+    <h2>Client Reviews</h2>
+    <div class="reviews">
+      <div class="review">
+        <p>“RI Photography made our wedding magical. Every moment was beautifully captured and edited with care.”<br>— Jui & Rahat</p>
+      </div>
+      <div class="review">
+        <p>“The team was professional and friendly. Our photos turned out better than we could have imagined.”<br>— Ayesha & Karim</p>
       </div>
     </div>
-  </header>
-
-  <!-- Hero Section with Slider -->
-  <section class="pt-24">
-    <div class="relative w-full h-screen overflow-hidden">
-      <div class="absolute inset-0 z-0">
-        <div class="w-full h-full" x-data="{
-          images: [
-            'https://i.postimg.cc/sx08dCyX/1746186427065-1.jpg',
-            'https://i.postimg.cc/Qtg9yjQQ/IMG-20250525-191508.jpg',
-            'https://i.postimg.cc/3NVTjvkn/FB-IMG-1748144944773.jpg'
-          ],
-          currentIndex: 0,
-          init() {
-            setInterval(() => {
-              this.currentIndex = (this.currentIndex + 1) % this.images.length;
-            }, 4000);
-          }
-        }" x-init="init()">
-          <template x-for="(image, index) in images" :key="index">
-            <div x-show="currentIndex === index" class="absolute inset-0 transition-opacity duration-1000">
-              <img :src="image" alt="Slider Image" class="w-full h-full object-cover">
-            </div>
-          </template>
-        </div>
-      </div>
-      <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center z-10">
-        <div class="text-center text-white px-4">
-          <h1 class="text-4xl md:text-6xl font-bold mb-4">Turning Moments into Timeless Art</h1>
-          <p class="text-lg md:text-xl mb-6">Capturing emotions, stories, and love through our lens</p>
-          <a href="#contact" class="bg-white text-black px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-gray-200 transition duration-300">Book a Session</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Inspirational Quote -->
-  <section class="py-16 bg-gray-100">
-    <div class="max-w-3xl mx-auto text-center">
-      <blockquote class="text-2xl italic text-gray-700">“Photography is the Universal Language that Speaks to the Heart.”</blockquote>
-      <p class="mt-4 text-gray-600">— Samantha Johnes, CA</p>
-    </div>
-  </section>
-
-  <!-- Recent Works -->
-  <section id="portfolio" class="py-16 px-6">
-    <h2 class="text-4xl font-bold text-center mb-10">Recent Works</h2>
-    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-      <img src="https://i.postimg.cc/cHCBqgJR/IMG-20250525-191601.jpg" alt="Work 1" class="rounded-xl shadow-lg">
-      <img src="https://i.postimg.cc/636tBwsL/IMG-3018-1.jpg" alt="Work 2" class="rounded-xl shadow-lg">
-      <img src="https://i.postimg.cc/pdRtBxdb/1746470085634-1.jpg" alt="Work 3" class="rounded-xl shadow-lg">
-    </div>
-  </section>
-
-  <!-- Client Reviews -->
-  <section class="py-16 bg-gray-100">
-    <h2 class="text-4xl font-bold text-center mb-10">Client Reviews</h2>
-    <div class="max-w-6xl mx-auto space-y-12">
-      <!-- Review 1 -->
-      <div class="flex flex-col md:flex-row items-center md:space-x-6">
-        <img src="https://via.placeholder.com/150" alt="Client 1" class="w-32 h-32 rounded-full shadow-lg mb-4 md:mb-0">
-        <div>
-          <p class="text-lg italic">“RI Photography made our wedding magical. Every moment was beautifully captured and edited with care.”</p>
-          <p class="mt-2 font-semibold">— Jui & Rahat</p>
-        </div>
-      </div>
-      <!-- Review 2 -->
-      <div class="flex flex-col md:flex-row-reverse items-center md:space-x-reverse md:space-x-6">
-        <img src="https://via.placeholder.com/150" alt="Client 2" class="w-32 h-32 rounded-full shadow-lg mb-4 md:mb-0">
-        <div>
-          <p class="text-lg italic">“The team was professional and friendly. Our photos turned out better than we could have imagined.”</p>
-          <p class="mt-2 font-semibold">— Ayesha & Karim</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-16 px-6">
-    <h2 class="text-4xl font-bold text-center mb-10">Get in Touch</h2>
-    <form class="max-w-2xl mx-auto grid grid-cols-1 gap-6">
-      <input type="text" placeholder="Your Name" class="border border-gray-300 rounded-lg p-3" />
-      <input type="email" placeholder="Your Email" class="border border-gray-300 rounded-lg p-3" />
-      <textarea rows="5" placeholder="Your Message" class="border border-gray-300 rounded-lg p-3"></textarea>
-      <button type="submit" class="bg-black text-white px-6 py-3 rounded-full shadow-lg hover:bg-gray-800 transition duration-300">Send Message</button>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-black text-white text-center py-6">
-    <p>&copy; 2025 RI Photography. All rights reserved.</p>
+  </div>  <footer>
+    <p>📞 017xxxxxxxx | 📧 riphotography@email.com | <a href="https://facebook.com/riphotography">Facebook Page</a></p>
+    <p>© 2025 RI Photography. All rights reserved.</p>
   </footer>
-
 </body>
 </html>
