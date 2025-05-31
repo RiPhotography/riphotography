@@ -1,13 +1,14 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="bn">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>RI Photography</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0f0f0f;
+      background-color: #0a0a0a;
       color: #fff;
       overflow-x: hidden;
     }
@@ -18,13 +19,17 @@
       align-items: center;
       justify-content: space-between;
     }
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
     .logo {
       height: 60px;
+      margin-right: 10px;
     }
-    .site-title {
+    .site-name {
       font-size: 1.5rem;
       font-weight: bold;
-      margin-left: 1rem;
       color: #e0b0ff;
     }
     nav a {
@@ -32,6 +37,20 @@
       color: #fff;
       text-decoration: none;
       font-weight: bold;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #e0b0ff;
+      transition: width 0.3s;
+    }
+    nav a:hover::after {
+      width: 100%;
     }
     .slider {
       position: relative;
@@ -42,7 +61,7 @@
     .slides {
       display: flex;
       width: 300%;
-      animation: slide 15s linear infinite;
+      animation: slide 15s infinite linear;
     }
     .slides img {
       width: 100vw;
@@ -51,32 +70,34 @@
     }
     @keyframes slide {
       0% { transform: translateX(0); }
-      33.33% { transform: translateX(-100vw); }
-      66.66% { transform: translateX(-200vw); }
+      33% { transform: translateX(-100vw); }
+      66% { transform: translateX(-200vw); }
       100% { transform: translateX(0); }
     }
-    .overlay-nav {
+    .slider-overlay {
       position: absolute;
       top: 20px;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
       gap: 20px;
-      z-index: 1;
     }
-    .overlay-nav a {
-      padding: 8px 15px;
-      border: 2px solid transparent;
-      border-radius: 10px;
-      font-weight: bold;
+    .slider-overlay a {
+      padding: 10px 20px;
+      border: 2px solid;
+      border-image: linear-gradient(45deg, #e0b0ff, #ff69b4, #00ffff, #e0b0ff) 1;
       color: #fff;
       text-decoration: none;
-      background: linear-gradient(45deg, #ff0080, #7928ca);
-      animation: borderPulse 2s infinite alternate;
+      font-weight: bold;
+      border-radius: 5px;
+      animation: borderColor 5s linear infinite;
     }
-    @keyframes borderPulse {
-      0% { border-color: #ff0080; }
-      100% { border-color: #7928ca; }
+    @keyframes borderColor {
+      0% { border-color: #e0b0ff; }
+      25% { border-color: #ff69b4; }
+      50% { border-color: #00ffff; }
+      75% { border-color: #ff69b4; }
+      100% { border-color: #e0b0ff; }
     }
     .center-text {
       text-align: center;
@@ -95,6 +116,7 @@
       cursor: pointer;
       font-weight: bold;
       margin-top: 1rem;
+      text-decoration: none;
     }
     .quote {
       font-style: italic;
@@ -123,24 +145,26 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 2rem;
-      padding: 0 1rem 3rem;
+      gap: 20px;
+      padding: 0 1rem;
     }
     .review-card {
       display: flex;
-      align-items: center;
-      background-color: #1a1a1a;
-      padding: 1rem;
+      background-color: #222;
       border-radius: 10px;
+      padding: 1rem;
       width: 80%;
-      gap: 1rem;
-      color: #ccc;
+      align-items: center;
     }
     .review-card img {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
+      object-fit: cover;
+      margin-right: 20px;
+    }
+    .review-text {
+      color: #ccc;
     }
     footer {
       text-align: center;
@@ -153,35 +177,39 @@
 </head>
 <body>
   <header>
-    <div style="display: flex; align-items: center;">
+    <div class="logo-container">
       <img src="/mnt/data/file-4pZAhUBkSd5Qab2C5F1rMb" alt="RI Logo" class="logo">
-      <div class="site-title">RI Photography</div>
+      <span class="site-name">RI Photography</span>
     </div>
     <nav>
       <a href="#portfolio">Portfolio</a>
-      <a href="#booking">Booking</a>
       <a href="#packages">Packages</a>
       <a href="#vlog">Vlog</a>
+      <a href="#booking">Booking</a>
     </nav>
-  </header>  <section class="slider">
-    <div class="overlay-nav">
-      <a href="#portfolio">Portfolio</a>
-      <a href="#packages">Packages</a>
-      <a href="#vlog">Vlog</a>
-      <a href="#booking">Booking</a>
-    </div>
+  </header>
+  <section class="slider">
     <div class="slides">
       <img src="https://via.placeholder.com/1200x800?text=Slide+1" alt="Slide 1">
       <img src="https://via.placeholder.com/1200x800?text=Slide+2" alt="Slide 2">
       <img src="https://via.placeholder.com/1200x800?text=Slide+3" alt="Slide 3">
     </div>
-  </section>  <section class="center-text">
+    <div class="slider-overlay">
+      <a href="#portfolio">Portfolio</a>
+      <a href="#packages">Packages</a>
+      <a href="#vlog">Vlog</a>
+      <a href="#booking">Booking</a>
+    </div>
+  </section>
+  <section class="center-text">
     <h1># Turning Moments into Timeless Art</h1>
     <p>Capturing emotions, stories, and love through our lens</p>
-    <a href="https://riphotography.github.io/riphotography/index.html#booking"><button class="btn">Book a Session</button></a>
-  </section>  <section class="quote">
+    <a href="https://riphotography.github.io/riphotography/index.html#booking" class="btn">Book a Session</a>
+  </section>
+  <section class="quote">
     <p>“Every click tells a tale, every frame captures a forever.”<br>— RI</p>
-  </section>  <section id="portfolio">
+  </section>
+  <section id="portfolio">
     <h2 class="section-title">Recent Works</h2>
     <div class="gallery">
       <img src="https://via.placeholder.com/500x400?text=Work+1" alt="Work 1">
@@ -189,23 +217,25 @@
       <img src="https://via.placeholder.com/500x400?text=Work+3" alt="Work 3">
       <img src="https://via.placeholder.com/500x400?text=Work+4" alt="Work 4">
     </div>
-  </section>  <section class="reviews">
+  </section>
+  <section class="reviews">
     <h2 class="section-title">Client Reviews</h2>
     <div class="review-card">
-      <img src="https://via.placeholder.com/80" alt="Client 1">
-      <div>
+      <img src="https://via.placeholder.com/100?text=Client+1" alt="Client 1">
+      <div class="review-text">
         <p>“RI Photography made our wedding magical. Every moment was beautifully captured and edited with care.”</p>
         <p>— Jui & Rahat</p>
       </div>
     </div>
     <div class="review-card">
-      <img src="https://via.placeholder.com/80" alt="Client 2">
-      <div>
+      <img src="https://via.placeholder.com/100?text=Client+2" alt="Client 2">
+      <div class="review-text">
         <p>“The team was professional and friendly. Our photos turned out better than we could have imagined.”</p>
         <p>— Ayesha & Karim</p>
       </div>
     </div>
-  </section>  <footer>
+  </section>
+  <footer>
     <p>📞 +8801234567890 | ✉️ riphotography@email.com | 🌐 fb.com/RIphotographyBD</p>
     <p>© 2025 RI Photography. All rights reserved.</p>
   </footer>
