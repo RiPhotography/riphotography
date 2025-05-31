@@ -1,150 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RI Photography</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Swiper CSS -->
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-  />
-  <style>
-    body {
-      font-family: 'Alike', serif;
-      background-color: #f9fafb;
-      color: #1f2937;
-    }
-    .title-font {
-      font-family: 'Playfair Display', serif;
-    }
-  </style>
-</head>
-<body>
+<!-- Swiper CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+/>
 
-  <!-- Header with Logo -->
-  <header class="bg-white shadow">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-center items-center">
-      <a href="index.html" class="title-font text-3xl text-gray-800 hover:text-gray-600">RI Photography</a>
-    </div>
-  </header>
-
-  <!-- Navigation Options -->
-  <nav class="bg-gray-100">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-center space-x-6">
-      <a href="about.html" class="text-gray-700 hover:text-gray-900">About</a>
-      <a href="portfolio.html" class="text-gray-700 hover:text-gray-900">Portfolio</a>
-      <a href="videos.html" class="text-gray-700 hover:text-gray-900">Videos</a>
-      <a href="gallery.html" class="text-gray-700 hover:text-gray-900">Gallery</a>
-      <a href="contact.html" class="text-gray-700 hover:text-gray-900">Contact</a>
-      <a href="pricing.html" class="text-gray-700 hover:text-gray-900">Pricing</a>
-    </div>
-  </nav>
-
-  <!-- Hero Section with Slider -->
-  <section class="relative">
-    <!-- Swiper -->
-    <div class="swiper mySwiper h-80 md:h-96">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="https://i.postimg.cc/sx08dCyX/1746186427065-1.jpg" class="w-full h-80 md:h-96 object-cover" alt="Slide 1">
-        </div>
-        <div class="swiper-slide">
-          <img src="https://i.postimg.cc/Qtg9yjQQ/IMG-20250525-191508.jpg" class="w-full h-80 md:h-96 object-cover" alt="Slide 2">
-        </div>
-        <div class="swiper-slide">
-          <img src="https://i.postimg.cc/3NVTjvkn/FB-IMG-1748144944773.jpg" class="w-full h-80 md:h-96 object-cover" alt="Slide 3">
-        </div>
+<section class="relative w-full h-[600px] md:h-[750px] overflow-hidden">
+  <!-- Swiper -->
+  <div class="swiper mySwiper h-full">
+    <div class="swiper-wrapper">
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <img
+          src="https://i.ibb.co/6tGZL8R/DSC-0103.jpg"
+          alt="Slide 1"
+          class="w-full h-full object-cover"
+        />
       </div>
-      <!-- Add Pagination -->
-      <div class="swiper-pagination"></div>
-    </div>
-    <!-- Overlay Text -->
-    <div class="absolute inset-0 flex items-center justify-center">
-      <div class="text-center text-white bg-black bg-opacity-50 px-4 py-8 rounded">
-        <h1 class="text-2xl md:text-4xl font-bold title-font"># Memories that will last a lifetime</h1>
-        <p class="mt-2 md:mt-4 text-base md:text-lg">Capturing life's most beautiful moments, one frame at a time.</p>
-        <a href="https://riphotography.github.io/riphotography/portfolio.html" class="mt-4 inline-block bg-white text-gray-800 px-4 py-2 rounded-full hover:bg-gray-200">View Portfolio</a>
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <img
+          src="https://i.ibb.co/gFt6LWT/DSC-0127.jpg"
+          alt="Slide 2"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <!-- Slide 3 -->
+      <div class="swiper-slide">
+        <img
+          src="https://i.ibb.co/f25BncH/DSC-0155.jpg"
+          alt="Slide 3"
+          class="w-full h-full object-cover"
+        />
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- About Section -->
-  <section class="py-12 bg-white">
-    <div class="max-w-5xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold title-font mb-4">About RI Photography</h2>
-      <p class="text-gray-600">At RI Photography, we approach photography with a documentary style and artistic vision, aiming to tell your story honestly and unobtrusively. Our images are warm, romantic, and intimate, designed to make you feel, not just see.</p>
+  <!-- Overlay Text -->
+  <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+    <div class="text-center text-white px-4">
+      <h1 class="text-3xl md:text-5xl font-bold mb-4"># Memories that will last a lifetime</h1>
+      <p class="text-lg md:text-2xl mb-6">
+        Capturing life's most beautiful moments, one frame at a time.
+      </p>
+      <a
+        href="https://riphotography.github.io/riphotography/portfolio.html"
+        class="inline-block bg-white text-gray-800 px-6 py-3 rounded-full hover:bg-gray-200 transition"
+      >
+        View Portfolio
+      </a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Recent Works Section -->
-  <section class="py-12 bg-gray-100">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold title-font text-center mb-8">Recent Works</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <img src="https://i.postimg.cc/cHCBqgJR/IMG-20250525-191601.jpg" alt="Work 1" class="w-full h-64 object-cover rounded-lg shadow-md">
-        <img src="https://i.postimg.cc/636tBwsL/IMG-3018-1.jpg" alt="Work 2" class="w-full h-64 object-cover rounded-lg shadow-md">
-        <img src="https://i.postimg.cc/pdRtBxdb/1746470085634-1.jpg" alt="Work 3" class="w-full h-64 object-cover rounded-lg shadow-md">
-      </div>
-      <div class="text-center mt-8">
-        <a href="portfolio.html" class="inline-block bg-gray-800 text-white px-6 py-3 rounded-full hover:bg-gray-700">See More</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Client Testimonials Section -->
-  <section class="py-12 bg-white">
-    <div class="max-w-5xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold title-font mb-8">Client Testimonials</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md flex flex-col items-center">
-          <img src="https://via.placeholder.com/100" alt="Client 1" class="w-24 h-24 rounded-full mb-4">
-          <p class="text-gray-700 italic">"RI Photography captured our wedding beautifully. Every photo tells a story, and we couldn't be happier with the results."</p>
-          <p class="mt-4 font-bold text-gray-800">— Amanda & Smith Jacobson</p>
-        </div>
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md flex flex-col items-center">
-          <img src="https://via.placeholder.com/100" alt="Client 2" class="w-24 h-24 rounded-full mb-4">
-          <p class="text-gray-700 italic">"Professional, creative, and truly passionate about their work. Highly recommended!"</p>
-          <p class="mt-4 font-bold text-gray-800">— Nuzhat & Samshad</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="py-12 bg-gray-100">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold title-font mb-4">Get in Touch</h2>
-      <p class="text-gray-600 mb-6">We'd love to hear from you! Whether you're planning a wedding, an event, or just want to say hello.</p>
-      <p class="text-gray-800">📞 <a href="tel:01736813344" class="text-blue-500 hover:underline">01736813344</a></p>
-      <p class="text-gray-800">📧 <a href="mailto:riphotography2021@gmail.com" class="text-blue-500 hover:underline">riphotography2021@gmail.com</a></p>
-      <p class="text-gray-800">🔗 <a href="https://www.facebook.com/share/16g9kcrbMv/" target="_blank" class="text-blue-500 hover:underline">Facebook Page</a></p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-white py-6">
-    <div class="max-w-7xl mx-auto px-4 text-center text-gray-600">
-      &copy; 2025 RI Photography. All rights reserved.
-    </div>
-  </footer>
-
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-  </script>
-
-</body>
-</html>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    speed: 1000,
+  });
+</script>
