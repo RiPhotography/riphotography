@@ -1,84 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RI Photography</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alike&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: "Alike", serif;
+      background-color: #f9fafb;
+      color: #1f2937;
+    }
+    .title-font {
+      font-family: 'Playfair Display', serif;
+    }
+    .theme-font {
+      font-family: "Alike", serif;
     }
   </style>
 </head>
+<body>
 
-<body class="bg-white text-gray-800">
+  <!-- Navigation Bar -->
+  <nav class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="index.html" class="title-font text-2xl text-gray-800 hover:text-gray-600">RI Photography</a>
+      <div class="space-x-4">
+        <a href="about.html" class="text-gray-700 hover:text-gray-900">About</a>
+        <a href="portfolio.html" class="text-gray-700 hover:text-gray-900">Portfolio</a>
+        <a href="videos.html" class="text-gray-700 hover:text-gray-900">Videos</a>
+        <a href="gallery.html" class="text-gray-700 hover:text-gray-900">Gallery</a>
+        <a href="contact.html" class="text-gray-700 hover:text-gray-900">Contact</a>
+        <a href="pricing.html" class="text-gray-700 hover:text-gray-900">Pricing</a>
+      </div>
+    </div>
+  </nav>
+
   <!-- Hero Section -->
-  <section class="h-screen bg-cover bg-center flex items-center justify-center text-center" style="background-image: url('https://your-image-url.com/hero.jpg');">
-    <div class="bg-black bg-opacity-50 p-10 rounded-xl">
-      <h1 class="text-5xl text-white font-bold mb-4">Turning Moments into Timeless Art</h1>
-      <p class="text-white text-lg mb-6">Capturing emotions, stories, and love through our lens</p>
-      <a href="#contact" class="bg-white text-black px-6 py-3 rounded-full font-semibold shadow-lg">Book a Session</a>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section class="py-16 px-6 bg-gray-100">
-    <h2 class="text-4xl font-bold text-center mb-10">Our Services</h2>
-    <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-      <div class="bg-white p-6 rounded-xl shadow">
-        <h3 class="text-2xl font-semibold mb-4">Wedding Photography</h3>
-        <p>Documenting your special day with elegance and timeless beauty.</p>
-      </div>
-      <div class="bg-white p-6 rounded-xl shadow">
-        <h3 class="text-2xl font-semibold mb-4">Couple/Pre-Wedding</h3>
-        <p>Cherishing your bond through soulful frames.</p>
-      </div>
-      <div class="bg-white p-6 rounded-xl shadow">
-        <h3 class="text-2xl font-semibold mb-4">Birthday & Events</h3>
-        <p>Capturing the joy of celebrations, candid and colorful.</p>
+  <section class="relative bg-cover bg-center h-screen" style="background-image: url('https://i.postimg.cc/sx08dCyX/1746186427065-1.jpg');">
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <div class="relative z-10 flex items-center justify-center h-full">
+      <div class="text-center text-white">
+        <h1 class="text-4xl md:text-6xl font-bold title-font">Memories that will last a lifetime</h1>
+        <p class="mt-4 text-lg md:text-2xl">Capturing life's most beautiful moments, one frame at a time.</p>
+        <a href="portfolio.html" class="mt-6 inline-block bg-white text-gray-800 px-6 py-3 rounded-full hover:bg-gray-200">View Portfolio</a>
       </div>
     </div>
   </section>
 
-  <!-- Gallery Section -->
-  <section class="py-16 px-6">
-    <h2 class="text-4xl font-bold text-center mb-10">Gallery</h2>
-    <div class="grid md:grid-cols-3 gap-4 max-w-6xl mx-auto">
-      <img src="https://your-image-url.com/photo1.jpg" alt="Gallery Image 1" class="rounded-xl shadow" />
-      <img src="https://your-image-url.com/photo2.jpg" alt="Gallery Image 2" class="rounded-xl shadow" />
-      <img src="https://your-image-url.com/photo3.jpg" alt="Gallery Image 3" class="rounded-xl shadow" />
+  <!-- About Section -->
+  <section class="py-12 bg-white">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold title-font mb-4">About RI Photography</h2>
+      <p class="text-gray-600">At RI Photography, we approach photography with a documentary style and artistic vision, aiming to tell your story honestly and unobtrusively. Our images are warm, romantic, and intimate, designed to make you feel, not just see.</p>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="py-12 bg-gray-100">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold title-font text-center mb-8">Portfolio</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <img src="https://i.postimg.cc/Qtg9yjQQ/IMG-20250525-191508.jpg" alt="Portfolio Image 1" class="w-full h-64 object-cover rounded-lg shadow-md">
+        <img src="https://i.postimg.cc/3NVTjvkn/FB-IMG-1748144944773.jpg" alt="Portfolio Image 2" class="w-full h-64 object-cover rounded-lg shadow-md">
+        <img src="https://i.postimg.cc/cHCBqgJR/IMG-20250525-191601.jpg" alt="Portfolio Image 3" class="w-full h-64 object-cover rounded-lg shadow-md">
+      </div>
+      <div class="text-center mt-8">
+        <a href="portfolio.html" class="inline-block bg-gray-800 text-white px-6 py-3 rounded-full hover:bg-gray-700">See More</a>
+      </div>
     </div>
   </section>
 
   <!-- Testimonials Section -->
-  <section class="py-16 px-6 bg-gray-100">
-    <h2 class="text-4xl font-bold text-center mb-10">What Clients Say</h2>
-    <div class="max-w-4xl mx-auto text-center">
-      <blockquote class="italic">“RI Photography made our wedding magical. Every moment was beautifully captured and edited with care.”</blockquote>
-      <p class="mt-4 font-semibold">— Jui & Rahat</p>
+  <section class="py-12 bg-white">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold title-font mb-8">Client Testimonials</h2>
+      <div class="space-y-6">
+        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+          <p class="text-gray-700 italic">"RI Photography captured our wedding beautifully. Every photo tells a story, and we couldn't be happier with the results."</p>
+          <p class="mt-4 font-bold text-gray-800">— Amanda & Smith Jacobson</p>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+          <p class="text-gray-700 italic">"Professional, creative, and truly passionate about their work. Highly recommended!"</p>
+          <p class="mt-4 font-bold text-gray-800">— Nuzhat & Samshad</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-16 px-6">
-    <h2 class="text-4xl font-bold text-center mb-10">Get in Touch</h2>
-    <form class="max-w-2xl mx-auto grid grid-cols-1 gap-6">
-      <input type="text" placeholder="Your Name" class="border border-gray-300 rounded-lg p-3" />
-      <input type="email" placeholder="Your Email" class="border border-gray-300 rounded-lg p-3" />
-      <textarea rows="5" placeholder="Your Message" class="border border-gray-300 rounded-lg p-3"></textarea>
-      <button type="submit" class="bg-black text-white px-6 py-3 rounded-full shadow-lg hover:bg-gray-800">Send Message</button>
-    </form>
+  <section class="py-12 bg-gray-100">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold title-font mb-4">Get in Touch</h2>
+      <p class="text-gray-600 mb-6">We'd love to hear from you! Whether you're planning a wedding, an event, or just want to say hello.</p>
+      <p class="text-gray-800">📞 <a href="tel:01736813344" class="text-blue-500 hover:underline">01736813344</a></p>
+      <p class="text-gray-800">📧 <a href="mailto:riphotography2021@gmail.com" class="text-blue-500 hover:underline">riphotography2021@gmail.com</a></p>
+      <p class="text-gray-800">🔗 <a href="https://www.facebook.com/share/16g9kcrbMv/" target="_blank" class="text-blue-500 hover:underline">Facebook Page</a></p>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-black text-white text-center py-6">
-    <p>&copy; 2025 RI Photography. All rights reserved.</p>
+  <footer class="bg-white py-6">
+    <div class="max-w-7xl mx-auto px-4 text-center text-gray-600">
+      &copy; 2025 RI Photography. All rights reserved.
+    </div>
   </footer>
-</body>
 
+</body>
 </html>
