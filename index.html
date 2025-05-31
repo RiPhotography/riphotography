@@ -1,11 +1,16 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RI Photography</title>
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Swiper CSS CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
   <style>
     body {
       font-family: 'Alike', serif;
@@ -38,53 +43,53 @@
     }
   </style>
 </head>
-<body>  <!-- Header -->  <header class="bg-white shadow">
+<body>
+  <!-- Header -->
+  <header class="bg-white shadow">
     <div class="max-w-7xl mx-auto px-4 py-4 flex justify-center items-center">
       <a href="index.html" class="title-font text-3xl text-gray-800 hover:text-gray-600">RI Photography</a>
     </div>
-  </header>  <!-- Navigation -->  <nav class="bg-gray-100">
+  </header>
+
+  <!-- Navigation -->
+  <nav class="bg-gray-100">
     <div class="max-w-7xl mx-auto px-4 py-4 flex justify-center space-x-6 flex-wrap">
       <a href="portfolio.html" class="nav-link text-gray-700 hover:text-gray-900">Portfolio</a>
       <a href="packages.html" class="nav-link text-gray-700 hover:text-gray-900">Packages</a>
       <a href="vlog.html" class="nav-link text-gray-700 hover:text-gray-900">Vlog</a>
       <a href="gallery.html" class="nav-link text-gray-700 hover:text-gray-900">Booking</a>
     </div>
-  </nav>  <!-- Hero Section -->  <section class="relative">
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative">
     <div class="swiper mySwiper h-90 md:h-110">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="https://i.postimg.cc/sx08dCyX/1746186427065-1.jpg" class="w-full h-80 md:h-110 object-cover" alt="Slide 1">
+          <img src="https://i.postimg.cc/sx08dCyX/1746186427065-1.jpg" class="w-full h-80 md:h-110 object-cover" alt="Slide 1" />
         </div>
         <div class="swiper-slide">
-          <img src="https://i.postimg.cc/Qtg9yjQQ/IMG-20250525-191508.jpg" class="w-full h-80 md:h-105 object-cover" alt="Slide 2">
+          <img src="https://i.postimg.cc/Qtg9yjQQ/IMG-20250525-191508.jpg" class="w-full h-80 md:h-105 object-cover" alt="Slide 2" />
         </div>
         <div class="swiper-slide">
-          <img src="https://i.postimg.cc/3NVTjvkn/FB-IMG-1748144944773.jpg" class="w-full h-80 md:h-100 object-cover" alt="Slide 3">
+          <img src="https://i.postimg.cc/3NVTjvkn/FB-IMG-1748144944773.jpg" class="w-full h-80 md:h-100 object-cover" alt="Slide 3" />
         </div>
       </div>
       <div class="swiper-pagination"></div>
     </div>
-    <script>
-      new Swiper(".mySwiper", {
-        pagination: {
-          el: ".swiper-pagination",
-        },
-        autoplay: {
-          delay: 4000,
-          disableOnInteraction: false,
-        },
-        loop: true,
-      });
-    </script><!-- Overlay Text -->
-<div class="absolute inset-0 flex items-center justify-center">
-  <div class="text-center text-white bg-black bg-opacity-50 px-6 py-6 rounded">
-    <h1 class="text-2xl md:text-4xl font-bold title-font"># Memories that will last a lifetime</h1>
-    <p class="mt-2 md:mt-4 text-base md:text-lg">Capturing life's most beautiful moments, one frame at a time.</p>
-    <a href="portfolio.html" class="mt-4 inline-block bg-white text-gray-800 px-4 py-2 rounded-full hover:bg-gray-200">View Portfolio</a>
-  </div>
-</div>
 
-  </section>  <!-- About Section -->  <section class="py-12 bg-white">
+    <!-- Overlay Text -->
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="text-center text-white bg-black bg-opacity-50 px-6 py-6 rounded">
+        <h1 class="text-2xl md:text-4xl font-bold title-font"># Memories that will last a lifetime</h1>
+        <p class="mt-2 md:mt-4 text-base md:text-lg">Capturing life's most beautiful moments, one frame at a time.</p>
+        <a href="portfolio.html" class="mt-4 inline-block bg-white text-gray-800 px-4 py-2 rounded-full hover:bg-gray-200">View Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-12 bg-white">
     <div class="max-w-5xl mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold title-font mb-4">About RI Photography</h2>
       <p class="text-gray-600 mb-6">
@@ -106,31 +111,37 @@
         </ul>
       </div>
     </div>
-  </section>  <!-- Recent Works -->  <section class="py-12 bg-gray-100">
+  </section>
+
+  <!-- Recent Works -->
+  <section class="py-12 bg-gray-100">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-3xl font-bold title-font text-center mb-8">Recent Works</h2>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-        <img src="https://i.postimg.cc/cHCBqgJR/IMG-20250525-191601.jpg" alt="Work 1" class="w-full h-64 object-cover rounded-lg shadow-md">
-        <img src="https://i.postimg.cc/636tBwsL/IMG-3018-1.jpg" alt="Work 2" class="w-full h-64 object-cover rounded-lg shadow-md">
-        <img src="https://i.postimg.cc/pdRtBxdb/1746470085634-1.jpg" alt="Work 3" class="w-full h-64 object-cover rounded-lg shadow-md">
+        <img src="https://i.postimg.cc/cHCBqgJR/IMG-20250525-191601.jpg" alt="Work 1" class="w-full h-64 object-cover rounded-lg shadow-md" />
+        <img src="https://i.postimg.cc/636tBwsL/IMG-3018-1.jpg" alt="Work 2" class="w-full h-64 object-cover rounded-lg shadow-md" />
+        <img src="https://i.postimg.cc/pdRtBxdb/1746470085634-1.jpg" alt="Work 3" class="w-full h-64 object-cover rounded-lg shadow-md" />
       </div>
       <div class="text-center mt-8">
         <a href="portfolio.html" class="inline-block bg-gray-800 text-white px-6 py-3 rounded-full hover:bg-gray-700">See More</a>
       </div>
     </div>
-  </section>  <!-- Testimonials -->  <section class="py-12 bg-white">
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-12 bg-white">
     <div class="max-w-5xl mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold title-font mb-8">Client Testimonials</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="flex items-center bg-gray-100 p-6 rounded-lg shadow-md text-left">
-          <img src="https://via.placeholder.com/100" alt="Client 1" class="w-24 h-24 rounded-full mr-6">
+          <img src="https://via.placeholder.com/100" alt="Client 1" class="w-24 h-24 rounded-full mr-6" />
           <div>
             <p class="text-gray-700 italic">"RI Photography captured our wedding beautifully. Every photo tells a story, and we couldn't be happier with the results."</p>
             <p class="mt-4 font-bold text-gray-800">— Amanda & Smith Jacobson</p>
           </div>
         </div>
         <div class="flex items-center bg-gray-100 p-6 rounded-lg shadow-md text-left">
-          <img src="https://via.placeholder.com/100" alt="Client 2" class="w-24 h-24 rounded-full mr-6">
+          <img src="https://via.placeholder.com/100" alt="Client 2" class="w-24 h-24 rounded-full mr-6" />
           <div>
             <p class="text-gray-700 italic">"Professional, creative, and truly passionate about their work. Highly recommended!"</p>
             <p class="mt-4 font-bold text-gray-800">— Nuzhat & Samshad</p>
@@ -138,5 +149,7 @@
         </div>
       </div>
     </div>
-  </section></body>
-</html>
+  </section>
+
+  <!-- Contact -->
+  <section class="py-12 bg-gray-100">
