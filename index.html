@@ -5,11 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RI Photography</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Swiper CSS -->
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-  />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   <style>
     body {
       font-family: 'Alike', serif;
@@ -18,6 +14,27 @@
     }
     .title-font {
       font-family: 'Playfair Display', serif;
+    }
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 3px;
+      bottom: -6px;
+      left: 0;
+      background-image: linear-gradient(90deg, #ff6ec4, #7873f5, #4ade80);
+      transform-origin: bottom right;
+      transition: transform 0.4s ease-out;
+      border-radius: 9999px;
+    }
+    .nav-link:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
     }
   </style>
 </head>
@@ -33,10 +50,10 @@
   <!-- Navigation Options -->
   <nav class="bg-gray-100">
     <div class="max-w-7xl mx-auto px-4 py-4 flex justify-center space-x-6 flex-wrap">
-      <a href="portfolio.html" class="text-gray-700 hover:text-gray-900">Portfolio</a>
-      <a href="packages.html" class="text-gray-700 hover:text-gray-900">Packages</a>
-      <a href="vlog.html" class="text-gray-700 hover:text-gray-900">Vlog</a>
-      <a href="gallery.html" class="text-gray-700 hover:text-gray-900">Booking</a>
+      <a href="portfolio.html" class="nav-link text-gray-700 hover:text-gray-900">Portfolio</a>
+      <a href="packages.html" class="nav-link text-gray-700 hover:text-gray-900">Packages</a>
+      <a href="vlog.html" class="nav-link text-gray-700 hover:text-gray-900">Vlog</a>
+      <a href="gallery.html" class="nav-link text-gray-700 hover:text-gray-900">Booking</a>
     </div>
   </nav>
 
@@ -94,16 +111,20 @@
   <section class="py-12 bg-white">
     <div class="max-w-5xl mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold title-font mb-8">Client Testimonials</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md flex flex-col items-center">
-          <img src="https://via.placeholder.com/100" alt="Client 1" class="w-24 h-24 rounded-full mb-4">
-          <p class="text-gray-700 italic">"RI Photography captured our wedding beautifully. Every photo tells a story, and we couldn't be happier with the results."</p>
-          <p class="mt-4 font-bold text-gray-800">— Amanda & Smith Jacobson</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="flex items-center bg-gray-100 p-6 rounded-lg shadow-md text-left">
+          <img src="https://via.placeholder.com/100" alt="Client 1" class="w-24 h-24 rounded-full mr-6">
+          <div>
+            <p class="text-gray-700 italic">"RI Photography captured our wedding beautifully. Every photo tells a story, and we couldn't be happier with the results."</p>
+            <p class="mt-4 font-bold text-gray-800">— Amanda & Smith Jacobson</p>
+          </div>
         </div>
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md flex flex-col items-center">
-          <img src="https://via.placeholder.com/100" alt="Client 2" class="w-24 h-24 rounded-full mb-4">
-          <p class="text-gray-700 italic">"Professional, creative, and truly passionate about their work. Highly recommended!"</p>
-          <p class="mt-4 font-bold text-gray-800">— Nuzhat & Samshad</p>
+        <div class="flex items-center bg-gray-100 p-6 rounded-lg shadow-md text-left">
+          <img src="https://via.placeholder.com/100" alt="Client 2" class="w-24 h-24 rounded-full mr-6">
+          <div>
+            <p class="text-gray-700 italic">"Professional, creative, and truly passionate about their work. Highly recommended!"</p>
+            <p class="mt-4 font-bold text-gray-800">— Nuzhat & Samshad</p>
+          </div>
         </div>
       </div>
     </div>
