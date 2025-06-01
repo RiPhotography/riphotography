@@ -276,6 +276,92 @@
   </div>
 
 </div>
+       <meta charset="UTF-8">
+  <title>RI Photography</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+      background: #f2f2f2;
+      text-align: center;
+    }
+
+    .stats-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .stat-box {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      flex: 1 1 140px;
+      max-width: 180px;
+    }
+
+    .stat-number {
+      font-size: 30px;
+      font-weight: bold;
+      color: #f57c00;
+    }
+
+    .stat-title {
+      margin-top: 6px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    @media (max-width: 480px) {
+      .stat-box {
+        flex: 1 1 130px;
+        padding: 12px;
+      }
+
+      .stat-number {
+        font-size: 26px;
+      }
+
+      .stat-title {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="stats-container">
+    <div class="stat-box">
+      <div class="stat-number" id="works">0</div>
+      <div class="stat-title">Complete Projects</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number" id="clients">0</div>
+      <div class="stat-title">Happy Clients</div>
+    </div>
+  </div>
+
+  <script>
+    function animateValue(id, start, end, duration) {
+      let obj = document.getElementById(id);
+      let range = end - start;
+      let current = start;
+      let increment = end > start ? 1 : -1;
+      let stepTime = Math.abs(Math.floor(duration / range));
+      let timer = setInterval(() => {
+        current += increment;
+        obj.textContent = current;
+        if (current == end) clearInterval(timer);
+      }, stepTime);
+    }
+
+    animateValue("works", 0, 180, 1200);
+    animateValue("clients", 0, 160, 1200);
+  </script>
 
   </section>  <!-- Contact -->  <section class="py-12 bg-gray-100"><div class="max-w-4xl mx-auto px-4 text-center">
 
