@@ -1,47 +1,99 @@
-"<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RI Photography</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Alike&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: "Alike", serif;
-      background: linear-gradient(to bottom, #1e293b, #334155);
-      color: white;
-      animation: fadeIn 0.8s ease-in-out;
-    }
-    .title-font {
-      font-family: 'Playfair Display', serif;
-    }
-    .theme-font {
-      font-family: "Alike", serif;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RI Photography</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <style>
+    body {
+      font-family: 'Alike', serif;
+      background-color: #f9fafb;
+      color: #1f2937;
+    }
+    .title-font {
+      font-family: 'Playfair Display', serif;
+    }
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 3px;
+      bottom: -6px;
+      left: 0;
+      background-image: linear-gradient(90deg, #ff6ec4, #7873f5, #4ade80);
+      transform-origin: bottom right;
+      transition: transform 0.4s ease-out;
+      border-radius: 9999px;
+    }
+    .nav-link:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+    .stats-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .stat-box {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      flex: 1 1 140px;
+      max-width: 180px;
+    }
+    .stat-number {
+      font-size: 30px;
+      font-weight: bold;
+      color: #f57c00;
+    }
+    .stat-title {
+      margin-top: 6px;
+      font-size: 14px;
+      color: #333;
+    }
+    @media (max-width: 480px) {
+      .stat-box {
+        flex: 1 1 130px;
+        padding: 12px;
+      }
+      .stat-number {
+        font-size: 26px;
+      }
+      .stat-title {
+        font-size: 13px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- Top Title + Theme -->
-  <div class="bg-gray-600 text-center py-4">
-    <a href="index.html" class="title-font text-3xl text-white hover:underline transition duration-250 block">
-      RI Photography
-    </a>
-    <p class="theme-font text-white text-sm mt-1">Turning Moments into Timeless Art</p>
-  </div>
-  
-  <!-- Navigation Boxes in One Line -->
-  <div class="flex flex-wrap justify-center gap-3 mt-6 px-4">
-    <a href="portfolio.html" class="border-2 border-green-400 px-4 py-2 hover:bg-green-100 text-white text-sm whitespace-nowrap rounded transition duration-250 animate-pulse"> Portfolio</a>
-    <a href="packages.html" class="border-2 border-blue-400 px-4 py-2 hover:bg-blue-100 text-white text-sm whitespace-nowrap rounded transition duration-250 animate-pulse">Packages</a>
-        <a href="gallery.html" class="border-2 border-purple-400 px-4 py-2 hover:bg-purple-100 text-white text-sm whitespace-nowrap rounded transition duration-250 animate-pulse">Booking</a>
-    <a href="vlog.html" class="border-2 border-yellow-400 px-4 py-2 hover:bg-yellow-100 text-white text-sm whitespace-nowrap rounded transition duration-250 animate-pulse">Vlog</a>
-  </div>
-  </nav>
+  <!-- Header -->
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-center items-center">
+      <a href="index.html" class="title-font text-3xl text-gray-800 hover:text-gray-600">RI Photography</a>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-center space-x-6 flex-wrap">
+      <a href="portfolio.html" class="nav-link text-gray-700 hover:text-gray-900">Portfolio</a>
+      <a href="packages.html" class="nav-link text-gray-700 hover:text-gray-900">Packages</a>
+      <a href="vlog.html" class="nav-link text-gray-700 hover:text-gray-900">Vlog</a>
+      <a href="gallery.html" class="nav-link text-gray-700 hover:text-gray-900">Booking</a>
+    </div>
+  </nav>
+
   <!-- Hero Section -->
   <section class="relative">
     <div class="swiper mySwiper h-90 md:h-110">
