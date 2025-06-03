@@ -86,6 +86,27 @@
         box-shadow: 0 0 15px rgba(147, 197, 253, 0.25);
       }
     }
+
+    /* Glowing effect on thumbnail images */
+    .glow-thumbnail {
+      position: relative;
+      border-radius: 0.5rem;
+      overflow: hidden;
+    }
+
+    .glow-thumbnail::after {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      border-radius: 0.5rem;
+      background: linear-gradient(45deg, #9333ea, #3b82f6, #06b6d4, #9333ea);
+      z-index: -1;
+      filter: blur(8px);
+      animation: animated-border 5s linear infinite;
+    }
   </style>
 </head>
 <body class="bg-gray-200 text-gray-900 min-h-screen flex flex-col">
@@ -102,7 +123,9 @@
 
       <!-- Portraits -->
       <a href="portraits.html" class="group glow-card bg-white rounded-lg overflow-hidden">
-        <img src="https://i.postimg.cc/256dvYTY/IMG-20250603-102651.jpg" alt="Personal Portraits" class="w-full h-56 object-cover">
+        <div class="glow-thumbnail">
+          <img src="https://i.postimg.cc/256dvYTY/IMG-20250603-102651.jpg" alt="Personal Portraits" class="w-full h-56 object-cover">
+        </div>
         <div class="p-4 text-center bg-rose-50">
           <h2 class="text-lg font-bold text-rose-700">Personal Portraits</h2>
           <p class="text-sm text-rose-600 mt-2">Stylized individual portraits</p>
@@ -111,25 +134,31 @@
 
       <!-- Wedding Works -->
       <a href="wedding.html" class="group glow-card bg-white rounded-lg overflow-hidden">
-        <img src="https://i.postimg.cc/ZKJ9Jnbj/FB-IMG-1748353663213.jpg" alt="Wedding Works" class="w-full h-56 object-cover">
+        <div class="glow-thumbnail">
+          <img src="https://i.postimg.cc/ZKJ9Jnbj/FB-IMG-1748353663213.jpg" alt="Wedding Works" class="w-full h-56 object-cover">
+        </div>
         <div class="p-4 text-center bg-rose-50">
           <h2 class="text-lg font-bold text-rose-700">Wedding Works</h2>
           <p class="text-sm text-rose-600 mt-2">Romantic celebrations & memories</p>
         </div>
       </a>
 
-        <!-- Rag Day -->
+      <!-- Rag Day -->
       <a href="ragday.html" class="group glow-card bg-white rounded-lg overflow-hidden">
-        <img src="https://i.postimg.cc/xdwkCV4t/IMG-20250602-WA0070.jpg" alt="Wedding Works" class="w-full h-56 object-cover">
+        <div class="glow-thumbnail">
+          <img src="https://i.postimg.cc/xdwkCV4t/IMG-20250602-WA0070.jpg" alt="Rag Day" class="w-full h-56 object-cover">
+        </div>
         <div class="p-4 text-center bg-rose-50">
           <h2 class="text-lg font-bold text-rose-700">Rag Day</h2>
           <p class="text-sm text-rose-600 mt-2">The last memories</p>
         </div>
       </a>
-      
+
       <!-- Street Photography -->
       <a href="street.html" class="group glow-card bg-white rounded-lg overflow-hidden">
-        <img src="https://i.postimg.cc/pdfjQLH6/IMG-4249-1.jpg" alt="Street Photography" class="w-full h-56 object-cover">
+        <div class="glow-thumbnail">
+          <img src="https://i.postimg.cc/pdfjQLH6/IMG-4249-1.jpg" alt="Street Photography" class="w-full h-56 object-cover">
+        </div>
         <div class="p-4 text-center bg-rose-50">
           <h2 class="text-lg font-bold text-rose-700">Street Photography</h2>
           <p class="text-sm text-rose-600 mt-2">Candid street moments & city life</p>
@@ -138,7 +167,9 @@
 
       <!-- Functions -->
       <a href="functions.html" class="group glow-card bg-white rounded-lg overflow-hidden">
-        <img src="https://i.postimg.cc/KcJHrZcj/FB-IMG-1748376246102.jpg" alt="Functions" class="w-full h-56 object-cover">
+        <div class="glow-thumbnail">
+          <img src="https://i.postimg.cc/KcJHrZcj/FB-IMG-1748376246102.jpg" alt="Functions" class="w-full h-56 object-cover">
+        </div>
         <div class="p-4 text-center bg-rose-50">
           <h2 class="text-lg font-bold text-rose-700">Functions</h2>
           <p class="text-sm text-rose-600 mt-2">Cultural events, programs & indoor moments</p>
