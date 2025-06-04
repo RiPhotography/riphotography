@@ -1,108 +1,175 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Photography Packages - RI Photography</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @keyframes pulse-border {
-      0%, 100% {
-        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5);
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+  <title>Photography Packages - RI Photography</title>  
+  <script src="https://cdn.tailwindcss.com"></script>  
+  <style>  
+    @keyframes pulse-border {  
+      0%, 100% {  
+        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5);  
+      }  
+      50% {  
+        box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);  
+      }  
+    }  
+
+    .animated-box {  
+      animation: pulse-border 2.5s infinite;  
+      border-radius: 0.75rem;  
+      border: 4px solid #3b82f6;  
+      padding: 0.5rem 1.5rem;  
+      display: inline-block;  
+      color: #1e40af;  
+      font-weight: 600;  
+      font-size: 1.875rem;  
+      margin-bottom: 1.5rem;  
+    }  
+
+    .btn-animated:hover {  
+      transform: scale(1.05);  
+      box-shadow: 0 8px 15px rgba(139, 92, 246, 0.4);  
+      transition: transform 0.3s ease, box-shadow 0.3s ease;  
+    }  
+
+    .card-animated {  
+      animation: pulse-border 3s infinite;  
+      border-radius: 0.75rem;  
+      border: 3px solid #4f46e5;  
+    }  
+
+    .cursor-pointer {  
+      cursor: pointer;  
+    }
+
+    /* New Styles for category boxes with glowing border animation */
+    @keyframes glowing-border {
+      0% {
+        box-shadow: 0 0 5px 2px rgba(59, 130, 246, 0.7);
       }
       50% {
-        box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+        box-shadow: 0 0 20px 5px rgba(59, 130, 246, 0);
+      }
+      100% {
+        box-shadow: 0 0 5px 2px rgba(59, 130, 246, 0.7);
       }
     }
 
-    .animated-box {
-      animation: pulse-border 2.5s infinite;
-      border-radius: 0.75rem;
-      border: 4px solid #3b82f6;
-      padding: 0.5rem 1.5rem;
-      display: inline-block;
-      color: #1e40af;
+    .category-container {
+      max-width: 900px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+
+    .category-title {
+      font-size: 1.5rem;
       font-weight: 600;
-      font-size: 1.875rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
+      color: #2563eb; /* Tailwind blue-600 */
     }
 
-    .btn-animated:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 15px rgba(139, 92, 246, 0.4);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .categories-grid {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem; /* 20px */
+      flex-wrap: wrap;
     }
 
-    .card-animated {
-      animation: pulse-border 3s infinite;
+    .category-box {
+      background: white;
       border-radius: 0.75rem;
-      border: 3px solid #4f46e5;
-    }
-
-    .cursor-pointer {
+      padding: 1rem 1.25rem;
+      width: 140px;
       cursor: pointer;
+      animation: glowing-border 3s ease-in-out infinite;
+      border: 3px solid #3b82f6;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      transition: transform 0.3s ease;
     }
-  </style>
-</head>
-<body class="bg-white text-gray-800">
+    .category-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px 5px rgba(59, 130, 246, 0.7);
+    }
 
-  <!-- Header -->
-  <div class="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white text-center py-6 shadow-md">
-    <h1 class="text-4xl font-bold cursor-pointer" onclick="location.reload();">RI Photography</h1>
-    <p class="text-lg mt-2">Turning Moments into Timeless Art</p>
-  </div>
+    .category-box img {
+      width: 64px;
+      height: 64px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+    }
 
-  <!-- Section Title with Animated Box -->
-  <div class="text-center mt-8">
-    <div class="animated-box mx-auto">
-      Our Photography Packages
+    .category-label {
+      font-weight: 600;
+      color: #1e40af;
+    }
+
+  </style>  
+</head>  
+<body class="bg-white text-gray-800">  
+  
+  <!-- Header -->  
+  <div class="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white text-center py-6 shadow-md">  
+    <h1 class="text-4xl font-bold cursor-pointer" onclick="location.reload();">RI Photography</h1>  
+    <p class="text-lg mt-2">Turning Moments into Timeless Art</p>  
+  </div>  
+  
+  <!-- Section Title with Animated Box -->  
+  <div class="text-center mt-8">  
+    <div class="animated-box mx-auto">  
+      Our Photography Packages  
+    </div>  
+  </div>  
+
+  <!-- Subtitle "select a Categorie" -->  
+  <div class="category-container">
+    <div class="category-title">select a Categorie</div>
+    <div class="categories-grid">
+      
+      <!-- Wedding -->
+      <div class="category-box cursor-pointer" title="Wedding">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=64&q=80" alt="Wedding Thumbnail" />
+        <div class="category-label">Wedding</div>
+      </div>
+
+      <!-- Single Outdoor -->
+      <div class="category-box cursor-pointer" title="Single Outdoor">
+        <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=64&q=80" alt="Single Outdoor Thumbnail" />
+        <div class="category-label">Single Outdoor</div>
+      </div>
+
+      <!-- Couple Outdoor -->
+      <div class="category-box cursor-pointer" title="Couple Outdoor">
+        <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=64&q=80" alt="Couple Outdoor Thumbnail" />
+        <div class="category-label">Couple Outdoor</div>
+      </div>
+
+      <!-- Birthday -->
+      <div class="category-box cursor-pointer" title="Birthday">
+        <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=64&q=80" alt="Birthday Thumbnail" />
+        <div class="category-label">Birthday</div>
+      </div>
+
+      <!-- Function -->
+      <div class="category-box cursor-pointer" title="Function">
+        <img src="https://images.unsplash.com/photo-1486308510493-cb69f4fe52b0?auto=format&fit=crop&w=64&q=80" alt="Function Thumbnail" />
+        <div class="category-label">Function</div>
+      </div>
+
     </div>
   </div>
-
-  <!-- Packages Grid -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-12 lg:px-20 mb-10">
-
-    <!-- Basic Package -->
-    <div class="card-animated p-4 shadow hover:shadow-lg transition duration-300">
-      <h2 class="text-2xl font-bold mb-2">Basic Package</h2>
-      <ul class="list-disc list-inside space-y-1">
-        <li>1 Photographer</li>
-        <li>3 Hours Coverage</li>
-        <li>100 Edited Photos</li>
-        <li>Delivery within 5 days</li>
-      </ul>
-    </div>
-
-    <!-- Standard Package -->
-    <div class="card-animated p-4 shadow hover:shadow-lg transition duration-300">
-      <h2 class="text-2xl font-bold mb-2">Standard Package</h2>
-      <img src="https://i.postimg.cc/wvrRzbdD/Beige-and-Gold-Elegant-Wedding-Package-Instagram-Post-20250515-224311-0000.png" alt="Couple Package" class="mb-3 rounded">
-      <ul class="list-disc list-inside space-y-1">
-        <li>1 Photographer</li>
-        <li>4 Hours Coverage</li>
-        <li>150 Edited Photos</li>
-        <li>All Raw images</li>
-        <li>Delivery within 7 days</li>
-      </ul>
-    </div>
-
-    <!-- Premium Package -->
-    <div class="card-animated p-4 shadow hover:shadow-lg transition duration-300">
-      <h2 class="text-2xl font-bold mb-2">Premium Package</h2>
-      <img src="https://i.postimg.cc/FHFSjSGd/FB-IMG-1748144944773.jpg" alt="Customized Package" class="mb-3 rounded">
-      <ul class="list-disc list-inside space-y-1">
-        <li>You can customize any package</li>
-      </ul>
-    </div>
-
-  </div>
-
-  <!-- Back Button -->
-  <div class="text-center mb-10">
-    <a href="index.html" class="inline-block bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-semibold py-2 px-6 rounded-full shadow hover:shadow-lg transition duration-300 btn-animated">
-      ← Back to Home
-    </a>
-  </div>
-
-</body>
+   
+  
+  <!-- Back Button -->  
+  <div class="text-center mb-10">  
+    <a href="index.html" class="inline-block bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-semibold py-2 px-6 rounded-full shadow hover:shadow-lg transition duration-300 btn-animated">  
+      ← Back to Home  
+    </a>  
+  </div>  
+  
+</body>  
 </html>
